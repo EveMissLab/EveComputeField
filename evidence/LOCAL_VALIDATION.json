@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-30",
+  "environment": {
+    "go": "go1.23.2",
+    "module": "github.com/EveMissLab/EveComputeField",
+    "network": "two local processes / loopback TCP",
+    "os": "linux",
+    "test_host": "isolated container"
+  },
+  "limitations": [
+    "Logical units are identities, not kernel threads",
+    "No distributed shared memory",
+    "No live OS integration",
+    "Stateless remote worker only",
+    "Go reference is replaceable"
+  ],
+  "not_run": [
+    "Organization GitHub Actions CI run",
+    "Production Security Audit",
+    "Pulse Differential Benchmarks",
+    "Remote GitHub repo creation",
+    "Third-party Applications",
+    "Two Physical LAN Machines",
+    "WAN/Cloud Persistence",
+    "Windows Native"
+  ],
+  "repository": "EveMissLab/EveComputeField (planned; independent remote not yet created)",
+  "schema": "evemisslab.evecomputefield.local-validation/v0.1",
+  "status": "LOCAL_REFERENCE_TESTED",
+  "validation": {
+    "go_build_all": "PASS (fresh after module path change)",
+    "go_test_all": "PASS",
+    "go_test_race_all": "PASS (fresh after module path change)",
+    "go_vet_all": "PASS (fresh after module path change)",
+    "reference_lan_loopback": {
+      "results": {
+        "local-result": 11,
+        "local-seed": 5,
+        "remote-multiply": 10
+      },
+      "tls": "TLS1.3 mutual client certificate",
+      "verification": "fresh retest using compiled evefield binary and local TCP 127.0.0.1"
+    },
+    "reference_local_plan": "PASS",
+    "reference_local_run": {
+      "epoch_run1": 1,
+      "epoch_run2": 2,
+      "results": {
+        "combine": 26,
+        "output": 52,
+        "seed-a": 5,
+        "seed-b": 20
+      }
+    },
+    "test_cases_count": 16
+  }
+}

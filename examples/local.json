@@ -1,0 +1,15 @@
+{
+  "version": "field/v0.1",
+  "field_id": "reference-local",
+  "unit_count": 360,
+  "memory_domains": [
+    {"id":"active", "kind":"volatile", "quota_bytes":65536},
+    {"id":"continuity", "kind":"snapshot", "quota_bytes":1048576}
+  ],
+  "tasks": [
+    {"id":"seed-a","op":"sum","inputs":[2,3],"node":"local"},
+    {"id":"seed-b","op":"mul","inputs":[4,5],"node":"local"},
+    {"id":"combine","op":"sum","inputs":[1],"depends_on":["seed-a","seed-b"],"node":"local"},
+    {"id":"output","op":"mul","inputs":[2],"depends_on":["combine"],"node":"local"}
+  ]
+}

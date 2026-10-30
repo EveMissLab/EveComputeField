@@ -1,0 +1,4 @@
+?   	github.com/EveMissLab/EveComputeField/cmd/evefield	[no test files]
+?   	github.com/EveMissLab/EveComputeField/internal/devcert	[no test files]
+ok  	github.com/EveMissLab/EveComputeField/internal/field	1.020s
+ok  	github.com/EveMissLab/EveComputeField/internal/transport	1.039s

@@ -1,0 +1,14 @@
+{
+  "version": "field/v0.1",
+  "field_id": "reference-lan",
+  "unit_count": 720,
+  "memory_domains": [
+    {"id":"active", "kind":"volatile", "quota_bytes":65536},
+    {"id":"continuity", "kind":"snapshot", "quota_bytes":1048576}
+  ],
+  "tasks": [
+    {"id":"local-seed","op":"sum","inputs":[2,3],"node":"local"},
+    {"id":"remote-multiply","op":"mul","inputs":[2],"depends_on":["local-seed"],"node":"worker"},
+    {"id":"local-result","op":"sum","inputs":[1],"depends_on":["remote-multiply"],"node":"local"}
+  ]
+}

@@ -1,0 +1,14 @@
+# Do not commit credentials, local state, test and build products.
+/dev-certs/
+/certs/
+*.key
+*.p12
+*.pfx
+*state*.json
+/evefield
+/evefield.exe
+/fieldproto
+/fieldproto.exe
+/.idea/
+/.vscode/
+*.tmp
