@@ -57,6 +57,19 @@ jobs:
       - name: Verify committed evidence and checkout bytes
         run: node scripts/check-evidence-manifest.mjs --ref HEAD --check-worktree
 
+      - name: Source-tree manifest regression tests
+        run: node --test scripts/check-source-manifest.test.mjs
+
+      - name: Verify current source-tree Git bytes
+        run: node scripts/check-source-manifest.mjs --ref HEAD --check-worktree
+
+      - name: M4 local matched-state benchmark smoke (Linux)
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          node research/m4/benchmark.mjs --units 360 --cells 512 --workers 2 --pairs 2 --steps 4 --calls 8 > m4-smoke.json
+          node -e "const r=require('./m4-smoke.json'); if (!r.reorganization_receipt.physical_state_unchanged || r.measurement.arms.some(a=>a.pairs.some(p=>!p.identical_state)))process.exit(1)"
+
       - name: Cross-language numerical parity (Go versus browser JavaScript)
         shell: bash
         run: |
