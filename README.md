@@ -218,3 +218,18 @@ Only self-contained, independently authored public-safe reference code and publi
 `MANIFEST_SHA256.txt` is the immutable-file list from the prior bootstrap
 reference package. It is **not** a verification manifest of M2; use
 `MANIFEST_SHA256_M2.txt` for this revision's tracked source snapshot.
+
+## M4-P0: local placement and virtual memory-domain bridge (experimental)
+
+M4 connects R3's existing contiguous tile pool to stable virtual logical-unit
+associations, requires matched-state evidence before choosing an alternate
+physical worker count, and introduces a zero-copy SharedArrayBuffer-backed
+virtual memory-domain **prototype** with checked generational handles.
+Neither logical units nor memory handles are physical cores/OS address spaces.
+
+- [M4 experiment and local benchmark](research/m4/README.md)
+- [M4 execution/memory contracts and migration plan](docs/M4_LOCAL_PLACEMENT_VMD.md)
+
+Use `node research/run-tests.mjs`, then
+`node research/m4/benchmark.mjs --units 720 --cells 2048 --workers 2,4 --pairs 4 --steps 16 --calls 32`.
+M3 numerical kernels and previously published performance evidence remain unchanged.
