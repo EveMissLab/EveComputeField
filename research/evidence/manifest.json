@@ -1,0 +1,178 @@
+{
+  "schema": "ecf-public-research-evidence/v1",
+  "measurement_date": "2026-10-31",
+  "baseline_commit": "471ae0b58b8c7a439fdd4ceceb6ca8fd538b265c",
+  "scope": "Published derivation, not a byte-identical export of private runtime/operational records",
+  "timing_scope": "Historical measurements before publication portability-wrapper edits; numerical kernels unchanged",
+  "entries": [
+    {
+      "path": "r1/study.json",
+      "sha256": "3fd9a1deaca2087c66c869d876d693ae390d43155bb8ca5a13a333efd59b92ac",
+      "bytes": 192058,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r1/resident-study.json",
+      "sha256": "b12e19ac1e0ec8c1f85103a2647011bb16b1f700e30b0e84a0e7ce66058f5dab",
+      "bytes": 18459,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r1/field-study.json",
+      "sha256": "e4b424824aea58003a70c43ff0a5fe9e58871f7fad12dde576207fef832292cd",
+      "bytes": 3404,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r1/render-study.json",
+      "sha256": "d437030ce16e8ccca76b0dfda7af0484f005b9e7509f17d90f005f85f2547064",
+      "bytes": 2778,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r2/study.json",
+      "sha256": "860a8d1c17e42e031d813b05e30263ec0b5730735219be329df312e425ce1926",
+      "bytes": 226450,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r2/refinement.json",
+      "sha256": "dc224d753cc78801cd4f355364e58913eaff0c6ec0356a18c4172d0c40f70fe7",
+      "bytes": 14982,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r2/response.json",
+      "sha256": "27fc428d194d2b4c4f3aedfd2b34c612471f6a55a527dfe5b9b83e7f9293622f",
+      "bytes": 117672,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r2/resident-study.json",
+      "sha256": "077c573f2594b0e7ba468048ca8003890f92cb00407d0f751dfee5d41673f568",
+      "bytes": 12799,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r2/render-study.json",
+      "sha256": "b64db6a49f0206d2c5bb2a0ebcd91be8bb04ccdb9111d72f42f5d22f3df0b21e",
+      "bytes": 3008,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r2/verification.json",
+      "sha256": "f8838b5857447e351e17537b3e353858f0c0ea8bf0afd1192f26019bd8c48177",
+      "bytes": 369,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r3/pilot.json",
+      "sha256": "88c2721cae56f8d51e19a4089d4dbf7da6052dbc52edad1fa05f5e1179fe83c3",
+      "bytes": 49915,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r3/crossover.json",
+      "sha256": "a71cfc255506da331eccb1805124248fdb5ee9232cab5de754c8492bd06e94c0",
+      "bytes": 510957,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r3/boundary.json",
+      "sha256": "3fa3dcefaf2e5413dec2942f45796e2f224065c2c0fe1ed6f515399ef26a56d2",
+      "bytes": 146301,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r3/complexity.json",
+      "sha256": "644d21d0fe759ecc9b004d6c372af62e02532e602cc73923a8087c52a92d3648",
+      "bytes": 766043,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r3/stability.json",
+      "sha256": "5f29990c82517c7feb8fc17175c0269ce009a53cfe825f0c87b38b0bda09add0",
+      "bytes": 434732,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r3/resident-study.json",
+      "sha256": "ae4b4dba8bffdad66ceb6a6ff4d64448ed9ee53accd7ab23af102565c14abf0a",
+      "bytes": 24864,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r3/render-study.json",
+      "sha256": "c305b50547936bf6dcac367e744f454a9b182e48ca359a469a79c5f7d4ba4165",
+      "bytes": 11853,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r3/view-followup.json",
+      "sha256": "62111cbf582bd6a926a367e51ca6d886585b27cb1d0c1ddb01d9824e9922b83d",
+      "bytes": 10259,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r3/verification.json",
+      "sha256": "50c6689a0ce5355a7b709458b7cb52e802052aba3f8f0bc672dd956c563a8209",
+      "bytes": 300,
+      "kind": "curated historical measurement",
+      "transformation": "control IDs pseudonymized; local paths and native execution bindings omitted; numerical values preserved"
+    },
+    {
+      "path": "r2/accuracy.svg",
+      "sha256": "a33cc9a1296171e76f02442f9c6992052d57f4652e1c63b13bfd157fcf43bc6f",
+      "bytes": 22766,
+      "kind": "standalone SVG figure"
+    },
+    {
+      "path": "r2/complexity.svg",
+      "sha256": "eaae41a1d7201b24f4e9d9cd932aead582b69367ec6766b0c0f7e805060973f1",
+      "bytes": 32240,
+      "kind": "standalone SVG figure"
+    },
+    {
+      "path": "r2/coupled-response.svg",
+      "sha256": "c91964e4f97f8239457e9c30560f4f4257ff9a84f3abc42535eedae5525ae8da",
+      "bytes": 76545,
+      "kind": "standalone SVG figure"
+    },
+    {
+      "path": "r3/crossover.svg",
+      "sha256": "9b094fd23f3c8504936466158990bed5d1b8a8670c3a05a0d893a3226967db92",
+      "bytes": 45491,
+      "kind": "standalone SVG figure"
+    },
+    {
+      "path": "r3/integration-cost.svg",
+      "sha256": "2b38261eff8d54bd886bd52cc3609ef0bb4bdc0c39bb441e53fc7269f84178b5",
+      "bytes": 37417,
+      "kind": "standalone SVG figure"
+    },
+    {
+      "path": "r3/network-response.svg",
+      "sha256": "bb911acdbde85686a7b0e2b4e34bb880afc99214d2bee2392e7cec1b59379ff0",
+      "bytes": 35827,
+      "kind": "standalone SVG figure"
+    }
+  ]
+}

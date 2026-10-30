@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import { portFor,originFor } from './runtime-config.mjs';
+test('loopback port override is explicit and invalid input is refused',()=>{const old=process.env.ECF_R3_PORT;try{process.env.ECF_R3_PORT='18768';assert.equal(portFor(8768),18768);assert.equal(originFor(8768),'http://127.0.0.1:18768');process.env.ECF_R3_PORT='not-a-port';assert.throws(()=>portFor(8768),/invalid/);}finally{if(old===undefined)delete process.env.ECF_R3_PORT;else process.env.ECF_R3_PORT=old;}});

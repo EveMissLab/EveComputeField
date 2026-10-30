@@ -1,0 +1,443 @@
+{
+  "schema": "ecf-sample-field-006/v2",
+  "kernel_sha256": "d642bd2f072b6921205e39957719d0bb772fa441a34e68b7b3d55cef75a800bf",
+  "grid_reference": "Cell-average projection from 512 cells at dt_max=.005, T=6; numerical reference, not natural-site validation",
+  "grid": [
+    {
+      "cells": 32,
+      "metrics": {
+        "time_s": 6,
+        "steps": 1201,
+        "cells": 32,
+        "volumes_m3": {
+          "fall": 0.9937456548175918,
+          "pool": 33.386093489220755,
+          "river": 110.45115099142876,
+          "ocean": 919.33035814781
+        },
+        "total_m3": 1064.1613482832772,
+        "pool_stage_m": 2.1628697829740253,
+        "ocean_stage_m": 1.5322172635796834,
+        "fall_delay_s": 1.5641237740115501,
+        "flux_integrals_m3": {
+          "supply": 6,
+          "landing": 6.570378119193952,
+          "pool_river": 6.184284629974078,
+          "river_ocean": 6.133133638545294,
+          "export": 4.802775490736324
+        },
+        "roundoff_m3": {
+          "fall": 0,
+          "pool": 0,
+          "river": 0,
+          "ocean": 0
+        },
+        "component_raw_residual_m3": {
+          "fall": -6.217248937900877e-15,
+          "pool": 8.881784197001252e-13,
+          "river": -1.4210854715202004e-14,
+          "ocean": 1.0187406473960436e-12
+        },
+        "component_corrected_residual_m3": {
+          "fall": -6.217248937900877e-15,
+          "pool": 8.881784197001252e-13,
+          "river": -1.4210854715202004e-14,
+          "ocean": 1.0187406473960436e-12
+        },
+        "raw_residual_m3": 1.9761969838327786e-12,
+        "corrected_residual_m3": 1.9761969838327786e-12,
+        "min_depth_m": 1.1038429131120575,
+        "max_depth_m": 1.2073464636054245,
+        "min_dt_s": 0.0008762259885442669,
+        "max_dt_s": 0.005,
+        "max_face_cfl": 0.007388877185837489,
+        "max_storage_number": 0.0007293362233924014
+      },
+      "depth_l1_vs_512_m": 0.0032050916405916563,
+      "pool_stage_error_vs_512_m": 0.0011892721355759583,
+      "ocean_stage_error_vs_512_m": 9.445716587141995e-05
+    },
+    {
+      "cells": 64,
+      "metrics": {
+        "time_s": 6,
+        "steps": 1201,
+        "cells": 64,
+        "volumes_m3": {
+          "fall": 0.9937456548175918,
+          "pool": 33.37210717869101,
+          "river": 110.49819073407699,
+          "ocean": 919.297398334022
+        },
+        "total_m3": 1064.1614419016075,
+        "pool_stage_m": 2.1624035726230337,
+        "ocean_stage_m": 1.5321623305567034,
+        "fall_delay_s": 1.5641237740115501,
+        "flux_integrals_m3": {
+          "supply": 6,
+          "landing": 6.570378119193952,
+          "pool_river": 6.198270940503805,
+          "river_ocean": 6.1000802064268065,
+          "export": 4.802681872404379
+        },
+        "roundoff_m3": {
+          "fall": 0,
+          "pool": 0,
+          "river": 0,
+          "ocean": 0
+        },
+        "component_raw_residual_m3": {
+          "fall": -6.217248937900877e-15,
+          "pool": 8.695266728864226e-13,
+          "river": -4.440892098500626e-15,
+          "ocean": -4.503064587879635e-13
+        },
+        "component_corrected_residual_m3": {
+          "fall": -6.217248937900877e-15,
+          "pool": 8.695266728864226e-13,
+          "river": -4.440892098500626e-15,
+          "ocean": -4.503064587879635e-13
+        },
+        "raw_residual_m3": 3.419486915845482e-13,
+        "corrected_residual_m3": 3.419486915845482e-13,
+        "min_depth_m": 1.1059080609735792,
+        "max_depth_m": 1.2048891367093706,
+        "min_dt_s": 0.0008762259885442669,
+        "max_dt_s": 0.005,
+        "max_face_cfl": 0.014800301858665337,
+        "max_storage_number": 0.00073193664072083
+      },
+      "depth_l1_vs_512_m": 0.0017544637020634815,
+      "pool_stage_error_vs_512_m": 0.0007230617845843668,
+      "ocean_stage_error_vs_512_m": 3.952414289143391e-05
+    },
+    {
+      "cells": 128,
+      "metrics": {
+        "time_s": 6,
+        "steps": 1201,
+        "cells": 128,
+        "volumes_m3": {
+          "fall": 0.9937456548175918,
+          "pool": 33.360798495340696,
+          "river": 110.52380520649763,
+          "ocean": 919.2831332738822
+        },
+        "total_m3": 1064.161482630538,
+        "pool_stage_m": 2.1620266165113566,
+        "ocean_stage_m": 1.5321385554564704,
+        "fall_delay_s": 1.5641237740115501,
+        "flux_integrals_m3": {
+          "supply": 6,
+          "landing": 6.570378119193952,
+          "pool_river": 6.209579623854261,
+          "river_ocean": 6.085774417356642,
+          "export": 4.8026411434744585
+        },
+        "roundoff_m3": {
+          "fall": 0,
+          "pool": 0,
+          "river": 0,
+          "ocean": 0
+        },
+        "component_raw_residual_m3": {
+          "fall": -6.217248937900877e-15,
+          "pool": 1.0116352200384426e-12,
+          "river": 1.687538997430238e-14,
+          "ocean": 1.7763568394002505e-15
+        },
+        "component_corrected_residual_m3": {
+          "fall": -6.217248937900877e-15,
+          "pool": 1.0116352200384426e-12,
+          "river": 1.687538997430238e-14,
+          "ocean": 1.7763568394002505e-15
+        },
+        "raw_residual_m3": 9.9298347322474e-13,
+        "corrected_residual_m3": 9.9298347322474e-13,
+        "min_depth_m": 1.1064381928122418,
+        "max_depth_m": 1.2034563243753162,
+        "min_dt_s": 0.0008762259885442669,
+        "max_dt_s": 0.005,
+        "max_face_cfl": 0.029625081243377514,
+        "max_storage_number": 0.0007336409703014131
+      },
+      "depth_l1_vs_512_m": 0.0009252727091663207,
+      "pool_stage_error_vs_512_m": 0.0003461056729072709,
+      "ocean_stage_error_vs_512_m": 1.574904265844168e-05
+    },
+    {
+      "cells": 256,
+      "metrics": {
+        "time_s": 6,
+        "steps": 1201,
+        "cells": 256,
+        "volumes_m3": {
+          "fall": 0.9937456548175918,
+          "pool": 33.35443453636384,
+          "river": 110.5366067202579,
+          "ocean": 919.2767134978568
+        },
+        "total_m3": 1064.1615004092962,
+        "pool_stage_m": 2.161814484545461,
+        "ocean_stage_m": 1.5321278558297613,
+        "fall_delay_s": 1.5641237740115501,
+        "flux_integrals_m3": {
+          "supply": 6,
+          "landing": 6.570378119193952,
+          "pool_river": 6.215943582830837,
+          "river_ocean": 6.079336862572976,
+          "export": 4.802623364714986
+        },
+        "roundoff_m3": {
+          "fall": 0,
+          "pool": 0,
+          "river": 0,
+          "ocean": 0
+        },
+        "component_raw_residual_m3": {
+          "fall": -6.217248937900877e-15,
+          "pool": 7.318590178329032e-13,
+          "river": 4.085620730620576e-14,
+          "ocean": -1.1866063687193673e-12
+        },
+        "component_corrected_residual_m3": {
+          "fall": -6.217248937900877e-15,
+          "pool": 7.318590178329032e-13,
+          "river": 4.085620730620576e-14,
+          "ocean": -1.1866063687193673e-12
+        },
+        "raw_residual_m3": -3.872457909892546e-13,
+        "corrected_residual_m3": -3.872457909892546e-13,
+        "min_depth_m": 1.1061640572674207,
+        "max_depth_m": 1.2027593045219234,
+        "min_dt_s": 0.0008762259885442669,
+        "max_dt_s": 0.005,
+        "max_face_cfl": 0.05943888656062047,
+        "max_storage_number": 0.0007350137473032541
+      },
+      "depth_l1_vs_512_m": 0.00035631816238865157,
+      "pool_stage_error_vs_512_m": 0.0001339737070118474,
+      "ocean_stage_error_vs_512_m": 5.049415949365255e-06
+    },
+    {
+      "cells": 512,
+      "metrics": {
+        "time_s": 6,
+        "steps": 1201,
+        "cells": 512,
+        "volumes_m3": {
+          "fall": 0.9937456548175918,
+          "pool": 33.35041532515348,
+          "river": 110.54366363903418,
+          "ocean": 919.2736838482872
+        },
+        "total_m3": 1064.1615084672924,
+        "pool_stage_m": 2.1616805108384494,
+        "ocean_stage_m": 1.532122806413812,
+        "fall_delay_s": 1.5641237740115501,
+        "flux_integrals_m3": {
+          "supply": 6,
+          "landing": 6.570378119193952,
+          "pool_river": 6.219962794041597,
+          "river_ocean": 6.076299155007437,
+          "export": 4.802615306719168
+        },
+        "roundoff_m3": {
+          "fall": 0,
+          "pool": 0,
+          "river": 0,
+          "ocean": 0
+        },
+        "component_raw_residual_m3": {
+          "fall": -6.217248937900877e-15,
+          "pool": 1.1288747714388592e-12,
+          "river": 2.7533531010703882e-14,
+          "ocean": -1.077360423096252e-12
+        },
+        "component_corrected_residual_m3": {
+          "fall": -6.217248937900877e-15,
+          "pool": 1.1288747714388592e-12,
+          "river": 2.7533531010703882e-14,
+          "ocean": -1.077360423096252e-12
+        },
+        "raw_residual_m3": -2.220446049250313e-14,
+        "corrected_residual_m3": -2.220446049250313e-14,
+        "min_depth_m": 1.1058968923977666,
+        "max_depth_m": 1.2024293861778212,
+        "min_dt_s": 0.0008762259885442669,
+        "max_dt_s": 0.005,
+        "max_face_cfl": 0.11919508712756477,
+        "max_storage_number": 0.0007357377324428911
+      },
+      "depth_l1_vs_512_m": 0,
+      "pool_stage_error_vs_512_m": 0,
+      "ocean_stage_error_vs_512_m": 0
+    }
+  ],
+  "cfl_reference": "Same 512 cells and source history at T=4; small-step dt=.005 reference",
+  "cfl": [
+    {
+      "label": "small-step-reference",
+      "metrics": {
+        "time_s": 4,
+        "steps": 801,
+        "cells": 512,
+        "volumes_m3": {
+          "fall": 17.20536151412688,
+          "pool": 52.90742532488016,
+          "river": 114.57628294455903,
+          "ocean": 918.5744125563789
+        },
+        "total_m3": 1103.2634823399449,
+        "pool_stage_m": 2.813580844162672,
+        "ocean_stage_m": 1.5309573542606314,
+        "fall_delay_s": 1.5641237740115501,
+        "flux_integrals_m3": {
+          "supply": 43.5,
+          "landing": 27.858762259884553,
+          "pool_river": 7.951336935005466,
+          "river_ocean": 3.7750539904464975,
+          "export": 3.2006414340665503
+        },
+        "roundoff_m3": {
+          "fall": 0,
+          "pool": 0,
+          "river": 0,
+          "ocean": 0
+        },
+        "component_raw_residual_m3": {
+          "fall": -1.1723955140041653e-13,
+          "pool": 1.078248601515952e-12,
+          "river": 6.52811138479592e-14,
+          "ocean": -1.0587086762825493e-12
+        },
+        "component_corrected_residual_m3": {
+          "fall": -1.1723955140041653e-13,
+          "pool": 1.078248601515952e-12,
+          "river": 6.52811138479592e-14,
+          "ocean": -1.0587086762825493e-12
+        },
+        "raw_residual_m3": -1.603162047558726e-13,
+        "corrected_residual_m3": -1.603162047558726e-13,
+        "min_depth_m": 1.1165969151150996,
+        "max_depth_m": 1.7512371987679398,
+        "min_dt_s": 0.0008762259885016343,
+        "max_dt_s": 0.005,
+        "max_face_cfl": 0.18082496750481517,
+        "max_storage_number": 0.0011301560469050948
+      },
+      "max_abs_q_m2_s": 4.599217170164596,
+      "depth_total_variation_m": 0.7193640661614484,
+      "depth_l1_vs_small_step_m": 0
+    },
+    {
+      "label": "guarded-CFL",
+      "metrics": {
+        "time_s": 3.9999999999999964,
+        "steps": 274,
+        "cells": 512,
+        "volumes_m3": {
+          "fall": 17.205361514127034,
+          "pool": 52.9234425965609,
+          "river": 114.56171253311099,
+          "ocean": 918.5729705264732
+        },
+        "total_m3": 1103.2634871702721,
+        "pool_stage_m": 2.8141147532186968,
+        "ocean_stage_m": 1.5309549508774554,
+        "fall_delay_s": 1.5641237740115501,
+        "flux_integrals_m3": {
+          "supply": 43.49999999999996,
+          "landing": 27.858762259884465,
+          "pool_river": 7.935319663323543,
+          "river_ocean": 3.773607130212461,
+          "export": 3.2006366037379284
+        },
+        "roundoff_m3": {
+          "fall": 0,
+          "pool": 0,
+          "river": 0,
+          "ocean": 0
+        },
+        "component_raw_residual_m3": {
+          "fall": -7.105427357601002e-15,
+          "pool": -1.0658141036401503e-14,
+          "river": -8.215650382226158e-14,
+          "ocean": -1.305178187749334e-12
+        },
+        "component_corrected_residual_m3": {
+          "fall": -7.105427357601002e-15,
+          "pool": -1.0658141036401503e-14,
+          "river": -8.215650382226158e-14,
+          "ocean": -1.305178187749334e-12
+        },
+        "raw_residual_m3": -1.4690471061840071e-12,
+        "corrected_residual_m3": -1.4690471061840071e-12,
+        "min_depth_m": 1.1165449120154383,
+        "max_depth_m": 1.7517714913073599,
+        "min_dt_s": 0.003591137337716129,
+        "max_dt_s": 0.017845133871358408,
+        "max_face_cfl": 0.39000000000000007,
+        "max_storage_number": 0.0024375
+      },
+      "max_abs_q_m2_s": 4.6001151825084525,
+      "depth_total_variation_m": 0.7199999645092869,
+      "depth_l1_vs_small_step_m": 0.00023630192809169373
+    },
+    {
+      "label": "unsafe-CFL-finite-only",
+      "metrics": {
+        "time_s": 3.999999999999996,
+        "steps": 155,
+        "cells": 512,
+        "volumes_m3": {
+          "fall": 17.20536151412706,
+          "pool": 53.81870320578273,
+          "river": 113.67146438606619,
+          "ocean": 918.5679728337204
+        },
+        "total_m3": 1103.2635019396964,
+        "pool_stage_m": 2.843956773526091,
+        "ocean_stage_m": 1.530946621389534,
+        "fall_delay_s": 1.5641237740115501,
+        "flux_integrals_m3": {
+          "supply": 43.49999999999996,
+          "landing": 27.85876225988446,
+          "pool_river": 7.040059054101727,
+          "river_ocean": 3.7685946680355165,
+          "export": 3.2006218343150366
+        },
+        "roundoff_m3": {
+          "fall": 0,
+          "pool": 0,
+          "river": 0,
+          "ocean": 0
+        },
+        "component_raw_residual_m3": {
+          "fall": 1.0658141036401503e-14,
+          "pool": 5.329070518200751e-15,
+          "river": -1.1102230246251565e-14,
+          "ocean": -4.75175454539567e-14
+        },
+        "component_corrected_residual_m3": {
+          "fall": 1.0658141036401503e-14,
+          "pool": 5.329070518200751e-15,
+          "river": -1.1102230246251565e-14,
+          "ocean": -4.75175454539567e-14
+        },
+        "raw_residual_m3": -6.394884621840902e-14,
+        "corrected_residual_m3": -6.394884621840902e-14,
+        "min_depth_m": 0.8158792798540235,
+        "max_depth_m": 2.531472974616853,
+        "min_dt_s": 0.003161446462661921,
+        "max_dt_s": 0.18290473367828625,
+        "max_face_cfl": 4,
+        "max_storage_number": 0.02452773025868091
+      },
+      "max_abs_q_m2_s": 12.882366591213225,
+      "depth_total_variation_m": 6.874388320828763,
+      "depth_l1_vs_small_step_m": 0.024447253998086536
+    }
+  ],
+  "interpretation": "Finite, wet and mass-conservative trajectories can still be inaccurate or oscillatory. Refusal is not the only numerical-quality criterion."
+}

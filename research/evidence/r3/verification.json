@@ -1,0 +1,13 @@
+{
+  "outcome": "passed",
+  "tests": 16,
+  "passed": 16,
+  "failed": 0,
+  "preserved_source_files": {
+    "m3-r1": 26,
+    "m3-r2": 25
+  },
+  "platform": "win32",
+  "node": "v24.16.0",
+  "scope": "Current R3 Node worker tests on Windows; unchanged Go/Linux race proof remains prior-round evidence."
+}

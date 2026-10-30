@@ -12,7 +12,7 @@ Status: **LOCALLY PREPARED; REMOTE NOT CREATED BY THIS ARTIFACT**.
 
 ## Repository settings
 
-- Owner: `EveMissLab` organization, not `kakon77777-commits` personal profile.
+- Owner: `EveMissLab` organization.
 - Name: `EveComputeField`.
 - Visibility: `public`. License: MIT. Default branch: `main`.
 - Topic suggestions: `distributed-computing`, `virtual-compute`, `go`, `local-first`, `runtime`, `research-prototype`.

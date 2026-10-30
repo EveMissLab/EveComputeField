@@ -1,0 +1,87 @@
+{
+  "outcome": "passed",
+  "browser": "156.0.8078.4",
+  "samples": [
+    {
+      "label": "baseline",
+      "frames": 120,
+      "elapsed_ms": 6723.300000000745,
+      "raf_interval_median_ms": 50.000000000000114,
+      "raf_interval_p95_ms": 66.80000000000018,
+      "raf_cadence_hz": 17.95573910311083,
+      "svg_mutation_batches": 121,
+      "svg_mutation_records": 82877,
+      "svg_update_batch_hz": 17.997114512216708,
+      "svg_nodes": 505,
+      "canvas_nodes": 0,
+      "state": {
+        "time_s": 21.356800000000053,
+        "steps": 772,
+        "cells": 96,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 2.1200660824768245,
+        "water_m2": 102.8652743893757,
+        "velocity_ms": 1.614969640429301,
+        "mass_residual_m2": -4.263256414560601e-14,
+        "max_cfl": 0.15600980433256248
+      },
+      "paused": false
+    },
+    {
+      "label": "boundary-control-extremes",
+      "frames": 120,
+      "elapsed_ms": 6316.400000002235,
+      "raf_interval_median_ms": 50,
+      "raf_interval_p95_ms": 66.70000000000073,
+      "raf_cadence_hz": 19.098852477280325,
+      "svg_mutation_batches": 121,
+      "svg_mutation_records": 82311,
+      "svg_update_batch_hz": 19.15648154011101,
+      "svg_nodes": 505,
+      "canvas_nodes": 0,
+      "state": {
+        "time_s": 41.70272000000077,
+        "steps": 1520,
+        "cells": 96,
+        "inflow_m2_s": 2.5,
+        "outflow_m2_s": 1.3462128202458787,
+        "water_m2": 112.89880465167552,
+        "velocity_ms": 1.4836732152091319,
+        "mass_residual_m2": 1.7053025658242404e-13,
+        "max_cfl": 0.16441744077328066
+      },
+      "paused": false
+    },
+    {
+      "label": "paused-solver-SVG-loop",
+      "frames": 120,
+      "elapsed_ms": 3516.599999997765,
+      "raf_interval_median_ms": 33.29999999999927,
+      "raf_interval_p95_ms": 50,
+      "raf_cadence_hz": 34.28669390554016,
+      "svg_mutation_batches": 67,
+      "svg_mutation_records": 37922,
+      "svg_update_batch_hz": 19.05249388615213,
+      "svg_nodes": 505,
+      "canvas_nodes": 0,
+      "state": {
+        "time_s": 42.03872000000078,
+        "steps": 1532,
+        "cells": 96,
+        "inflow_m2_s": 2.5,
+        "outflow_m2_s": 1.374433104750212,
+        "water_m2": 113.14069932268288,
+        "velocity_ms": 1.4851181879950388,
+        "mass_residual_m2": 7.105427357601002e-14,
+        "max_cfl": 0.16441744077328066
+      },
+      "paused": true
+    }
+  ],
+  "negative_controls": {
+    "visual_style_only_does_not_change_physics": true
+  },
+  "page_errors": [],
+  "external_requests": [],
+  "scope": "Standalone original browser M3 solver and SVG DOM. RAF cadence and mutation batches include solver/browser work; not isolated GPU render time or SLA. Backend resident continuation is measured separately."
+}

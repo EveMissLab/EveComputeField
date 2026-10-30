@@ -9,6 +9,18 @@ License: MIT (included in the public repository)
 
 ## Purpose / 目的
 
+### M3 research rounds R1–R3 — 2026-10-31
+
+Resident worker reuse, independent waterfall/basin/ocean inventories, branched
+river networks and SVG views are available under [research/](research/README.md).
+R3 measurements extend to262,144 cells and separately64 reaches/65 storage
+regions. Read [results and limits](research/RESULTS.md) for crossover intervals,
+water budgets, stability horizons and the distinction between logical units and
+actual workers. These remain reference research models, not a Stable CFD product.
+
+Run `node research/run-tests.mjs` for all numerical/worker tests, or follow the
+[portable local setup](research/README.md#start-a-local-resident-svg-field).
+
 Create an **offline-first, local-network-oriented, persistent-identity Virtual Compute Field**, in which users can declare logical-unit counts, logical memory domains, dependency-aware computation, and execution placement independently of any one programming language or hardware backend.
 
 The reference implementation uses Go as a **replaceable bootstrap**, not as the permanent authority for field semantics. Future connectors may target NOVA, EML-SF, MACR, ODTS, TCGCT/TCGQT, GMA, or other EveMissLab systems after each coupling contract is individually verified. A connector's existence here does **not** imply completed upstream integration.

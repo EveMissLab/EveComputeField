@@ -1,3 +1,16 @@
+## 2026-10-31 — M3 resident research rounds R1–R3
+
+- Persistent arrays and worker pools, per-field serialized calls, explicit
+  checkpoints and quiescent reorganization with continuity validation.
+- Independent waterfall, basin and ocean inventories coupled to1D rivers;
+  graph tributaries and finite-volume confluence storages with shared transfers.
+- Fixed tiles and double banks support parallel face/update work; measured
+  crossover studies extend to262,144 cells, with separate64-reach graph cases.
+- SVG-only views read actual resident state; large displays aggregate samples
+  without reducing solver resolution. Historical public evidence states scope
+  and precision limits and omits workstation/private operational metadata.
+- Portable local setup and Node24 tests join the existing Linux/Windows CI.
+
 ## 2026-10-30 — M3 Fluid SVG Benchmark (reference)
 
 - Single continuous waterfall → river → ocean SVG-only scene, offline HTML controls;

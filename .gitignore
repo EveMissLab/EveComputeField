@@ -18,3 +18,12 @@
 # M2 generated local runtime, do not publish credentials/snapshots.
 /.evefield-local/
 /build/
+# Original intake archive and local operational/evidence generators stay local.
+/EveComputeField_Independent_GitHub_Ready_v0.1.0_2026-10-30.zip
+/research/*/make-report.mjs
+/research/*/verify.mjs
+/research/*/archive-source.py
+/research/m3-r1/active-check.mjs
+/research/m3-r1/health.mjs
+/research/m3-r1/maintain-resident.mjs
+/research/m3-r1/post-fix-metadata.mjs

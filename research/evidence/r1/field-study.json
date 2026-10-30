@@ -1,0 +1,89 @@
+{
+  "schema": "ecf-m3-r1-field-study/v1",
+  "field_id": "sample-field-005",
+  "kernel_sha256": "3dd680e14d1d488dac768bb9cce4725d7bd9cff5e69d09f73ec1dc191c237ed1",
+  "endpoint": "[local path omitted]",
+  "logical_units_final": 720,
+  "trace": [
+    {
+      "index": 0,
+      "steps": 80,
+      "time_s": 2.399999999999999,
+      "partitions": 1,
+      "organization": "monolithic",
+      "field_http_invoke_and_save_ms": 105.5857,
+      "worker": {
+        "setup_ms": 1.0630999999999986,
+        "advance_ms": 7.201500000000003,
+        "total_before_serialization_ms": 9.315800000000003
+      },
+      "checkpoint_bytes": 7907,
+      "mass_residual_m2": -2.5757174171303632e-14,
+      "state_sha256": "da7a4fe2b05a2e8ac35762fcccc5565d987fd79b16b563c44485e2ea8966dc70",
+      "receipt_sha256": "7449ab9b012949a84193662cfdee84f1451f2ab827ec4b864effbfded6e0e44a"
+    },
+    {
+      "index": 1,
+      "steps": 160,
+      "time_s": 4.799999999999995,
+      "partitions": 2,
+      "organization": "partitioned-serial",
+      "field_http_invoke_and_save_ms": 108.34970000000001,
+      "worker": {
+        "setup_ms": 1.953800000000001,
+        "advance_ms": 8.349899999999998,
+        "total_before_serialization_ms": 11.396499999999996
+      },
+      "checkpoint_bytes": 7896,
+      "mass_residual_m2": 2.3092638912203256e-14,
+      "state_sha256": "49f1ef95081d7e5d090355aeabffde3cb81700393627e5136d72a8b93ef9d1d6",
+      "receipt_sha256": "a09ca144e6c36a507e68e3695f8199e6198b245767041c996e6bfb9da3444c5a"
+    },
+    {
+      "index": 2,
+      "steps": 240,
+      "time_s": 7.200000000000015,
+      "partitions": 4,
+      "organization": "partitioned-workers",
+      "field_http_invoke_and_save_ms": 179.3265,
+      "worker": {
+        "setup_ms": 69.2844,
+        "advance_ms": 10.480500000000006,
+        "total_before_serialization_ms": 81.27350000000001
+      },
+      "checkpoint_bytes": 7878,
+      "mass_residual_m2": -5.950795411990839e-14,
+      "state_sha256": "cba7963e3aeff989298084d3749abfedda6bfb96db16b1aabfd4ed83e2999441",
+      "receipt_sha256": "ff4b6727150cf83fe9204c800345792c6c334777c06969e56eb07a9fd0233b18"
+    },
+    {
+      "index": 3,
+      "steps": 320,
+      "time_s": 9.599999999999987,
+      "partitions": 2,
+      "organization": "partitioned-workers",
+      "field_http_invoke_and_save_ms": 170.27280000000007,
+      "worker": {
+        "setup_ms": 54.09779999999999,
+        "advance_ms": 7.818000000000012,
+        "total_before_serialization_ms": 62.9324
+      },
+      "checkpoint_bytes": 7876,
+      "mass_residual_m2": -3.375077994860476e-14,
+      "state_sha256": "f6afa7b96de3f8f915c1c622bd5a760dfb61d274b869886cbf9be304c952bd6e",
+      "receipt_sha256": "db624617fa8525d49a661073bd434b350eec7ae25d99f2b627a38a3736b197f5"
+    }
+  ],
+  "uninterrupted_320_steps_equivalent": true,
+  "final_checkpoint_sha256": "f6afa7b96de3f8f915c1c622bd5a760dfb61d274b869886cbf9be304c952bd6e",
+  "organization_history_head": "db624617fa8525d49a661073bd434b350eec7ae25d99f2b627a38a3736b197f5",
+  "failed_reorganization_preserves_saved_state": true,
+  "restart_verified": true,
+  "distinction": "Field logical units are metadata. Real partitions are explicit worker cell ranges, not automatic DAG distribution.",
+  "restored": {
+    "logical_units": 720,
+    "epoch": 1,
+    "state_sha256": "f6afa7b96de3f8f915c1c622bd5a760dfb61d274b869886cbf9be304c952bd6e",
+    "receipt_count": 4
+  }
+}

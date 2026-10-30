@@ -97,7 +97,7 @@ registry with `fluid` permitted. If the registry **already exists**, it is
 never overwritten: add a trusted entry yourself, then restart the daemon:
 
 ```json
-{"name":"fluid","program":"C:\\absolute\\path\\to\\repo\\build\\evefield.exe","args":["tool","fluid"],"timeout_ms":10000,"max_output_bytes":16384}
+{"name":"fluid","program":"<absolute path to the evefield executable>","args":["tool","fluid"],"timeout_ms":10000,"max_output_bytes":16384}
 ```
 
 The program path must be the actual absolute path to your own binary.

@@ -1,0 +1,6279 @@
+{
+  "schema": "ecf-m3-r1-study/v1",
+  "baseline_commit": "471ae0b58b8c7a439fdd4ceceb6ca8fd538b265c",
+  "kernel_sha256": "3dd680e14d1d488dac768bb9cce4725d7bd9cff5e69d09f73ec1dc191c237ed1",
+  "environment": {
+    "os": "win32",
+    "release": "10.0.19045",
+    "arch": "x64",
+    "node": "v24.16.0",
+    "cpu_model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+    "logical_processors": 16
+  },
+  "scope": "1D river with ghost-state waterfall inlet and tailwater ocean boundary; not a 2D/3D waterfall/ocean solution.",
+  "reference_parity": [
+    {
+      "name": "base",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 2.220446049250313e-16,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 32,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.3673280876507068,
+        "water_m2": 109.74158455703093,
+        "velocity_ms": 1.158776177023236,
+        "mass_residual_m2": -2.3092638912203256e-14,
+        "max_cfl": 0.04568178170077893
+      },
+      "min_depth_m": 1.072852253793129,
+      "max_depth_m": 1.1855682315025338,
+      "wall_with_process_ms": 50.71320000000001
+    },
+    {
+      "name": "inlet-low",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 4.440892098500626e-16,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 32,
+        "inflow_m2_s": 0.05,
+        "outflow_m2_s": 1.3673279326961807,
+        "water_m2": 105.47831975481093,
+        "velocity_ms": 1.1368919221626743,
+        "mass_residual_m2": -2.3092638912203256e-14,
+        "max_cfl": 0.04568178075689893
+      },
+      "min_depth_m": 0.9377160584188869,
+      "max_depth_m": 1.1855682115987016,
+      "wall_with_process_ms": 45.934899999999985
+    },
+    {
+      "name": "inlet-high",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 0,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 32,
+        "inflow_m2_s": 2.5,
+        "outflow_m2_s": 1.367328554297733,
+        "water_m2": 117.98502037952599,
+        "velocity_ms": 1.2420378199569546,
+        "mass_residual_m2": -2.6645352591003757e-14,
+        "max_cfl": 0.0543609763862881
+      },
+      "min_depth_m": 1.1631282549573683,
+      "max_depth_m": 1.3390102656475502,
+      "wall_with_process_ms": 43.02459999999999
+    },
+    {
+      "name": "tide-low",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": -0.4,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 4.440892098500626e-16,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 32,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.907157997787371,
+        "water_m2": 104.15178274651785,
+        "velocity_ms": 1.1627462608182968,
+        "mass_residual_m2": -5.329070518200751e-15,
+        "max_cfl": 0.05020985784743643
+      },
+      "min_depth_m": 0.8306485944408377,
+      "max_depth_m": 1.1503467163348187,
+      "wall_with_process_ms": 44.27259999999998
+    },
+    {
+      "name": "tide-high",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0.4,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 0,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 32,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 0.172695250537076,
+        "water_m2": 119.2246200943868,
+        "velocity_ms": 1.150977780287576,
+        "mass_residual_m2": -5.773159728050814e-15,
+        "max_cfl": 0.04524473127784263
+      },
+      "min_depth_m": 1.0728522538337817,
+      "max_depth_m": 1.5826433892481682,
+      "wall_with_process_ms": 43.2654
+    },
+    {
+      "name": "rough-low",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.01
+      },
+      "max_abs_go_js_delta": 0,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 32,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.4185571797311531,
+        "water_m2": 109.64554041130272,
+        "velocity_ms": 1.2049730038660917,
+        "mass_residual_m2": -2.6645352591003757e-14,
+        "max_cfl": 0.04611209235582029
+      },
+      "min_depth_m": 1.067750941091301,
+      "max_depth_m": 1.185559481872515,
+      "wall_with_process_ms": 42.537900000000036
+    },
+    {
+      "name": "rough-high",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.08
+      },
+      "max_abs_go_js_delta": 3.3306690738754696e-16,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 32,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.1036760357983524,
+        "water_m2": 110.26192491984594,
+        "velocity_ms": 0.9245424084428977,
+        "mass_residual_m2": 7.105427357601002e-15,
+        "max_cfl": 0.04346428859866421
+      },
+      "min_depth_m": 1.1014502512871571,
+      "max_depth_m": 1.18565258051074,
+      "wall_with_process_ms": 42.8691
+    },
+    {
+      "name": "base",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 0,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.3545903201288567,
+        "water_m2": 109.8566396157423,
+        "velocity_ms": 1.155316901178387,
+        "mass_residual_m2": 0,
+        "max_cfl": 0.13674688347673244
+      },
+      "min_depth_m": 1.06310847638803,
+      "max_depth_m": 1.1949877226474381,
+      "wall_with_process_ms": 50.04540000000003
+    },
+    {
+      "name": "inlet-low",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 0,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "inflow_m2_s": 0.05,
+        "outflow_m2_s": 1.3545903201288567,
+        "water_m2": 105.55715344193938,
+        "velocity_ms": 1.15344810779379,
+        "mass_residual_m2": 4.440892098500626e-14,
+        "max_cfl": 0.13674688347673244
+      },
+      "min_depth_m": 0.924196615533013,
+      "max_depth_m": 1.1949877226474381,
+      "wall_with_process_ms": 45.874300000000005
+    },
+    {
+      "name": "inlet-high",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 0,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "inflow_m2_s": 2.5,
+        "outflow_m2_s": 1.3545903201288567,
+        "water_m2": 118.4898510968919,
+        "velocity_ms": 1.1657385774184432,
+        "mass_residual_m2": 1.2434497875801753e-14,
+        "max_cfl": 0.1637424764511699
+      },
+      "min_depth_m": 1.1514014230333112,
+      "max_depth_m": 1.3594052653190678,
+      "wall_with_process_ms": 45.34359999999998
+    },
+    {
+      "name": "tide-low",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": -0.4,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 4.440892098500626e-16,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.857342646041606,
+        "water_m2": 104.6662566098901,
+        "velocity_ms": 1.155318385440505,
+        "mass_residual_m2": -2.6645352591003757e-14,
+        "max_cfl": 0.15222889303317624
+      },
+      "min_depth_m": 0.8083274331369873,
+      "max_depth_m": 1.1606793134153532,
+      "wall_with_process_ms": 44.300400000000025
+    },
+    {
+      "name": "tide-high",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0.4,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 0,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 0.14783649656679915,
+        "water_m2": 120.11436243773133,
+        "velocity_ms": 1.1553136501098171,
+        "mass_residual_m2": -2.4646951146678475e-14,
+        "max_cfl": 0.13636867939455347
+      },
+      "min_depth_m": 1.06310847638803,
+      "max_depth_m": 1.5948797340828906,
+      "wall_with_process_ms": 46.01920000000007
+    },
+    {
+      "name": "rough-low",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.01
+      },
+      "max_abs_go_js_delta": 0,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.4050591150724854,
+        "water_m2": 109.75805756125452,
+        "velocity_ms": 1.2014882679908272,
+        "mass_residual_m2": 1.0658141036401503e-14,
+        "max_cfl": 0.13800643612034985
+      },
+      "min_depth_m": 1.05636677142802,
+      "max_depth_m": 1.195005181233877,
+      "wall_with_process_ms": 45.003900000000044
+    },
+    {
+      "name": "rough-high",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.08
+      },
+      "max_abs_go_js_delta": 6.661338147750939e-16,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.0941373319730296,
+        "water_m2": 110.3887973507256,
+        "velocity_ms": 0.9214008538981597,
+        "mass_residual_m2": 1.4210854715202004e-14,
+        "max_cfl": 0.13023751362597025
+      },
+      "min_depth_m": 1.099196111345897,
+      "max_depth_m": 1.1949226315628352,
+      "wall_with_process_ms": 43.351099999999974
+    },
+    {
+      "name": "base",
+      "config": {
+        "cells": 192,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 4.440892098500626e-16,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 192,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.3513921234305,
+        "water_m2": 109.88417328248377,
+        "velocity_ms": 1.1549839932050303,
+        "mass_residual_m2": -5.3290705182007514e-14,
+        "max_cfl": 0.2737235122162874
+      },
+      "min_depth_m": 1.0592226378881133,
+      "max_depth_m": 1.1974817195328924,
+      "wall_with_process_ms": 57.81899999999996
+    },
+    {
+      "name": "inlet-low",
+      "config": {
+        "cells": 192,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 3.3306690738754696e-16,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 192,
+        "inflow_m2_s": 0.05,
+        "outflow_m2_s": 1.3513921234305,
+        "water_m2": 105.57580293873234,
+        "velocity_ms": 1.154963431630694,
+        "mass_residual_m2": 1.2434497875801753e-14,
+        "max_cfl": 0.2733350414485034
+      },
+      "min_depth_m": 0.918987885150609,
+      "max_depth_m": 1.1974817195328924,
+      "wall_with_process_ms": 48.822400000000016
+    },
+    {
+      "name": "inlet-high",
+      "config": {
+        "cells": 192,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 0,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 192,
+        "inflow_m2_s": 2.5,
+        "outflow_m2_s": 1.3513921234305,
+        "water_m2": 118.63185487681554,
+        "velocity_ms": 1.1551245067650329,
+        "mass_residual_m2": -1.7763568394002505e-15,
+        "max_cfl": 0.32938356187583845
+      },
+      "min_depth_m": 1.1458578586257027,
+      "max_depth_m": 1.3696758558254698,
+      "wall_with_process_ms": 47.95230000000004
+    },
+    {
+      "name": "tide-low",
+      "config": {
+        "cells": 192,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": -0.4,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 4.440892098500626e-16,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 192,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.845740265290691,
+        "water_m2": 104.83827845977615,
+        "velocity_ms": 1.1549839932071477,
+        "mass_residual_m2": -5.861977570020827e-14,
+        "max_cfl": 0.3052487075226356
+      },
+      "min_depth_m": 0.8032297499244015,
+      "max_depth_m": 1.1654471310628345,
+      "wall_with_process_ms": 49.959100000000035
+    },
+    {
+      "name": "tide-high",
+      "config": {
+        "cells": 192,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0.4,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 4.440892098500626e-16,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 192,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 0.14311776832629244,
+        "water_m2": 120.33740526544263,
+        "velocity_ms": 1.1549839932004846,
+        "mass_residual_m2": -2.2870594307278225e-14,
+        "max_cfl": 0.2737235122162874
+      },
+      "min_depth_m": 1.0592226378881133,
+      "max_depth_m": 1.5974240607357844,
+      "wall_with_process_ms": 49.177200000000084
+    },
+    {
+      "name": "rough-low",
+      "config": {
+        "cells": 192,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.01
+      },
+      "max_abs_go_js_delta": 0,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 192,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.401645693631417,
+        "water_m2": 109.78461411760769,
+        "velocity_ms": 1.2011265476087296,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "max_cfl": 0.27663665500906753
+      },
+      "min_depth_m": 1.0518231172516779,
+      "max_depth_m": 1.197494912109505,
+      "wall_with_process_ms": 52.95320000000004
+    },
+    {
+      "name": "rough-high",
+      "config": {
+        "cells": 192,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.08
+      },
+      "max_abs_go_js_delta": 1.1102230246251565e-15,
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 192,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.0918255211803802,
+        "water_m2": 110.42112359398513,
+        "velocity_ms": 0.9211838640130628,
+        "mass_residual_m2": -3.108624468950438e-14,
+        "max_cfl": 0.26039016921492486
+      },
+      "min_depth_m": 1.0986612807069986,
+      "max_depth_m": 1.1974300895333068,
+      "wall_with_process_ms": 52.41170000000011
+    },
+    {
+      "name": "base",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 2.842170943040401e-14,
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.3505508803041049,
+        "water_m2": 109.89877576452494,
+        "velocity_ms": 1.1550194999247334,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "max_cfl": 0.39000000000000007
+      },
+      "min_depth_m": 1.0561511467793498,
+      "max_depth_m": 1.199052705221699,
+      "wall_with_process_ms": 90.19380000000001
+    },
+    {
+      "name": "inlet-low",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 2.842170943040401e-14,
+      "metrics": {
+        "time_s": 7.999999999999998,
+        "steps": 474,
+        "cells": 512,
+        "inflow_m2_s": 0.05,
+        "outflow_m2_s": 1.3496532656685947,
+        "water_m2": 105.58466600043,
+        "velocity_ms": 1.1550198287855535,
+        "mass_residual_m2": 1.2256862191861728e-13,
+        "max_cfl": 0.39000000000000007
+      },
+      "min_depth_m": 0.9156540771984528,
+      "max_depth_m": 1.1990527052961553,
+      "wall_with_process_ms": 87.13529999999992
+    },
+    {
+      "name": "inlet-high",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 1.4210854715202004e-14,
+      "metrics": {
+        "time_s": 8.000000000000007,
+        "steps": 591,
+        "cells": 512,
+        "inflow_m2_s": 2.5,
+        "outflow_m2_s": 1.3503150218588449,
+        "water_m2": 118.71854640983958,
+        "velocity_ms": 1.1550098395855295,
+        "mass_residual_m2": -8.881784197001252e-14,
+        "max_cfl": 0.38999999999999996
+      },
+      "min_depth_m": 1.1416656016684459,
+      "max_depth_m": 1.3780691671139291,
+      "wall_with_process_ms": 99.3273999999999
+    },
+    {
+      "name": "tide-low",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": -0.4,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 2.842170943040401e-14,
+      "metrics": {
+        "time_s": 7.9999999999999885,
+        "steps": 536,
+        "cells": 512,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.8399934402758835,
+        "water_m2": 104.95285575633439,
+        "velocity_ms": 1.1550139400840567,
+        "mass_residual_m2": -1.4210854715202004e-14,
+        "max_cfl": 0.39000000000000007
+      },
+      "min_depth_m": 0.8009046862802148,
+      "max_depth_m": 1.1697640832665852,
+      "wall_with_process_ms": 93.41120000000001
+    },
+    {
+      "name": "tide-high",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0.4,
+        "roughness": 0.03
+      },
+      "max_abs_go_js_delta": 2.842170943040401e-14,
+      "metrics": {
+        "time_s": 7.999999999999999,
+        "steps": 480,
+        "cells": 512,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 0.14154472458124218,
+        "water_m2": 120.46720680777769,
+        "velocity_ms": 1.1550192977236324,
+        "mass_residual_m2": 2.19824158875781e-14,
+        "max_cfl": 0.39000000000000007
+      },
+      "min_depth_m": 1.0561511828290469,
+      "max_depth_m": 1.5990293142498848,
+      "wall_with_process_ms": 87.61709999999994
+    },
+    {
+      "name": "rough-low",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.01
+      },
+      "max_abs_go_js_delta": 1.9539925233402755e-14,
+      "metrics": {
+        "time_s": 7.999999999999987,
+        "steps": 480,
+        "cells": 512,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.4005085838240166,
+        "water_m2": 109.79815733120164,
+        "velocity_ms": 1.2012134883136059,
+        "mass_residual_m2": -2.6645352591003757e-14,
+        "max_cfl": 0.39000000000000007
+      },
+      "min_depth_m": 1.0483565889286235,
+      "max_depth_m": 1.1990587776725377,
+      "wall_with_process_ms": 88.04829999999993
+    },
+    {
+      "name": "rough-high",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.08
+      },
+      "max_abs_go_js_delta": 4.263256414560601e-14,
+      "metrics": {
+        "time_s": 7.999999999999994,
+        "steps": 465,
+        "cells": 512,
+        "inflow_m2_s": 1,
+        "outflow_m2_s": 1.0905590759285941,
+        "water_m2": 110.44060741295358,
+        "velocity_ms": 0.921105390654991,
+        "mass_residual_m2": -1.0302869668521453e-13,
+        "max_cfl": 0.39000000000000007
+      },
+      "min_depth_m": 1.0981475905234808,
+      "max_depth_m": 1.1990287146910052,
+      "wall_with_process_ms": 85.89559999999983
+    }
+  ],
+  "stability": [
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.01,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999874,
+        "steps": 800,
+        "cells": 32,
+        "water_m2": 109.73829856515431,
+        "mass_residual_m2": -8.881784197001252e-15,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.160556934757102,
+        "boundary_out_m2": 8.822258369602775,
+        "nominal_source_integral_m2": 7.999999999999874,
+        "actual_minus_nominal_inlet_m2": 0.16055693475722776,
+        "min_depth_m": 1.072860502021274,
+        "max_depth_m": 1.1855721892833568,
+        "min_dt_s": 0.01,
+        "max_dt_s": 0.01,
+        "max_cfl": 0.015234099588851115,
+        "outlet_depth_m": 1.1855721892833568,
+        "outlet_flux_m2_s": 1.3678651506993278
+      },
+      "checkpoint_sha256": "52dd6c70add40135d8dc36988fd2331775f2fc3e176bb608d44529ab8530f33b",
+      "setup_ms": 0.4175999999999931,
+      "advance_ms": 10.847499999999854,
+      "total_ms": 11.265099999999848,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 32,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.01,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999874,
+        "steps": 800,
+        "cells": 32,
+        "water_m2": 109.73828530311584,
+        "mass_residual_m2": -1.628901443417874e-05,
+        "initial_water_m2": 110.39999985694885,
+        "boundary_in_m2": 8.160558950275055,
+        "boundary_out_m2": 8.822257215093629,
+        "nominal_source_integral_m2": 7.999999999999874,
+        "actual_minus_nominal_inlet_m2": 0.1605589502751812,
+        "min_depth_m": 1.0728603601455688,
+        "max_depth_m": 1.1855721473693848,
+        "min_dt_s": 0.01,
+        "max_dt_s": 0.01,
+        "max_cfl": 0.015234099576498886,
+        "outlet_depth_m": 1.1855721473693848,
+        "outlet_flux_m2_s": 1.3678651524932455
+      },
+      "checkpoint_sha256": "d3433eef3d04f7dbd6738fc6c7cdb0e79e1b0743e842e16cc9df73db7a5e74e8",
+      "setup_ms": 0.09709999999995489,
+      "advance_ms": 7.5914000000000215,
+      "total_ms": 7.688499999999976,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 32,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 32,
+        "water_m2": 109.74158455703093,
+        "mass_residual_m2": -2.3092638912203256e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.158777078867034,
+        "boundary_out_m2": 8.81719252183607,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.1587770788670344,
+        "min_depth_m": 1.072852253793129,
+        "max_depth_m": 1.1855682315025338,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.04568178170077893,
+        "outlet_depth_m": 1.1855682315025338,
+        "outlet_flux_m2_s": 1.3673280876507068
+      },
+      "checkpoint_sha256": "56d6ac11163d8922f764df4610c57129bd4a6379445ce4d7af2e94a1da469c50",
+      "setup_ms": 0.07219999999983884,
+      "advance_ms": 1.7694000000001324,
+      "total_ms": 1.8415999999999713,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 32,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 32,
+        "water_m2": 109.74159157276154,
+        "mass_residual_m2": 1.6116209025085482e-06,
+        "initial_water_m2": 110.39999985694885,
+        "boundary_in_m2": 8.158779805285771,
+        "boundary_out_m2": 8.81718970109399,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.1587798052857714,
+        "min_depth_m": 1.072852373123169,
+        "max_depth_m": 1.1855684518814087,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.04568178691345745,
+        "outlet_depth_m": 1.1855684518814087,
+        "outlet_flux_m2_s": 1.3673290651392487
+      },
+      "checkpoint_sha256": "aa0f6cd4d638b7cc1d6a15bdac3eed6bc032fed251293c2edf07a051b6101ba1",
+      "setup_ms": 0.04119999999988977,
+      "advance_ms": 1.4438000000000102,
+      "total_ms": 1.4849999999999,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 32,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.12,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 67,
+        "cells": 32,
+        "water_m2": 109.75634445210079,
+        "mass_residual_m2": -2.842170943040401e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.15077662405891,
+        "boundary_out_m2": 8.794432171958082,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.1507766240589099,
+        "min_depth_m": 1.0728155017149292,
+        "max_depth_m": 1.1855506611401483,
+        "min_dt_s": 0.07999999999999385,
+        "max_dt_s": 0.12,
+        "max_cfl": 0.18242089133448622,
+        "outlet_depth_m": 1.1855506611401483,
+        "outlet_flux_m2_s": 1.363962893128537
+      },
+      "checkpoint_sha256": "d391f23126cda0acf4f8f01a980949e319443b05bb8f1bf5ce9a1db3efdeb647",
+      "setup_ms": 0.03559999999993124,
+      "advance_ms": 0.34410000000002583,
+      "total_ms": 0.37969999999995707,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 32,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 32,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.12,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 67,
+        "cells": 32,
+        "water_m2": 109.75633871555328,
+        "mass_residual_m2": -6.3726240728811945e-06,
+        "initial_water_m2": 110.39999985694885,
+        "boundary_in_m2": 8.150776961390934,
+        "boundary_out_m2": 8.79443173016243,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15077696139093355,
+        "min_depth_m": 1.0728155374526978,
+        "max_depth_m": 1.185550570487976,
+        "min_dt_s": 0.07999999999999385,
+        "max_dt_s": 0.12,
+        "max_cfl": 0.1824208720636843,
+        "outlet_depth_m": 1.185550570487976,
+        "outlet_flux_m2_s": 1.3639622379603011
+      },
+      "checkpoint_sha256": "257ab94f97d9a10f922b778b318ec1a200ebcab45ddeef0a9eba9368104e8549",
+      "setup_ms": 0.025100000000065847,
+      "advance_ms": 0.5296999999998206,
+      "total_ms": 0.5547999999998865,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 32,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.01,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999874,
+        "steps": 800,
+        "cells": 96,
+        "water_m2": 109.85328694951616,
+        "mass_residual_m2": 1.5987211554602254e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.157875625033101,
+        "boundary_out_m2": 8.704588675516948,
+        "nominal_source_integral_m2": 7.999999999999874,
+        "actual_minus_nominal_inlet_m2": 0.1578756250332276,
+        "min_depth_m": 1.06311571224475,
+        "max_depth_m": 1.1949876996523427,
+        "min_dt_s": 0.01,
+        "max_dt_s": 0.01,
+        "max_cfl": 0.04560288376860875,
+        "outlet_depth_m": 1.1949876996523427,
+        "outlet_flux_m2_s": 1.3551378855995493
+      },
+      "checkpoint_sha256": "4916354dbc4f57a6c41aed6af6c14de66a7f3c912754eeaa2eecc69d0a7e52eb",
+      "setup_ms": 0.04169999999999163,
+      "advance_ms": 11.393300000000181,
+      "total_ms": 11.435000000000173,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.01,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999874,
+        "steps": 800,
+        "cells": 96,
+        "water_m2": 109.85330855846405,
+        "mass_residual_m2": 4.0545447971496174e-05,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 8.157868904228197,
+        "boundary_out_m2": 8.70460086737026,
+        "nominal_source_integral_m2": 7.999999999999874,
+        "actual_minus_nominal_inlet_m2": 0.157868904228323,
+        "min_depth_m": 1.0631166696548462,
+        "max_depth_m": 1.1949882507324219,
+        "min_dt_s": 0.01,
+        "max_dt_s": 0.01,
+        "max_cfl": 0.045602879694300755,
+        "outlet_depth_m": 1.1949882507324219,
+        "outlet_flux_m2_s": 1.3551382838103219
+      },
+      "checkpoint_sha256": "7dfb774d65ad86bc4c15fd9bd67faf65113b14a782f5357b44cd50cf020e28b0",
+      "setup_ms": 0.06140000000004875,
+      "advance_ms": 10.405099999999948,
+      "total_ms": 10.466499999999996,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.05330000000003565,
+      "advance_ms": 2.3049000000000888,
+      "total_ms": 2.3582000000001244,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.85664427280426,
+        "mass_residual_m2": 4.753153131531462e-06,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 8.156108630595432,
+        "boundary_out_m2": 8.699469087102445,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610863059543156,
+        "min_depth_m": 1.063108205795288,
+        "max_depth_m": 1.1949875354766846,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674689020598121,
+        "outlet_depth_m": 1.1949875354766846,
+        "outlet_flux_m2_s": 1.3545901095989603
+      },
+      "checkpoint_sha256": "771f925e858ba4182ce6fce0512031fe08f236888316a4cac3c1c0e168e9905c",
+      "setup_ms": 0.055700000000115324,
+      "advance_ms": 2.2730999999998858,
+      "total_ms": 2.328800000000001,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.12,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999995,
+        "steps": 90,
+        "cells": 96,
+        "water_m2": 109.86669539031978,
+        "mass_residual_m2": 3.552713678800501e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.150775250881432,
+        "boundary_out_m2": 8.684079860561683,
+        "nominal_source_integral_m2": 7.999999999999995,
+        "actual_minus_nominal_inlet_m2": 0.15077525088143773,
+        "min_depth_m": 1.0630876804982357,
+        "max_depth_m": 1.194987793202183,
+        "min_dt_s": 0.00042089199139141997,
+        "max_dt_s": 0.09518588106469861,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.194987793202183,
+        "outlet_flux_m2_s": 1.3560993595557227
+      },
+      "checkpoint_sha256": "b29cf29d5f2540eebd106306a6f82b66a8ce2810e79a7679e5db4757494ee0e8",
+      "setup_ms": 0.053100000000085856,
+      "advance_ms": 0.97849999999994,
+      "total_ms": 1.0316000000000258,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.12,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 90,
+        "cells": 96,
+        "water_m2": 109.86669266223907,
+        "mass_residual_m2": -2.2531900363276236e-06,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 8.150774650860724,
+        "boundary_out_m2": 8.684079711589755,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15077465086072372,
+        "min_depth_m": 1.0630877017974854,
+        "max_depth_m": 1.1949877738952637,
+        "min_dt_s": 0.0004208394568805812,
+        "max_dt_s": 0.0951858797044218,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.1949877738952637,
+        "outlet_flux_m2_s": 1.3560995603340298
+      },
+      "checkpoint_sha256": "c4a7c2bddc3e456707b383d13f2be1d37ba2e722fc288865b31c9328bfd60888",
+      "setup_ms": 0.03640000000018517,
+      "advance_ms": 0.7008999999998196,
+      "total_ms": 0.7373000000000047,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.01,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999874,
+        "steps": 800,
+        "cells": 512,
+        "water_m2": 109.89764411348644,
+        "mass_residual_m2": -6.039613253960852e-14,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.1515072061677,
+        "boundary_out_m2": 8.65386309268121,
+        "nominal_source_integral_m2": 7.999999999999874,
+        "actual_minus_nominal_inlet_m2": 0.15150720616782642,
+        "min_depth_m": 1.0561531944959006,
+        "max_depth_m": 1.1990527004783835,
+        "min_dt_s": 0.01,
+        "max_dt_s": 0.01,
+        "max_cfl": 0.24425566878706453,
+        "outlet_depth_m": 1.1990527004783835,
+        "outlet_flux_m2_s": 1.3499427266864799
+      },
+      "checkpoint_sha256": "3a2403fe8afce5738ad513ea1e012fe760524c6844835abe0b06554dc9a8824b",
+      "setup_ms": 0.17749999999978172,
+      "advance_ms": 52.63160000000016,
+      "total_ms": 52.809099999999944,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.01,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999874,
+        "steps": 800,
+        "cells": 512,
+        "water_m2": 109.89772045612335,
+        "mass_residual_m2": 9.47960125561309e-05,
+        "initial_water_m2": 110.3999999910593,
+        "boundary_in_m2": 8.151476558809174,
+        "boundary_out_m2": 8.653850889757681,
+        "nominal_source_integral_m2": 7.999999999999874,
+        "actual_minus_nominal_inlet_m2": 0.1514765588092999,
+        "min_depth_m": 1.056157112121582,
+        "max_depth_m": 1.1990525722503662,
+        "min_dt_s": 0.01,
+        "max_dt_s": 0.01,
+        "max_cfl": 0.2442557149460662,
+        "outlet_depth_m": 1.1990525722503662,
+        "outlet_flux_m2_s": 1.3499370495195346
+      },
+      "checkpoint_sha256": "b7ccea4e2c3c2825787722ea0dd388dfba07c7c190eaeb3fb13bac65c08b294e",
+      "setup_ms": 0.15069999999991524,
+      "advance_ms": 49.90460000000007,
+      "total_ms": 50.05529999999999,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.11380000000008295,
+      "advance_ms": 19.96640000000002,
+      "total_ms": 20.080200000000104,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999996,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89876206964254,
+        "mass_residual_m2": -2.2087276990490068e-05,
+        "initial_water_m2": 110.3999999910593,
+        "boundary_in_m2": 8.150890522435635,
+        "boundary_out_m2": 8.652106356575404,
+        "nominal_source_integral_m2": 7.999999999999996,
+        "actual_minus_nominal_inlet_m2": 0.15089052243563916,
+        "min_depth_m": 1.0561511516571045,
+        "max_depth_m": 1.1990526914596558,
+        "min_dt_s": 0.0009480893083864787,
+        "max_dt_s": 0.017845742020408575,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.1990526914596558,
+        "outlet_flux_m2_s": 1.3505486501152324
+      },
+      "checkpoint_sha256": "7a0f0e2518353c1718f100b57ffb93530e3d6644765d1797a6e7a071674dd226",
+      "setup_ms": 0.1009999999998854,
+      "advance_ms": 21.072700000000168,
+      "total_ms": 21.173700000000053,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.12,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "14cb6c986cb4f0b6772f7b150edea5e14d44c83000656ee29334aeb527417f9b",
+      "setup_ms": 0.09749999999985448,
+      "advance_ms": 21.293500000000222,
+      "total_ms": 21.391000000000076,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "grid-dt-precision",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.12,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999996,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89876206964254,
+        "mass_residual_m2": -2.2087276990490068e-05,
+        "initial_water_m2": 110.3999999910593,
+        "boundary_in_m2": 8.150890522435635,
+        "boundary_out_m2": 8.652106356575404,
+        "nominal_source_integral_m2": 7.999999999999996,
+        "actual_minus_nominal_inlet_m2": 0.15089052243563916,
+        "min_depth_m": 1.0561511516571045,
+        "max_depth_m": 1.1990526914596558,
+        "min_dt_s": 0.0009480893083864787,
+        "max_dt_s": 0.017845742020408575,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.1990526914596558,
+        "outlet_flux_m2_s": 1.3505486501152324
+      },
+      "checkpoint_sha256": "5a1b40e2989ed200f2d7cb71ca5046a034f58c0c300f39607745c6b3093ec96e",
+      "setup_ms": 0.13970000000017535,
+      "advance_ms": 21.225299999999834,
+      "total_ms": 21.36500000000001,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "cfl-stress",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.4,
+        "cfl": 0.2,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 174,
+        "cells": 96,
+        "water_m2": 109.85933466212484,
+        "mass_residual_m2": -1.5987211554602254e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.154674130503523,
+        "boundary_out_m2": 8.695339468378661,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15467413050352263,
+        "min_depth_m": 1.0631030279375169,
+        "max_depth_m": 1.1949877358976577,
+        "min_dt_s": 0.024389535636226388,
+        "max_dt_s": 0.04881327234087108,
+        "max_cfl": 0.20000000000000004,
+        "outlet_depth_m": 1.1949877358976577,
+        "outlet_flux_m2_s": 1.3543815320585406
+      },
+      "checkpoint_sha256": "be96618ab202877dbb8e23c85b4d0e7fb2a020836f2cee188fcb5fd5347bebaa",
+      "setup_ms": 0.06189999999992324,
+      "advance_ms": 4.84739999999988,
+      "total_ms": 4.909299999999803,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "cfl-stress",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.4,
+        "cfl": 0.2,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999996,
+        "steps": 174,
+        "cells": 96,
+        "water_m2": 109.85933184623718,
+        "mass_residual_m2": -1.716284963038106e-06,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 8.15467516944718,
+        "boundary_out_m2": 8.695341583083177,
+        "nominal_source_integral_m2": 7.999999999999996,
+        "actual_minus_nominal_inlet_m2": 0.1546751694471853,
+        "min_depth_m": 1.0631028413772583,
+        "max_depth_m": 1.1949877738952637,
+        "min_dt_s": 0.02438985253449656,
+        "max_dt_s": 0.04881327164329323,
+        "max_cfl": 0.20000000000000004,
+        "outlet_depth_m": 1.1949877738952637,
+        "outlet_flux_m2_s": 1.3543818565882033
+      },
+      "checkpoint_sha256": "ba94847cf5abc68a85ffec212f11fe9573bd7787760c195bdef4c5edf0b867b5",
+      "setup_ms": 0.04780000000005202,
+      "advance_ms": 2.845399999999927,
+      "total_ms": 2.893199999999979,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "cfl-stress",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.4,
+        "cfl": 0.8,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8.000000000000002,
+        "steps": 44,
+        "cells": 96,
+        "water_m2": 109.88229717232086,
+        "mass_residual_m2": 1.2434497875801753e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.142437645359768,
+        "boundary_out_m2": 8.660140473038911,
+        "nominal_source_integral_m2": 8.000000000000002,
+        "actual_minus_nominal_inlet_m2": 0.14243764535976666,
+        "min_depth_m": 1.0630569991223324,
+        "max_depth_m": 1.194987943490881,
+        "min_dt_s": 0.08849500568552798,
+        "max_dt_s": 0.19525308936348432,
+        "max_cfl": 0.8000000000000002,
+        "outlet_depth_m": 1.194987943490881,
+        "outlet_flux_m2_s": 1.3509009121085565
+      },
+      "checkpoint_sha256": "8bdb649448cb4d2f84d7a1c50596fe0c83b87468c11750c34f9c2a22d0021c52",
+      "setup_ms": 0.04949999999985266,
+      "advance_ms": 0.6349999999999909,
+      "total_ms": 0.6844999999998436,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "cfl-stress",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.4,
+        "cfl": 0.8,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8.000000000000002,
+        "steps": 44,
+        "cells": 96,
+        "water_m2": 109.88229668140411,
+        "mass_residual_m2": 1.4107054724377122e-06,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 8.14243809727821,
+        "boundary_out_m2": 8.660142802737711,
+        "nominal_source_integral_m2": 8.000000000000002,
+        "actual_minus_nominal_inlet_m2": 0.14243809727820889,
+        "min_depth_m": 1.0630569458007812,
+        "max_depth_m": 1.1949878931045532,
+        "min_dt_s": 0.08849509897801042,
+        "max_dt_s": 0.19525308657317292,
+        "max_cfl": 0.8,
+        "outlet_depth_m": 1.1949878931045532,
+        "outlet_flux_m2_s": 1.350900892785395
+      },
+      "checkpoint_sha256": "44374546dc2b0b8833110ba7e5d9ef5181e5988e4fccc59b2b8ab31316bff9ad",
+      "setup_ms": 0.06550000000015643,
+      "advance_ms": 0.8341999999997824,
+      "total_ms": 0.8996999999999389,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "cfl-stress",
+      "status": "numerical-refusal",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "dt_max": 0.4,
+        "cfl": 1.2,
+        "precision": "f64"
+      },
+      "error": "numerical stability failure at cell 17, t=6.363731838399384",
+      "metrics": {
+        "time_s": 6.363731838399384,
+        "steps": 30,
+        "cells": 96,
+        "water_m2": 110.20521043652309,
+        "mass_residual_m2": -7.37188088351104e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 6.331790032649276,
+        "boundary_out_m2": 6.526579596126105,
+        "nominal_source_integral_m2": 6.363731838399384,
+        "actual_minus_nominal_inlet_m2": -0.03194180575010819,
+        "min_depth_m": 0.19669707932931257,
+        "max_depth_m": 1.4759819834586116,
+        "min_dt_s": 0.05946075930223478,
+        "max_dt_s": 0.2928796340452265,
+        "max_cfl": 1.2000000000000002,
+        "outlet_depth_m": 1.1950482619965688,
+        "outlet_flux_m2_s": 1.2507837502344126
+      },
+      "total_ms": 0.7826999999999771
+    },
+    {
+      "axis": "cfl-stress",
+      "status": "numerical-refusal",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "dt_max": 0.4,
+        "cfl": 1.2,
+        "precision": "f32-state"
+      },
+      "error": "numerical stability failure at cell 17, t=6.3637531176623705",
+      "metrics": {
+        "time_s": 6.3637531176623705,
+        "steps": 30,
+        "cells": 96,
+        "water_m2": 110.20520474016666,
+        "mass_residual_m2": -9.591790988139337e-07,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 6.3318125677714505,
+        "boundary_out_m2": 6.52660684458383,
+        "nominal_source_integral_m2": 6.3637531176623705,
+        "actual_minus_nominal_inlet_m2": -0.03194054989091999,
+        "min_depth_m": 0.1969795972108841,
+        "max_depth_m": 1.4761865139007568,
+        "min_dt_s": 0.059462620139325094,
+        "max_dt_s": 0.29287962985975935,
+        "max_cfl": 1.2,
+        "outlet_depth_m": 1.195048213005066,
+        "outlet_flux_m2_s": 1.2507847050790188
+      },
+      "total_ms": 1.332300000000032
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": -0.4,
+        "roughness": 0.08
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 101.68642598461604,
+        "mass_residual_m2": -5.5067062021407764e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 3.617883389952165,
+        "boundary_out_m2": 12.331457405336065,
+        "nominal_source_integral_m2": 0.3999999999999992,
+        "actual_minus_nominal_inlet_m2": 3.217883389952166,
+        "min_depth_m": 0.819947110950311,
+        "max_depth_m": 1.159452230445719,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13820486602608512,
+        "outlet_depth_m": 0.819947110950311,
+        "outlet_flux_m2_s": 1.4789285470925568
+      },
+      "checkpoint_sha256": "555ff40fe10c471a1789354c47e7bd0b3ed17e4706add9dd7f7ae4d05c1097ed",
+      "setup_ms": 0.059300000000121145,
+      "advance_ms": 6.614299999999957,
+      "total_ms": 6.673600000000079,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": -0.4,
+        "roughness": 0.08
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 101.68641728162766,
+        "mass_residual_m2": -1.359545874990431e-05,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 3.617887044540782,
+        "boundary_out_m2": 12.331456143612519,
+        "nominal_source_integral_m2": 0.3999999999999992,
+        "actual_minus_nominal_inlet_m2": 3.217887044540783,
+        "min_depth_m": 0.8199471235275269,
+        "max_depth_m": 1.1594523191452026,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.1382048691520694,
+        "outlet_depth_m": 0.8199471235275269,
+        "outlet_flux_m2_s": 1.4789286716078833
+      },
+      "checkpoint_sha256": "d506bc0fa070815c32675525d640c27c60b77bf705aa4c90b2ff522e51432a81",
+      "setup_ms": 0.04409999999984393,
+      "advance_ms": 4.002700000000004,
+      "total_ms": 4.046799999999848,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": 0.4,
+        "roughness": 0.01
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 128.81366858129692,
+        "mass_residual_m2": -3.1308289294429414e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 16.93971484726797,
+        "boundary_out_m2": -1.4739537340289914,
+        "nominal_source_integral_m2": 19.999999999999844,
+        "actual_minus_nominal_inlet_m2": -3.060285152731872,
+        "min_depth_m": 1.1520330536299856,
+        "max_depth_m": 1.595181089316133,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.16606546540819234,
+        "outlet_depth_m": 1.595181089316133,
+        "outlet_flux_m2_s": 0.17345968041858914
+      },
+      "checkpoint_sha256": "1e7a4f275ed19203f5858b40fffeb87bdb7e521df8a7b50c1faba8e199d03c5e",
+      "setup_ms": 0.048800000000028376,
+      "advance_ms": 5.152399999999943,
+      "total_ms": 5.201199999999972,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": 0.4,
+        "roughness": 0.01
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 128.81375861167908,
+        "mass_residual_m2": 0.00010255820123306059,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 16.939711832029342,
+        "boundary_out_m2": -1.4739442452903597,
+        "nominal_source_integral_m2": 19.999999999999844,
+        "actual_minus_nominal_inlet_m2": -3.0602881679705014,
+        "min_depth_m": 1.152034878730774,
+        "max_depth_m": 1.5951812267303467,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.16606541267103592,
+        "outlet_depth_m": 1.5951812267303467,
+        "outlet_flux_m2_s": 0.17346240620017572
+      },
+      "checkpoint_sha256": "1928b6733de8c5b36f2c0c5cd984c1a99dbd1102c91cb68968cd49619fd5e817",
+      "setup_ms": 0.062300000000050204,
+      "advance_ms": 5.296899999999823,
+      "total_ms": 5.359199999999873,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": 0.4,
+        "roughness": 0.01
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 115.76972357230095,
+        "mass_residual_m2": -2.5979218776228663e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 3.89576983827199,
+        "boundary_out_m2": -1.4739537340289914,
+        "nominal_source_integral_m2": 0.3999999999999992,
+        "actual_minus_nominal_inlet_m2": 3.495769838271991,
+        "min_depth_m": 0.9199008364592243,
+        "max_depth_m": 1.595181089316133,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13685954961720223,
+        "outlet_depth_m": 1.595181089316133,
+        "outlet_flux_m2_s": 0.17345968041858914
+      },
+      "checkpoint_sha256": "f5900960b2ab729127d97081838a832a20fddbff7cd8ca38d60dfc0bb7272420",
+      "setup_ms": 0.049399999999877764,
+      "advance_ms": 4.994599999999991,
+      "total_ms": 5.043999999999869,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": 0.4,
+        "roughness": 0.01
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 115.76980018615723,
+        "mass_residual_m2": 8.943229948177311e-05,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 3.895766532409243,
+        "boundary_out_m2": -1.4739442452903597,
+        "nominal_source_integral_m2": 0.3999999999999992,
+        "actual_minus_nominal_inlet_m2": 3.495766532409244,
+        "min_depth_m": 0.9199011325836182,
+        "max_depth_m": 1.5951812267303467,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.1368595892272652,
+        "outlet_depth_m": 1.5951812267303467,
+        "outlet_flux_m2_s": 0.17346240620017572
+      },
+      "checkpoint_sha256": "2b87b4c23b7945425ae6d6fa4d7344499ef014047be24f316054409d8c88d4a7",
+      "setup_ms": 0.053200000000060754,
+      "advance_ms": 5.469200000000001,
+      "total_ms": 5.5224000000000615,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": -0.4,
+        "roughness": 0.08
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 113.95994727808193,
+        "mass_residual_m2": -7.993605777301127e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 15.89140468341808,
+        "boundary_out_m2": 12.331457405336065,
+        "nominal_source_integral_m2": 19.999999999999844,
+        "actual_minus_nominal_inlet_m2": -4.108595316581763,
+        "min_depth_m": 0.819947110950311,
+        "max_depth_m": 1.3648101789202065,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.1596790107910475,
+        "outlet_depth_m": 0.819947110950311,
+        "outlet_flux_m2_s": 1.4789285470925568
+      },
+      "checkpoint_sha256": "7e875918e32db04c970c571574b37703e82e015c9613d84228b581a067d4817d",
+      "setup_ms": 0.0806999999999789,
+      "advance_ms": 3.853700000000117,
+      "total_ms": 3.934400000000096,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": -0.4,
+        "roughness": 0.08
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 113.95994585752487,
+        "mass_residual_m2": -3.085859537677038e-06,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 15.891405110838786,
+        "boundary_out_m2": 12.331456143612519,
+        "nominal_source_integral_m2": 19.999999999999844,
+        "actual_minus_nominal_inlet_m2": -4.108594889161058,
+        "min_depth_m": 0.8199471235275269,
+        "max_depth_m": 1.3648098707199097,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.15967901311156016,
+        "outlet_depth_m": 0.8199471235275269,
+        "outlet_flux_m2_s": 1.4789286716078833
+      },
+      "checkpoint_sha256": "df37645182422a7af162b8482c1e51fc457764cf722d1f7cae772d7995ae4a1c",
+      "setup_ms": 0.03150000000005093,
+      "advance_ms": 2.4645000000000437,
+      "total_ms": 2.4960000000000946,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": -0.4,
+        "roughness": 0.08
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999993,
+        "steps": 507,
+        "cells": 512,
+        "water_m2": 102.00405972977589,
+        "mass_residual_m2": -3.019806626980426e-14,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 3.6072525191610443,
+        "boundary_out_m2": 12.00319278938513,
+        "nominal_source_integral_m2": 0.4,
+        "actual_minus_nominal_inlet_m2": 3.2072525191610444,
+        "min_depth_m": 0.8050144804748343,
+        "max_depth_m": 1.1680586466259126,
+        "min_dt_s": 0.015345520126942461,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 0.8050144804748343,
+        "outlet_flux_m2_s": 1.4588521942799029
+      },
+      "checkpoint_sha256": "d8cb5f834ccc3e75cfd67345a6761423e54aeb5f93089cfef5e86323d2ac712f",
+      "setup_ms": 0.03510000000005675,
+      "advance_ms": 21.954899999999952,
+      "total_ms": 21.99000000000001,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": -0.4,
+        "roughness": 0.08
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999995,
+        "steps": 507,
+        "cells": 512,
+        "water_m2": 102.00402378290892,
+        "mass_residual_m2": -4.1476188229694344e-05,
+        "initial_water_m2": 110.3999999910593,
+        "boundary_in_m2": 3.6072565053085373,
+        "boundary_out_m2": 12.003191237270695,
+        "nominal_source_integral_m2": 0.3999999999999993,
+        "actual_minus_nominal_inlet_m2": 3.207256505308538,
+        "min_depth_m": 0.8050145506858826,
+        "max_depth_m": 1.1680583953857422,
+        "min_dt_s": 0.01534509147172691,
+        "max_dt_s": 0.017845742020408575,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 0.8050145506858826,
+        "outlet_flux_m2_s": 1.4588520093570188
+      },
+      "checkpoint_sha256": "cf2829f88443b41b764843f7255ff4fe79927595a35ed9cd285c173906ad757f",
+      "setup_ms": 0.08030000000007931,
+      "advance_ms": 25.93820000000005,
+      "total_ms": 26.01850000000013,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": 0.4,
+        "roughness": 0.01
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8.000000000000012,
+        "steps": 594,
+        "cells": 512,
+        "water_m2": 129.33404844988354,
+        "mass_residual_m2": -1.0036416142611415e-13,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 17.106375367061826,
+        "boundary_out_m2": -1.827673082821808,
+        "nominal_source_integral_m2": 20.000000000000032,
+        "actual_minus_nominal_inlet_m2": -2.893624632938206,
+        "min_depth_m": 1.142206438080052,
+        "max_depth_m": 1.599089229989692,
+        "min_dt_s": 0.005155516882875086,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.38999999999999996,
+        "outlet_depth_m": 1.599089229989692,
+        "outlet_flux_m2_s": 0.16836957907944058
+      },
+      "checkpoint_sha256": "a41da4a071c7f83ed3f4c62b9c489c68614dbe3725728936b5f004a2f542a1dd",
+      "setup_ms": 0.035499999999956344,
+      "advance_ms": 31.667500000000018,
+      "total_ms": 31.702999999999975,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": 0.4,
+        "roughness": 0.01
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999997,
+        "steps": 594,
+        "cells": 512,
+        "water_m2": 129.33415404707193,
+        "mass_residual_m2": 0.00013557407577491354,
+        "initial_water_m2": 110.3999999910593,
+        "boundary_in_m2": 17.106369169649103,
+        "boundary_out_m2": -1.8276493122877528,
+        "nominal_source_integral_m2": 19.999999999999996,
+        "actual_minus_nominal_inlet_m2": -2.8936308303508937,
+        "min_depth_m": 1.1422063112258911,
+        "max_depth_m": 1.59908926486969,
+        "min_dt_s": 0.0051554735866345385,
+        "max_dt_s": 0.017845742020408575,
+        "max_cfl": 0.38999999999999996,
+        "outlet_depth_m": 1.59908926486969,
+        "outlet_flux_m2_s": 0.16837446160548705
+      },
+      "checkpoint_sha256": "0e1bb58e9eda897b2bd5d3d4347859da4fd1df8caaecd694682828a5e699431b",
+      "setup_ms": 0.035200000000259024,
+      "advance_ms": 29.7507999999998,
+      "total_ms": 29.786000000000058,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": 0.4,
+        "roughness": 0.01
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999998,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 116.10156419688337,
+        "mass_residual_m2": 4.6629367034256575e-14,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 3.874214371382703,
+        "boundary_out_m2": -1.827349825500618,
+        "nominal_source_integral_m2": 0.40000000000000024,
+        "actual_minus_nominal_inlet_m2": 3.4742143713827027,
+        "min_depth_m": 0.9112556718339542,
+        "max_depth_m": 1.5990889522661804,
+        "min_dt_s": 0.00485075292365908,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.5990889522661804,
+        "outlet_flux_m2_s": 0.16832299045000643
+      },
+      "checkpoint_sha256": "232daaeb0a2b4a6adacb4f4ee72f165df92d3f80911fa1d72dc3cb0309c79779",
+      "setup_ms": 0.03940000000011423,
+      "advance_ms": 25.550900000000183,
+      "total_ms": 25.590300000000298,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 0.05,
+        "tide_m": 0.4,
+        "roughness": 0.01
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999994,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 116.10157477855682,
+        "mass_residual_m2": 2.70190016566918e-05,
+        "initial_water_m2": 110.3999999910593,
+        "boundary_in_m2": 3.8742150969136877,
+        "boundary_out_m2": -1.827332671582176,
+        "nominal_source_integral_m2": 0.40000000000000013,
+        "actual_minus_nominal_inlet_m2": 3.474215096913688,
+        "min_depth_m": 0.911255419254303,
+        "max_depth_m": 1.5990890264511108,
+        "min_dt_s": 0.0048512456531011015,
+        "max_dt_s": 0.017845742020408575,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.5990890264511108,
+        "outlet_flux_m2_s": 0.16832888885822675
+      },
+      "checkpoint_sha256": "b1569aede617a4b5ae3a16a3ad474375e39bf8cb8753fc6c75c87a5f9586ca91",
+      "setup_ms": 0.03720000000021173,
+      "advance_ms": 22.271899999999732,
+      "total_ms": 22.309099999999944,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": -0.4,
+        "roughness": 0.08
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.9999999999999964,
+        "steps": 584,
+        "cells": 512,
+        "water_m2": 114.54670611056049,
+        "mass_residual_m2": -4.618527782440651e-14,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 16.150137605937992,
+        "boundary_out_m2": 12.003431495377459,
+        "nominal_source_integral_m2": 19.999999999999982,
+        "actual_minus_nominal_inlet_m2": -3.84986239406199,
+        "min_depth_m": 0.8050147910304563,
+        "max_depth_m": 1.3749862477373016,
+        "min_dt_s": 0.0047976425849673345,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.38999999999999996,
+        "outlet_depth_m": 0.8050147910304563,
+        "outlet_flux_m2_s": 1.458813023378355
+      },
+      "checkpoint_sha256": "f4355f67695fb623673be528f271f56f49e78a2fe883a32b40d641916c9679e3",
+      "setup_ms": 0.04010000000016589,
+      "advance_ms": 24.49350000000004,
+      "total_ms": 24.533600000000206,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "boundary-extreme",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 2.5,
+        "tide_m": -0.4,
+        "roughness": 0.08
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999995,
+        "steps": 584,
+        "cells": 512,
+        "water_m2": 114.54667200520635,
+        "mass_residual_m2": -4.556612332251575e-05,
+        "initial_water_m2": 110.3999999910593,
+        "boundary_in_m2": 16.15014773142769,
+        "boundary_out_m2": 12.003430151157325,
+        "nominal_source_integral_m2": 19.99999999999999,
+        "actual_minus_nominal_inlet_m2": -3.849852268572299,
+        "min_depth_m": 0.8050149083137512,
+        "max_depth_m": 1.3749850988388062,
+        "min_dt_s": 0.004798468977888657,
+        "max_dt_s": 0.017845742020408575,
+        "max_cfl": 0.38999999999999996,
+        "outlet_depth_m": 0.8050149083137512,
+        "outlet_flux_m2_s": 1.4588131056280835
+      },
+      "checkpoint_sha256": "f7f1379f62e5786f73883dcd1734e32629c10ed89704d2d55859460c267ed753",
+      "setup_ms": 0.032000000000152795,
+      "advance_ms": 25.338400000000092,
+      "total_ms": 25.370400000000245,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "dynamic-boundary",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "inlet-pulse",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 110.96934695070763,
+        "mass_residual_m2": 2.4868995751603507e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 9.268816906945476,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 9.607999999999969,
+        "actual_minus_nominal_inlet_m2": -0.33918309305449235,
+        "min_depth_m": 1.0631422246908822,
+        "max_depth_m": 1.2098496267382344,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.14591033845529955,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "90f4ec752d39309312509b312f66fe0d1a372d97d3c8f602952b6e758003455c",
+      "setup_ms": 0.04279999999971551,
+      "advance_ms": 5.485900000000129,
+      "total_ms": 5.528699999999844,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "dynamic-boundary",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "inlet-pulse",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 110.96934938430786,
+        "mass_residual_m2": 9.295739857861918e-07,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 9.268817565678178,
+        "boundary_out_m2": 8.699469087102445,
+        "nominal_source_integral_m2": 9.607999999999969,
+        "actual_minus_nominal_inlet_m2": -0.3391824343217902,
+        "min_depth_m": 1.063141942024231,
+        "max_depth_m": 1.20984947681427,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.1459103275600073,
+        "outlet_depth_m": 1.1949875354766846,
+        "outlet_flux_m2_s": 1.3545901095989603
+      },
+      "checkpoint_sha256": "da8a3c0a6146e018211b606d68d58da704bd624267d1a149143fcd315c38ff78",
+      "setup_ms": 0.02419999999983702,
+      "advance_ms": 3.774800000000141,
+      "total_ms": 3.798999999999978,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "dynamic-boundary",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "tide-oscillation",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 110.87876435925817,
+        "mass_residual_m2": -2.398081733190338e-14,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 7.677345212721963,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.3621351385338056,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.1386963566038155,
+        "outlet_depth_m": 1.3621351385338056,
+        "outlet_flux_m2_s": 0.8803379993236841
+      },
+      "checkpoint_sha256": "3930d50ca6e1b104a20ff91d4ea30c480266941e63de0dafeb49c2ede5bb3409",
+      "setup_ms": 0.025599999999940337,
+      "advance_ms": 3.9245999999998276,
+      "total_ms": 3.950199999999768,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "dynamic-boundary",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "tide-oscillation",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 110.87876570224762,
+        "mass_residual_m2": 2.314288301441536e-06,
+        "initial_water_m2": 110.39999997615814,
+        "boundary_in_m2": 8.156108630595432,
+        "boundary_out_m2": 7.6773452187942555,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610863059543156,
+        "min_depth_m": 1.063108205795288,
+        "max_depth_m": 1.3621350526809692,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13869635491230625,
+        "outlet_depth_m": 1.3621350526809692,
+        "outlet_flux_m2_s": 0.8803375745095492
+      },
+      "checkpoint_sha256": "33ef1b47acb17de975cc059e8d8567955420b961d2624715a951441f2f8f514b",
+      "setup_ms": 0.02500000000009095,
+      "advance_ms": 4.020100000000184,
+      "total_ms": 4.045100000000275,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "dynamic-boundary",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "inlet-pulse",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999998,
+        "steps": 515,
+        "cells": 512,
+        "water_m2": 111.00073272261966,
+        "mass_residual_m2": 1.6342482922482304e-13,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 9.253144769620148,
+        "boundary_out_m2": 8.652412047000658,
+        "nominal_source_integral_m2": 9.59724968061698,
+        "actual_minus_nominal_inlet_m2": -0.3441049109968315,
+        "min_depth_m": 1.056779167117728,
+        "max_depth_m": 1.2442282544210563,
+        "min_dt_s": 0.003923265826223581,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.38999999999999996,
+        "outlet_depth_m": 1.1990527042602908,
+        "outlet_flux_m2_s": 1.3503553516409805
+      },
+      "checkpoint_sha256": "3de5d4fa6ab2c12c73259cb2f178ea82d12ef6915fd0d153c88b5bb616c26022",
+      "setup_ms": 0.0284999999998945,
+      "advance_ms": 27.864500000000135,
+      "total_ms": 27.89300000000003,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "dynamic-boundary",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "inlet-pulse",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8.000000000000002,
+        "steps": 515,
+        "cells": 512,
+        "water_m2": 111.00073447823524,
+        "mass_residual_m2": -1.1737611185225205e-06,
+        "initial_water_m2": 110.3999999910593,
+        "boundary_in_m2": 9.253144355669953,
+        "boundary_out_m2": 8.652408694732893,
+        "nominal_source_integral_m2": 9.597249667102414,
+        "actual_minus_nominal_inlet_m2": -0.34410531143246104,
+        "min_depth_m": 1.056779384613037,
+        "max_depth_m": 1.244228482246399,
+        "min_dt_s": 0.003923237638893674,
+        "max_dt_s": 0.017845742020408575,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.1990525722503662,
+        "outlet_flux_m2_s": 1.3503537295777501
+      },
+      "checkpoint_sha256": "dee9490c9cfebb45f233ca7a6b0de94e8219110648e85606b803d54ae937fab2",
+      "setup_ms": 0.032199999999647844,
+      "advance_ms": 21.658800000000156,
+      "total_ms": 21.690999999999804,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "dynamic-boundary",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "tide-oscillation",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8.000000000000005,
+        "steps": 490,
+        "cells": 512,
+        "water_m2": 111.00664992979051,
+        "mass_residual_m2": -3.108624468950438e-14,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.150923093422925,
+        "boundary_out_m2": 7.544273163632387,
+        "nominal_source_integral_m2": 8.000000000000005,
+        "actual_minus_nominal_inlet_m2": 0.15092309342291976,
+        "min_depth_m": 1.056151421663389,
+        "max_depth_m": 1.3932547887044313,
+        "min_dt_s": 0.014235310495566695,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.3808813613071067,
+        "outlet_flux_m2_s": 0.867166001671326
+      },
+      "checkpoint_sha256": "89f5151e7da0789522b57fc0cefdb4a8d5323847233662c79ad40071c9f130e9",
+      "setup_ms": 0.029100000000198634,
+      "advance_ms": 20.46160000000009,
+      "total_ms": 20.490700000000288,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "axis": "dynamic-boundary",
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f32-state",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "tide-oscillation",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999995,
+        "steps": 490,
+        "cells": 512,
+        "water_m2": 111.00666285306215,
+        "mass_residual_m2": 1.1907788975307199e-05,
+        "initial_water_m2": 110.3999999910593,
+        "boundary_in_m2": 8.150923204047281,
+        "boundary_out_m2": 7.544272249833407,
+        "nominal_source_integral_m2": 7.999999999999995,
+        "actual_minus_nominal_inlet_m2": 0.15092320404728632,
+        "min_depth_m": 1.0561516284942627,
+        "max_depth_m": 1.3932548761367798,
+        "min_dt_s": 0.014235352957163503,
+        "max_dt_s": 0.017845742020408575,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.3808813095092773,
+        "outlet_flux_m2_s": 0.8671662913336841
+      },
+      "checkpoint_sha256": "8ee4dc1249d33c166ba34411dfa8070da236a0ef8916556687850649ce30cfd0",
+      "setup_ms": 0.07629999999971915,
+      "advance_ms": 20.559999999999945,
+      "total_ms": 20.636299999999665,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f32-state"
+      }
+    },
+    {
+      "axis": "unsafe-fixed-step",
+      "status": "numerical-refusal",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "dt_max": 0.3,
+        "time_mode": "fixed"
+      },
+      "error": "numerical stability failure at cell 1, t=0.6",
+      "metrics": {
+        "time_s": 0.6,
+        "steps": 2,
+        "cells": 512,
+        "water_m2": 110.47702417201502,
+        "mass_residual_m2": 7.049916206369744e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 0.5648754122371429,
+        "boundary_out_m2": 0.4878512402221346,
+        "nominal_source_integral_m2": 0.6,
+        "actual_minus_nominal_inlet_m2": -0.035124587762857096,
+        "min_depth_m": 0.1463438917943447,
+        "max_depth_m": 2.4764137480518293,
+        "min_dt_s": 0.3,
+        "max_dt_s": 0.3,
+        "max_cfl": 52.3261078586481,
+        "outlet_depth_m": 1.2061366851444904,
+        "outlet_flux_m2_s": 0.840219729797724
+      },
+      "total_ms": 0.6298999999999069
+    },
+    {
+      "axis": "unsafe-fixed-step",
+      "status": "numerical-refusal",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "dt_max": 1,
+        "time_mode": "fixed"
+      },
+      "error": "numerical stability failure at cell 0, t=1",
+      "metrics": {
+        "time_s": 1,
+        "steps": 1,
+        "cells": 512,
+        "water_m2": 110.49855472281533,
+        "mass_residual_m2": -1.3988810110276972e-14,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 0.8997952120770345,
+        "boundary_out_m2": 0.8012404892616982,
+        "nominal_source_integral_m2": 1,
+        "actual_minus_nominal_inlet_m2": -0.1002047879229655,
+        "min_depth_m": 1.100293053407137,
+        "max_depth_m": 1.6344286218356783,
+        "min_dt_s": 1,
+        "max_dt_s": 1,
+        "max_cfl": 34.336356824154244,
+        "outlet_depth_m": 1.1911522259470553,
+        "outlet_flux_m2_s": 0.8799593048264971
+      },
+      "total_ms": 0.36919999999963693
+    },
+    {
+      "axis": "broken-interface-negative",
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "broken-interface"
+      },
+      "metrics": {
+        "time_s": 2.999999999999995,
+        "steps": 100,
+        "cells": 96,
+        "water_m2": 110.6136607394553,
+        "mass_residual_m2": 0.0805598595465784,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 2.87891602080956,
+        "boundary_out_m2": 2.745815140900832,
+        "nominal_source_integral_m2": 2.999999999999995,
+        "actual_minus_nominal_inlet_m2": -0.12108397919043501,
+        "min_depth_m": 1.102713111811319,
+        "max_depth_m": 1.1952181552877388,
+        "min_dt_s": 0.03,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.12839719623110415,
+        "outlet_depth_m": 1.1952181552877388,
+        "outlet_flux_m2_s": 1.0205609875411834
+      },
+      "checkpoint_sha256": "7f145697b87b53f32a2402700771c20ee286b1841263d484073da7711f93e553",
+      "setup_ms": 0.09070000000019718,
+      "advance_ms": 4.996299999999792,
+      "total_ms": 5.086999999999989,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 4,
+        "cells_per_partition": 24,
+        "shared_internal_faces": 3,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    }
+  ],
+  "partition_trials": [
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.052999999999883585,
+      "advance_ms": 2.4241000000001804,
+      "total_ms": 2.477100000000064,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.03490000000010696,
+      "advance_ms": 2.7992999999996755,
+      "total_ms": 2.8341999999997824,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 2,
+        "cells_per_partition": 48,
+        "shared_internal_faces": 1,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 48.32170000000042,
+      "advance_ms": 10.835699999999633,
+      "total_ms": 59.15740000000005,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 2,
+        "cells_per_partition": 48,
+        "shared_internal_faces": 1,
+        "barriers": 267,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.040899999999965075,
+      "advance_ms": 2.0938999999998487,
+      "total_ms": 2.1347999999998137,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 4,
+        "cells_per_partition": 24,
+        "shared_internal_faces": 3,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 49.49940000000015,
+      "advance_ms": 10.877899999999954,
+      "total_ms": 60.377300000000105,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 4,
+        "cells_per_partition": 24,
+        "shared_internal_faces": 3,
+        "barriers": 267,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.05120000000033542,
+      "advance_ms": 2.7774999999996908,
+      "total_ms": 2.828700000000026,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 8,
+        "cells_per_partition": 12,
+        "shared_internal_faces": 7,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 68.98190000000022,
+      "advance_ms": 14.834800000000087,
+      "total_ms": 83.81670000000031,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 8,
+        "cells_per_partition": 12,
+        "shared_internal_faces": 7,
+        "barriers": 267,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 45.88560000000007,
+      "advance_ms": 7.912399999999707,
+      "total_ms": 53.797999999999774,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 2,
+        "cells_per_partition": 48,
+        "shared_internal_faces": 1,
+        "barriers": 267,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.04800000000022919,
+      "advance_ms": 1.9936999999999898,
+      "total_ms": 2.041700000000219,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 4,
+        "cells_per_partition": 24,
+        "shared_internal_faces": 3,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 58.9681999999998,
+      "advance_ms": 11.532900000000154,
+      "total_ms": 70.50109999999995,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 4,
+        "cells_per_partition": 24,
+        "shared_internal_faces": 3,
+        "barriers": 267,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.04300000000012005,
+      "advance_ms": 2.3515000000002146,
+      "total_ms": 2.3945000000003347,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 8,
+        "cells_per_partition": 12,
+        "shared_internal_faces": 7,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 77.91609999999991,
+      "advance_ms": 14.554099999999835,
+      "total_ms": 92.47019999999975,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 8,
+        "cells_per_partition": 12,
+        "shared_internal_faces": 7,
+        "barriers": 267,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.04639999999972133,
+      "advance_ms": 2.4486000000001695,
+      "total_ms": 2.494999999999891,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.03539999999975407,
+      "advance_ms": 2.788600000000315,
+      "total_ms": 2.824000000000069,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 2,
+        "cells_per_partition": 48,
+        "shared_internal_faces": 1,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 51.4049,
+      "advance_ms": 9.977899999999863,
+      "total_ms": 61.38279999999986,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 4,
+        "cells_per_partition": 24,
+        "shared_internal_faces": 3,
+        "barriers": 267,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.051599999999780266,
+      "advance_ms": 2.0003999999998996,
+      "total_ms": 2.05199999999968,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 8,
+        "cells_per_partition": 12,
+        "shared_internal_faces": 7,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 68.15369999999984,
+      "advance_ms": 16.51220000000012,
+      "total_ms": 84.66589999999997,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 8,
+        "cells_per_partition": 12,
+        "shared_internal_faces": 7,
+        "barriers": 267,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.05289999999968131,
+      "advance_ms": 2.2999000000004344,
+      "total_ms": 2.3528000000001157,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 96,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.04659999999967113,
+      "advance_ms": 1.9735000000000582,
+      "total_ms": 2.0200999999997293,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 2,
+        "cells_per_partition": 48,
+        "shared_internal_faces": 1,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 47.66910000000007,
+      "advance_ms": 8.921400000000176,
+      "total_ms": 56.59050000000025,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 2,
+        "cells_per_partition": 48,
+        "shared_internal_faces": 1,
+        "barriers": 267,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 96,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 8,
+        "steps": 267,
+        "cells": 96,
+        "water_m2": 109.8566396157423,
+        "mass_residual_m2": 0,
+        "initial_water_m2": 110.39999999999999,
+        "boundary_in_m2": 8.156109571980165,
+        "boundary_out_m2": 8.699469956237861,
+        "nominal_source_integral_m2": 8,
+        "actual_minus_nominal_inlet_m2": 0.15610957198016528,
+        "min_depth_m": 1.06310847638803,
+        "max_depth_m": 1.1949877226474381,
+        "min_dt_s": 0.019999999999978257,
+        "max_dt_s": 0.03,
+        "max_cfl": 0.13674688347673244,
+        "outlet_depth_m": 1.1949877226474381,
+        "outlet_flux_m2_s": 1.3545903201288567
+      },
+      "checkpoint_sha256": "7222c4b9208fd568415bb31931e19d1e320be8563a3ee8b5e539845501ac8ec7",
+      "setup_ms": 0.055600000000140426,
+      "advance_ms": 2.256999999999607,
+      "total_ms": 2.3125999999997475,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 4,
+        "cells_per_partition": 24,
+        "shared_internal_faces": 3,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.10309999999981301,
+      "advance_ms": 19.52890000000025,
+      "total_ms": 19.632000000000062,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.1430000000000291,
+      "advance_ms": 18.8125,
+      "total_ms": 18.95550000000003,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 2,
+        "cells_per_partition": 256,
+        "shared_internal_faces": 1,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 48.15520000000015,
+      "advance_ms": 31.711299999999937,
+      "total_ms": 79.86650000000009,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 2,
+        "cells_per_partition": 256,
+        "shared_internal_faces": 1,
+        "barriers": 478,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.0340000000001055,
+      "advance_ms": 19.15560000000005,
+      "total_ms": 19.189600000000155,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 4,
+        "cells_per_partition": 128,
+        "shared_internal_faces": 3,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 51.3137999999999,
+      "advance_ms": 36.04330000000027,
+      "total_ms": 87.35710000000017,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 4,
+        "cells_per_partition": 128,
+        "shared_internal_faces": 3,
+        "barriers": 478,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.07930000000033033,
+      "advance_ms": 19.242299999999886,
+      "total_ms": 19.321600000000217,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 8,
+        "cells_per_partition": 64,
+        "shared_internal_faces": 7,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 0,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 68.83770000000004,
+      "advance_ms": 47.26160000000027,
+      "total_ms": 116.09930000000031,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 8,
+        "cells_per_partition": 64,
+        "shared_internal_faces": 7,
+        "barriers": 478,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 45.09109999999964,
+      "advance_ms": 26.90859999999975,
+      "total_ms": 71.9996999999994,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 2,
+        "cells_per_partition": 256,
+        "shared_internal_faces": 1,
+        "barriers": 478,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.04989999999997963,
+      "advance_ms": 18.77430000000004,
+      "total_ms": 18.82420000000002,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 4,
+        "cells_per_partition": 128,
+        "shared_internal_faces": 3,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 49.80709999999999,
+      "advance_ms": 35.31959999999981,
+      "total_ms": 85.1266999999998,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 4,
+        "cells_per_partition": 128,
+        "shared_internal_faces": 3,
+        "barriers": 478,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.10050000000046566,
+      "advance_ms": 19.612599999999475,
+      "total_ms": 19.71309999999994,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 8,
+        "cells_per_partition": 64,
+        "shared_internal_faces": 7,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 66.51949999999943,
+      "advance_ms": 51.568600000000515,
+      "total_ms": 118.08809999999994,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 8,
+        "cells_per_partition": 64,
+        "shared_internal_faces": 7,
+        "barriers": 478,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.03130000000055588,
+      "advance_ms": 19.18199999999979,
+      "total_ms": 19.213300000000345,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 1,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.037299999999959255,
+      "advance_ms": 18.705399999999827,
+      "total_ms": 18.742699999999786,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 2,
+        "cells_per_partition": 256,
+        "shared_internal_faces": 1,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 49.21319999999923,
+      "advance_ms": 33.61290000000008,
+      "total_ms": 82.82609999999931,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 4,
+        "cells_per_partition": 128,
+        "shared_internal_faces": 3,
+        "barriers": 478,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.0419000000001688,
+      "advance_ms": 18.842900000000554,
+      "total_ms": 18.884800000000723,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 8,
+        "cells_per_partition": 64,
+        "shared_internal_faces": 7,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 8,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 65.82480000000032,
+      "advance_ms": 47.389000000000124,
+      "total_ms": 113.21380000000045,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 8,
+        "cells_per_partition": 64,
+        "shared_internal_faces": 7,
+        "barriers": 478,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 1,
+        "organization": "monolithic",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.032000000000152795,
+      "advance_ms": 18.482199999999466,
+      "total_ms": 18.51419999999962,
+      "receipt": {
+        "organization": "monolithic",
+        "partitions": 1,
+        "cells_per_partition": 512,
+        "shared_internal_faces": 0,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.0327000000006592,
+      "advance_ms": 18.520700000000033,
+      "total_ms": 18.553400000000693,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 2,
+        "cells_per_partition": 256,
+        "shared_internal_faces": 1,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 2,
+        "organization": "partitioned-workers",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 49.23520000000008,
+      "advance_ms": 29.327299999999923,
+      "total_ms": 78.5625,
+      "receipt": {
+        "organization": "partitioned-workers",
+        "partitions": 2,
+        "cells_per_partition": 256,
+        "shared_internal_faces": 1,
+        "barriers": 478,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    },
+    {
+      "repetition": 2,
+      "identical_to_monolithic": true,
+      "status": "finite",
+      "config": {
+        "cells": 512,
+        "duration_s": 8,
+        "inflow_m2_s": 1,
+        "tide_m": 0,
+        "roughness": 0.03
+      },
+      "options": {
+        "precision": "f64",
+        "dt_max": 0.03,
+        "cfl": 0.39,
+        "partitions": 4,
+        "organization": "partitioned-serial",
+        "forcing": "constant",
+        "time_mode": "adaptive",
+        "fault": "none"
+      },
+      "metrics": {
+        "time_s": 7.999999999999991,
+        "steps": 478,
+        "cells": 512,
+        "water_m2": 109.89877576452494,
+        "mass_residual_m2": -3.552713678800501e-15,
+        "initial_water_m2": 110.4,
+        "boundary_in_m2": 8.15088918107363,
+        "boundary_out_m2": 8.65211341654869,
+        "nominal_source_integral_m2": 7.999999999999991,
+        "actual_minus_nominal_inlet_m2": 0.15088918107363902,
+        "min_depth_m": 1.0561511467793498,
+        "max_depth_m": 1.199052705221699,
+        "min_dt_s": 0.0009480360911111006,
+        "max_dt_s": 0.017845741882171126,
+        "max_cfl": 0.39000000000000007,
+        "outlet_depth_m": 1.199052705221699,
+        "outlet_flux_m2_s": 1.3505508803041049
+      },
+      "checkpoint_sha256": "552eb2c21767a4abf9e2cac1906b7b5ce1c28060c5436b3e07466a7e38a2bd92",
+      "setup_ms": 0.03279999999995198,
+      "advance_ms": 18.643599999999424,
+      "total_ms": 18.676399999999376,
+      "receipt": {
+        "organization": "partitioned-serial",
+        "partitions": 4,
+        "cells_per_partition": 128,
+        "shared_internal_faces": 3,
+        "barriers": 0,
+        "changes": [],
+        "serial_components": [
+          "global timestep",
+          "one flux per face",
+          "ordered mass reduction"
+        ],
+        "precision": "f64"
+      }
+    }
+  ],
+  "cost_groups": [
+    {
+      "cells": 96,
+      "organization": "monolithic",
+      "partitions": 1,
+      "interfaces": 0,
+      "setup_median_ms": 0.05289999999968131,
+      "advance_median_ms": 2.4241000000001804,
+      "total_median_ms": 2.477100000000064,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 0
+    },
+    {
+      "cells": 96,
+      "organization": "partitioned-serial",
+      "partitions": 2,
+      "interfaces": 1,
+      "setup_median_ms": 0.03539999999975407,
+      "advance_median_ms": 2.788600000000315,
+      "total_median_ms": 2.824000000000069,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 0
+    },
+    {
+      "cells": 96,
+      "organization": "partitioned-workers",
+      "partitions": 2,
+      "interfaces": 1,
+      "setup_median_ms": 47.66910000000007,
+      "advance_median_ms": 8.921400000000176,
+      "total_median_ms": 56.59050000000025,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 267
+    },
+    {
+      "cells": 96,
+      "organization": "partitioned-serial",
+      "partitions": 4,
+      "interfaces": 3,
+      "setup_median_ms": 0.04800000000022919,
+      "advance_median_ms": 2.0938999999998487,
+      "total_median_ms": 2.1347999999998137,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 0
+    },
+    {
+      "cells": 96,
+      "organization": "partitioned-workers",
+      "partitions": 4,
+      "interfaces": 3,
+      "setup_median_ms": 51.4049,
+      "advance_median_ms": 10.877899999999954,
+      "total_median_ms": 61.38279999999986,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 267
+    },
+    {
+      "cells": 96,
+      "organization": "partitioned-serial",
+      "partitions": 8,
+      "interfaces": 7,
+      "setup_median_ms": 0.05120000000033542,
+      "advance_median_ms": 2.3515000000002146,
+      "total_median_ms": 2.3945000000003347,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 0
+    },
+    {
+      "cells": 96,
+      "organization": "partitioned-workers",
+      "partitions": 8,
+      "interfaces": 7,
+      "setup_median_ms": 68.98190000000022,
+      "advance_median_ms": 14.834800000000087,
+      "total_median_ms": 84.66589999999997,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 267
+    },
+    {
+      "cells": 512,
+      "organization": "monolithic",
+      "partitions": 1,
+      "interfaces": 0,
+      "setup_median_ms": 0.032000000000152795,
+      "advance_median_ms": 19.18199999999979,
+      "total_median_ms": 19.213300000000345,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 0
+    },
+    {
+      "cells": 512,
+      "organization": "partitioned-serial",
+      "partitions": 2,
+      "interfaces": 1,
+      "setup_median_ms": 0.037299999999959255,
+      "advance_median_ms": 18.705399999999827,
+      "total_median_ms": 18.742699999999786,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 0
+    },
+    {
+      "cells": 512,
+      "organization": "partitioned-workers",
+      "partitions": 2,
+      "interfaces": 1,
+      "setup_median_ms": 48.15520000000015,
+      "advance_median_ms": 29.327299999999923,
+      "total_median_ms": 78.5625,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 478
+    },
+    {
+      "cells": 512,
+      "organization": "partitioned-serial",
+      "partitions": 4,
+      "interfaces": 3,
+      "setup_median_ms": 0.0340000000001055,
+      "advance_median_ms": 18.77430000000004,
+      "total_median_ms": 18.82420000000002,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 0
+    },
+    {
+      "cells": 512,
+      "organization": "partitioned-workers",
+      "partitions": 4,
+      "interfaces": 3,
+      "setup_median_ms": 49.80709999999999,
+      "advance_median_ms": 35.31959999999981,
+      "total_median_ms": 85.1266999999998,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 478
+    },
+    {
+      "cells": 512,
+      "organization": "partitioned-serial",
+      "partitions": 8,
+      "interfaces": 7,
+      "setup_median_ms": 0.07930000000033033,
+      "advance_median_ms": 19.242299999999886,
+      "total_median_ms": 19.321600000000217,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 0
+    },
+    {
+      "cells": 512,
+      "organization": "partitioned-workers",
+      "partitions": 8,
+      "interfaces": 7,
+      "setup_median_ms": 66.51949999999943,
+      "advance_median_ms": 47.389000000000124,
+      "total_median_ms": 116.09930000000031,
+      "repetitions": 3,
+      "full_state_equivalent": true,
+      "synchronization_barriers": 478
+    }
+  ],
+  "time_refinement": [
+    {
+      "dt_max": 0.01,
+      "max_depth_delta_to_refined_dt": 0.0001833474589882922,
+      "mean_depth_delta_to_refined_dt": 2.6917726210148873e-05
+    },
+    {
+      "dt_max": 0.03,
+      "max_depth_delta_to_refined_dt": 0.0006977828864580538,
+      "mean_depth_delta_to_refined_dt": 0.00010088605861776946
+    },
+    {
+      "dt_max": 0.12,
+      "max_depth_delta_to_refined_dt": 0.0025313011087193527,
+      "mean_depth_delta_to_refined_dt": 0.00034557762905243483
+    }
+  ],
+  "counts": {
+    "reference": 28,
+    "stability": 51,
+    "partition_trials": 42,
+    "unmeasured_partition_warmups": 14
+  },
+  "benchmark_design": {
+    "repetitions": 3,
+    "order": "rotating configuration order",
+    "warmups_per_configuration": 1,
+    "scope": "single-host pilot; no statistical scaling guarantee"
+  },
+  "source_hashes": {
+    "solver.mjs": "1cb8ddce0d6b7205f08c00414cbe4714f4b19d100227d81ddb20e82328810c3c",
+    "numerics.mjs": "2d9a7ce5ae44025c65721f385e3c9bc2025eebace3b758472ff9256a6c856f11",
+    "partition-worker.mjs": "01cab7a764cc8b249475f13fa8fe860516887a5951474cfc0805b5f013d35832",
+    "worker.mjs": "52d54ca8328dc8a2b8bcfcc13190a8f0820331c95552d8aa62f488ee6c0b1aae",
+    "study.mjs": "ed397684d40019ea14211fe64f2e833e11eba1985d6de98a9873a289321fac78",
+    "solver.test.mjs": "32170a20c3d97be59350f81ae155d2049b268536c472c1471a86edeeb7585fae",
+    "../../examples/fluid/fluid-core.js": "25a45ffe3c38bb64dd3b33097295b815979d0c58812fb6de94950ea19c4902a9",
+    "../../internal/fluid/solver.go": "74ce7f04d8530a7cbfd306a4fb0dd634b79e69ba84bb35454bfddef46ad2e7c2"
+  }
+}

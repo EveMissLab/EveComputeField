@@ -1,0 +1,9 @@
+{
+  "outcome": "passed",
+  "test_count": 17,
+  "passed": 17,
+  "failed": 0,
+  "r1_manifest_files_unchanged": 26,
+  "r1_manifest_hashing": "UTF-8 LF normalized, matching the R1 manifest contract",
+  "scope": "R2 Node tests on Windows plus preservation of R1 manifest files; existing Go/Linux race evidence belongs to unchanged baseline, not a new R2 Linux execution."
+}

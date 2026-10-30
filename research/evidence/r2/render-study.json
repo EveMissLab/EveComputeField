@@ -1,0 +1,91 @@
+{
+  "schema": "ecf-sample-field-011-study/v2",
+  "outcome": "passed",
+  "browser": "156.0.8078.4",
+  "field_id": "sample-field-009",
+  "desktop": {
+    "svg_nodes": 189,
+    "all_svg_nodes": 204,
+    "canvas_nodes": 0,
+    "context_calls": [],
+    "raf_interval_median_ms": 16.699999999999818,
+    "raf_interval_p95_ms": 16.700000000000273,
+    "view": {
+      "id": "sample-field-009",
+      "state_sha256": "b977e02c6dfd53a829cb9db7d17e5260d22ce5388a330f480323e0f7ebfaced0",
+      "metrics": {
+        "time_s": 31.094123774011972,
+        "steps": 1040,
+        "cells": 96,
+        "volumes_m3": {
+          "fall": 1.564123774011545,
+          "pool": 25.197812527848793,
+          "river": 96.57221636696706,
+          "ocean": 947.2345145789777
+        },
+        "total_m3": 1070.568667247805,
+        "pool_stage_m": 1.8899270842616265,
+        "ocean_stage_m": 1.578724190964963,
+        "fall_delay_s": 1.5641237740115501,
+        "flux_integrals_m3": {
+          "supply": 32.69412377401197,
+          "landing": 32.694123774012056,
+          "pool_river": 40.49631124616369,
+          "river_ocean": 54.32409487919663,
+          "export": 25.08958030021738
+        },
+        "roundoff_m3": {
+          "fall": 0,
+          "pool": 0,
+          "river": 0,
+          "ocean": 0
+        },
+        "component_raw_residual_m3": {
+          "fall": 7.815970093361102e-14,
+          "pool": 4.334310688136611e-13,
+          "river": 0,
+          "ocean": -1.5241141682054149e-12
+        },
+        "component_corrected_residual_m3": {
+          "fall": 7.815970093361102e-14,
+          "pool": 4.334310688136611e-13,
+          "river": 0,
+          "ocean": -1.5241141682054149e-12
+        },
+        "raw_residual_m3": -1.1333156635373598e-12,
+        "corrected_residual_m3": -1.1333156635373598e-12,
+        "min_depth_m": 0.8423889007545097,
+        "max_depth_m": 1.2334524707687164,
+        "min_dt_s": 0.004123774011537407,
+        "max_dt_s": 0.03,
+        "max_face_cfl": 0.1630152734735087,
+        "max_storage_number": 0.004565147398493637
+      },
+      "frozen": false
+    },
+    "horizontal_overflow": false
+  },
+  "mobile": {
+    "viewport": 390,
+    "document_width": 390,
+    "canvas_nodes": 0
+  },
+  "page_errors": [],
+  "external_requests": [],
+  "checks": {
+    "viewer_matches_live_state": true,
+    "freeze_only_changes_reading": true,
+    "manual_refresh_while_frozen": true,
+    "advance_matches_uninterrupted": true,
+    "SVG_style_does_not_change_physics": true,
+    "no_canvas_or_webgl_contexts": true
+  },
+  "persisted": {
+    "saved": true,
+    "state_sha256": "b977e02c6dfd53a829cb9db7d17e5260d22ce5388a330f480323e0f7ebfaced0",
+    "receipt_head": "617a293bf2931afa04314833d0e15febc194db1b4368aa876e9e241f45ad3625",
+    "bytes": 6058,
+    "elapsed_ms": 4.023700000005192
+  },
+  "scope": "Isolated headless browser, loopback-only requests. Actual resident state readback; no browser-side solver. RAF cadence is not isolated rendering time or a production FPS claim."
+}

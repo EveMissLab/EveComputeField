@@ -46,10 +46,10 @@ jobs:
       - name: Install Node for deterministic SVG-fluid math tests
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24'
 
       - name: SVG-fluid numerical regression tests (no browser dependency)
-        run: node --test examples/fluid/fluid.test.js
+        run: node research/run-tests.mjs
 
       - name: Cross-language numerical parity (Go versus browser JavaScript)
         shell: bash

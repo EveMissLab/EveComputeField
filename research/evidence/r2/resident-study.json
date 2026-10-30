@@ -1,0 +1,436 @@
+{
+  "schema": "ecf-sample-field-008-study/v2",
+  "created_utc": "2026-10-30T17:01:53.879Z",
+  "kernel_sha256": "d642bd2f072b6921205e39957719d0bb772fa441a34e68b7b3d55cef75a800bf",
+  "field_id": "sample-field-009",
+  "comparison_id": "sample-field-010",
+  "config": {
+    "source": {
+      "kind": "pulse",
+      "base": 1,
+      "amplitude": 0.8,
+      "at": 2,
+      "duration": 2
+    },
+    "ocean": {
+      "tide_amplitude": 0.2,
+      "tide_period": 6
+    }
+  },
+  "created": {
+    "id": "sample-field-009",
+    "metrics": {
+      "time_s": 0,
+      "steps": 0,
+      "cells": 96,
+      "volumes_m3": {
+        "fall": 1.5641237740115501,
+        "pool": 32.99999999999999,
+        "river": 110.39999999999999,
+        "ocean": 918
+      },
+      "total_m3": 1062.9641237740116,
+      "pool_stage_m": 2.15,
+      "ocean_stage_m": 1.53,
+      "fall_delay_s": 1.5641237740115501,
+      "flux_integrals_m3": {
+        "supply": 0,
+        "landing": 0,
+        "pool_river": 0,
+        "river_ocean": 0,
+        "export": 0
+      },
+      "roundoff_m3": {
+        "fall": 0,
+        "pool": 0,
+        "river": 0,
+        "ocean": 0
+      },
+      "component_raw_residual_m3": {
+        "fall": 0,
+        "pool": 0,
+        "river": 0,
+        "ocean": 0
+      },
+      "component_corrected_residual_m3": {
+        "fall": 0,
+        "pool": 0,
+        "river": 0,
+        "ocean": 0
+      },
+      "raw_residual_m3": 0,
+      "corrected_residual_m3": 0,
+      "min_depth_m": 1.100520833333333,
+      "max_depth_m": 1.1994791666666664,
+      "min_dt_s": 0,
+      "max_dt_s": 0,
+      "max_face_cfl": 0,
+      "max_storage_number": 0
+    },
+    "organization": {
+      "organization": "partitioned-workers",
+      "partitions": 4,
+      "exchange": "direct",
+      "internal_interfaces": 6,
+      "physical_links": 3,
+      "external_links": 2,
+      "river_seams": 3,
+      "barriers": 0,
+      "copied_interfaces": 0,
+      "profile_ms": {
+        "faces_ms": 0,
+        "policy_ms": 0,
+        "update_ms": 0,
+        "audit_commit_ms": 0
+      },
+      "changes": [],
+      "serial_components": [
+        "face assembly",
+        "shared timestep",
+        "reservoir proposals",
+        "ordered budget audit/commit"
+      ]
+    },
+    "state_sha256": "c47d8e9909807604d03c7fd8a1d07e1eaf4825b4709e23e2876a3eefb9d982fa",
+    "receipt_head": null,
+    "advance_calls": 0,
+    "worker_pool_creations": 1,
+    "buffers_reused": true,
+    "original_pool_reused": true,
+    "setup_ms": 72.45969999999943,
+    "rss_bytes": 120295424,
+    "blocked": false,
+    "pending_association": false
+  },
+  "comparison_created": {
+    "id": "sample-field-010",
+    "metrics": {
+      "time_s": 0,
+      "steps": 0,
+      "cells": 96,
+      "volumes_m3": {
+        "fall": 1.5641237497329712,
+        "pool": 33,
+        "river": 110.39999997615814,
+        "ocean": 918
+      },
+      "total_m3": 1062.964123725891,
+      "pool_stage_m": 2.1500000000000004,
+      "ocean_stage_m": 1.53,
+      "fall_delay_s": 1.5641237740115501,
+      "flux_integrals_m3": {
+        "supply": 0,
+        "landing": 0,
+        "pool_river": 0,
+        "river_ocean": 0,
+        "export": 0
+      },
+      "roundoff_m3": {
+        "fall": 0,
+        "pool": 0,
+        "river": 0,
+        "ocean": 0
+      },
+      "component_raw_residual_m3": {
+        "fall": 0,
+        "pool": 0,
+        "river": 0,
+        "ocean": 0
+      },
+      "component_corrected_residual_m3": {
+        "fall": 0,
+        "pool": 0,
+        "river": 0,
+        "ocean": 0
+      },
+      "raw_residual_m3": 0,
+      "corrected_residual_m3": 0,
+      "min_depth_m": 1.1005208492279053,
+      "max_depth_m": 1.1994792222976685,
+      "min_dt_s": 0,
+      "max_dt_s": 0,
+      "max_face_cfl": 0,
+      "max_storage_number": 0
+    },
+    "organization": {
+      "organization": "partitioned-serial",
+      "partitions": 4,
+      "exchange": "direct",
+      "internal_interfaces": 6,
+      "physical_links": 3,
+      "external_links": 2,
+      "river_seams": 3,
+      "barriers": 0,
+      "copied_interfaces": 0,
+      "profile_ms": {
+        "faces_ms": 0,
+        "policy_ms": 0,
+        "update_ms": 0,
+        "audit_commit_ms": 0
+      },
+      "changes": [],
+      "serial_components": [
+        "face assembly",
+        "shared timestep",
+        "reservoir proposals",
+        "ordered budget audit/commit"
+      ]
+    },
+    "state_sha256": "32e2db454bfce5d9638cae5eeb1dd639184c14262872e34eb4e5087804d7d68f",
+    "receipt_head": null,
+    "advance_calls": 0,
+    "worker_pool_creations": 0,
+    "buffers_reused": true,
+    "original_pool_reused": true,
+    "setup_ms": 0.2779000000009546,
+    "rss_bytes": 126824448,
+    "blocked": false,
+    "pending_association": false
+  },
+  "hot_calls": [
+    {
+      "call": 0,
+      "steps": 80,
+      "wall_ms": 32.47660000000002,
+      "compute_ms": 24.80789999999979,
+      "audit_ms": 3.677800000004936,
+      "state_sha256": "3cc353009922a0bd3091430127cc0910f105af5f959418480d86b90aa513592c",
+      "buffers_reused": true,
+      "original_pool_reused": true,
+      "pool_creations": 1
+    },
+    {
+      "call": 1,
+      "steps": 160,
+      "wall_ms": 17.195899999999995,
+      "compute_ms": 10.232799999997951,
+      "audit_ms": 3.56420000000071,
+      "state_sha256": "d02774263bf86d04bef8253f6a4d73f02d43d22186f9697d78daf3f08e2ad659",
+      "buffers_reused": true,
+      "original_pool_reused": true,
+      "pool_creations": 1
+    },
+    {
+      "call": 2,
+      "steps": 240,
+      "wall_ms": 17.08269999999999,
+      "compute_ms": 10.641100000000733,
+      "audit_ms": 3.346299999997427,
+      "state_sha256": "f8e54ac1074ca5d7a675ec6d3a51081ecdc7153b32d011ab65272dea4dea14d1",
+      "buffers_reused": true,
+      "original_pool_reused": true,
+      "pool_creations": 1
+    },
+    {
+      "call": 3,
+      "steps": 320,
+      "wall_ms": 15.435099999999977,
+      "compute_ms": 10.114600000000792,
+      "audit_ms": 3.0653999999994994,
+      "state_sha256": "861c3a56dc6441351a5d6eac831bba43149218f86ad261f34629cd206201938b",
+      "buffers_reused": true,
+      "original_pool_reused": true,
+      "pool_creations": 1
+    },
+    {
+      "call": 4,
+      "steps": 400,
+      "wall_ms": 13.957499999999982,
+      "compute_ms": 8.273800000002666,
+      "audit_ms": 3.381600000000617,
+      "state_sha256": "5c7d278f39e853e003aa5d3ca984c52950df541c0f36e8a471cc26a172eef8b4",
+      "buffers_reused": true,
+      "original_pool_reused": true,
+      "pool_creations": 1
+    },
+    {
+      "call": 5,
+      "steps": 480,
+      "wall_ms": 11.70920000000001,
+      "compute_ms": 5.666300000004412,
+      "audit_ms": 3.6906999999991967,
+      "state_sha256": "c8355a5db5f7d89fff52db456aa712510b322e07e0bf8fd2c19f72625a3eca87",
+      "buffers_reused": true,
+      "original_pool_reused": true,
+      "pool_creations": 1
+    },
+    {
+      "call": 6,
+      "steps": 560,
+      "wall_ms": 15.204400000000021,
+      "compute_ms": 8.362600000000384,
+      "audit_ms": 4.28009999999631,
+      "state_sha256": "bc8ad296e9277acc59e88448bd6524c6109b5b560a18b9104294dc27262798a0",
+      "buffers_reused": true,
+      "original_pool_reused": true,
+      "pool_creations": 1
+    },
+    {
+      "call": 7,
+      "steps": 640,
+      "wall_ms": 12.510400000000004,
+      "compute_ms": 6.533199999998033,
+      "audit_ms": 3.4694999999992433,
+      "state_sha256": "03688a71e8582ab1e85d75c6d7301fdc0169164b930fb904a895985e937090a0",
+      "buffers_reused": true,
+      "original_pool_reused": true,
+      "pool_creations": 1
+    },
+    {
+      "call": 8,
+      "steps": 720,
+      "wall_ms": 12.204399999999964,
+      "compute_ms": 6.613600000004226,
+      "audit_ms": 3.4501000000018394,
+      "state_sha256": "dbfb7f28d3d6577950787dd5a7e2492eb19ad22e58b9fefeee46de272a185183",
+      "buffers_reused": true,
+      "original_pool_reused": true,
+      "pool_creations": 1
+    },
+    {
+      "call": 9,
+      "steps": 800,
+      "wall_ms": 16.672200000000032,
+      "compute_ms": 8.257499999999709,
+      "audit_ms": 5.960699999995995,
+      "state_sha256": "331841aa01031ce5fdf41915525922ec5de4891c4df561ce957f50bef4036480",
+      "buffers_reused": true,
+      "original_pool_reused": true,
+      "pool_creations": 1
+    }
+  ],
+  "hot_buffers_reused": true,
+  "hot_pool_created_once": true,
+  "uninterrupted_800_steps_exact": true,
+  "reorganization_preserves_physical_state": true,
+  "invalid_reorganization_preserves_state": true,
+  "final": {
+    "id": "sample-field-009",
+    "metrics": {
+      "time_s": 31.094123774011972,
+      "steps": 1040,
+      "cells": 96,
+      "volumes_m3": {
+        "fall": 1.564123774011545,
+        "pool": 25.197812527848793,
+        "river": 96.57221636696706,
+        "ocean": 947.2345145789777
+      },
+      "total_m3": 1070.568667247805,
+      "pool_stage_m": 1.8899270842616265,
+      "ocean_stage_m": 1.578724190964963,
+      "fall_delay_s": 1.5641237740115501,
+      "flux_integrals_m3": {
+        "supply": 32.69412377401197,
+        "landing": 32.694123774012056,
+        "pool_river": 40.49631124616369,
+        "river_ocean": 54.32409487919663,
+        "export": 25.08958030021738
+      },
+      "roundoff_m3": {
+        "fall": 0,
+        "pool": 0,
+        "river": 0,
+        "ocean": 0
+      },
+      "component_raw_residual_m3": {
+        "fall": 7.815970093361102e-14,
+        "pool": 4.334310688136611e-13,
+        "river": 0,
+        "ocean": -1.5241141682054149e-12
+      },
+      "component_corrected_residual_m3": {
+        "fall": 7.815970093361102e-14,
+        "pool": 4.334310688136611e-13,
+        "river": 0,
+        "ocean": -1.5241141682054149e-12
+      },
+      "raw_residual_m3": -1.1333156635373598e-12,
+      "corrected_residual_m3": -1.1333156635373598e-12,
+      "min_depth_m": 0.8423889007545097,
+      "max_depth_m": 1.2334524707687164,
+      "min_dt_s": 0.004123774011537407,
+      "max_dt_s": 0.03,
+      "max_face_cfl": 0.1630152734735087,
+      "max_storage_number": 0.004565147398493637
+    },
+    "organization": {
+      "organization": "partitioned-workers",
+      "partitions": 2,
+      "exchange": "message-copy",
+      "internal_interfaces": 4,
+      "physical_links": 3,
+      "external_links": 2,
+      "river_seams": 1,
+      "barriers": 160,
+      "copied_interfaces": 640,
+      "profile_ms": {
+        "faces_ms": 7.657100000011269,
+        "policy_ms": 14.29869999998482,
+        "update_ms": 10.921899999975722,
+        "audit_commit_ms": 6.306200000046374
+      },
+      "changes": [],
+      "serial_components": [
+        "face assembly",
+        "shared timestep",
+        "reservoir proposals",
+        "ordered budget audit/commit"
+      ]
+    },
+    "state_sha256": "b977e02c6dfd53a829cb9db7d17e5260d22ce5388a330f480323e0f7ebfaced0",
+    "receipt_head": "617a293bf2931afa04314833d0e15febc194db1b4368aa876e9e241f45ad3625",
+    "advance_calls": 2,
+    "worker_pool_creations": 1,
+    "buffers_reused": true,
+    "original_pool_reused": true,
+    "setup_ms": 83.1449999999968,
+    "rss_bytes": 100052992,
+    "blocked": false,
+    "pending_association": false
+  },
+  "saved": {
+    "saved": true,
+    "state_sha256": "7078dcc23b2ad30508cf997cb9a268dc49db0261b3caf469283a24d1f8bc813a",
+    "receipt_head": "d5a2b50ccf48a217ef4533ddea6bfd17491b5643b97209d6d9e4070fe343b678",
+    "bytes": 6045,
+    "elapsed_ms": 3.7111000000004424
+  },
+  "comparison_saved": {
+    "saved": true,
+    "state_sha256": "450dd1ae443d4073c182bfc20e24a85a1e4be28d95c4e11ec0cd4daf609e8b6c",
+    "receipt_head": "9f19d4fc03649d762bec4286de22eaee5436f831d44bda83bdff7f7698c8cedd",
+    "bytes": 6038,
+    "elapsed_ms": 3.6389000000053784
+  },
+  "r1_preserved": {
+    "id": "sample-field-003",
+    "state_sha256": "4e2418fad319e37e6c70d726aa254c3c1d3d0fd6802b3805f1292f8ab49394ff",
+    "exact": true
+  },
+  "control_checks": {
+    "unauthenticated_status": 401,
+    "browser_origin_status": 403,
+    "readonly_demo_same_live_state": true
+  },
+  "restart": {
+    "process_restart_readback": true,
+    "restored_step": 880,
+    "restored_hash": "7078dcc23b2ad30508cf997cb9a268dc49db0261b3caf469283a24d1f8bc813a",
+    "post_restart_step": 960,
+    "post_restart_hash": "236b5cdcfcdb8cc3d5a9062e7dffac73c62b47d402391a68d2dec58cceae6c51",
+    "continuation_matches_uninterrupted": true
+  },
+  "persistence_scope": "Explicit Go M2 checkpoint, hash-linked best-effort audit log. No fsync/power-loss/authenticated authorship claim. State is an ID-associated sidecar, not native FieldSpec solver execution.",
+  "browser_advance": {
+    "additional_steps": 80,
+    "exact": true,
+    "checkpoint": {
+      "saved": true,
+      "state_sha256": "b977e02c6dfd53a829cb9db7d17e5260d22ce5388a330f480323e0f7ebfaced0",
+      "receipt_head": "617a293bf2931afa04314833d0e15febc194db1b4368aa876e9e241f45ad3625",
+      "bytes": 6058,
+      "elapsed_ms": 4.023700000005192
+    }
+  }
+}

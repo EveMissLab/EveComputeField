@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import { ResidentManager } from './resident-manager.mjs';import { makeNetwork } from './solver.mjs';
+test('pending association holds racing advance until successful bind',async()=>{
+  const m=new ResidentManager();let release;const gate=new Promise(r=>release=r),created=m.createAndBind('pending',makeNetwork({trunk:2,tributaries:2,cells:32}),{},null,null,()=>gate),advancing=m.advance('pending',4);assert.equal(m.entry('pending').blocked,true);release();try{await created;await advancing;assert.equal(m.view('pending').metrics.steps,4);}finally{await m.close();}
+});
+test('failed association and failed audit retain RAM and block later actions',async()=>{
+  const a=new ResidentManager(),b=new ResidentManager(async()=>{throw Error('disk witness');});try{await assert.rejects(a.createAndBind('bad',undefined,{},null,null,async()=>{throw Error('bind witness');}),/association/);await assert.rejects(a.advance('bad',1),/blocked/);await b.createAndBind('audit',makeNetwork({trunk:2,tributaries:2,cells:32}));await assert.rejects(b.advance('audit',2),/audit append/);assert.equal(b.view('audit').metrics.steps,2);await assert.rejects(b.advance('audit',1),/blocked/);}finally{await a.close();await b.close();}
+});
+test('durable save serializes with advance and retains actual backing banks',async()=>{
+  const m=new ResidentManager();try{await m.createAndBind('saved',makeNetwork({trunk:2,tributaries:2,cells:128}),{workers:2});await m.advance('saved',4);let entered,release;const ready=new Promise(r=>entered=r),gate=new Promise(r=>release=r);let snapshot;const saving=m.persist('saved',async cp=>{snapshot=cp;entered();await gate;});await ready;const advanced=m.advance('saved',4);assert.equal(m.view('saved').metrics.steps,4);release();await saving;await advanced;assert.equal(snapshot.checkpoint.metadata.steps,4);assert.equal(m.view('saved').metrics.steps,8);assert.equal(m.view('saved').retained_banks,true);assert.equal(m.view('saved').worker_pool_creations,1);}finally{await m.close();}
+});
