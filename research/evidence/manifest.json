@@ -140,39 +140,40 @@
     },
     {
       "path": "r2/accuracy.svg",
-      "sha256": "a33cc9a1296171e76f02442f9c6992052d57f4652e1c63b13bfd157fcf43bc6f",
-      "bytes": 22766,
+      "sha256": "dd5b800712c8ef250850ca6dc97e7fc1a219977e1f9fe25d4634ac5f4007f71c",
+      "bytes": 22261,
       "kind": "standalone SVG figure"
     },
     {
       "path": "r2/complexity.svg",
-      "sha256": "eaae41a1d7201b24f4e9d9cd932aead582b69367ec6766b0c0f7e805060973f1",
-      "bytes": 32240,
+      "sha256": "30bdb19826ec808d28d371391372f87ad12adb4c0dd39a41f54205e7373397a5",
+      "bytes": 31623,
       "kind": "standalone SVG figure"
     },
     {
       "path": "r2/coupled-response.svg",
-      "sha256": "c91964e4f97f8239457e9c30560f4f4257ff9a84f3abc42535eedae5525ae8da",
-      "bytes": 76545,
+      "sha256": "0fb000ce01ca705020d627b90d37ae19ae12399d4e21d7d7daa2c3188324da31",
+      "bytes": 74888,
       "kind": "standalone SVG figure"
     },
     {
       "path": "r3/crossover.svg",
-      "sha256": "9b094fd23f3c8504936466158990bed5d1b8a8670c3a05a0d893a3226967db92",
-      "bytes": 45491,
+      "sha256": "db31fc54b04b8dbaf49bda816f69e5075ada5b890b06d0780e9195b8b9375e9b",
+      "bytes": 44540,
       "kind": "standalone SVG figure"
     },
     {
       "path": "r3/integration-cost.svg",
-      "sha256": "2b38261eff8d54bd886bd52cc3609ef0bb4bdc0c39bb441e53fc7269f84178b5",
-      "bytes": 37417,
+      "sha256": "f9f2fcbd896dd33fdca7c09088119d3f7daa7dbe052cd61e1095a5af424d1f0c",
+      "bytes": 36650,
       "kind": "standalone SVG figure"
     },
     {
       "path": "r3/network-response.svg",
-      "sha256": "bb911acdbde85686a7b0e2b4e34bb880afc99214d2bee2392e7cec1b59379ff0",
-      "bytes": 35827,
+      "sha256": "2db13b1de9a2feb258b3b39ca33e38f380924cb3a27760b41ac0b548acfbb378",
+      "bytes": 35078,
       "kind": "standalone SVG figure"
     }
-  ]
+  ],
+  "byte_representation": "Raw Git blob bytes; text uses LF according to .gitattributes"
 }

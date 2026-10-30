@@ -51,6 +51,12 @@ jobs:
       - name: SVG-fluid numerical regression tests (no browser dependency)
         run: node research/run-tests.mjs
 
+      - name: Evidence integrity regression tests
+        run: node --test scripts/check-evidence-manifest.test.mjs
+
+      - name: Verify committed evidence and checkout bytes
+        run: node scripts/check-evidence-manifest.mjs --ref HEAD --check-worktree
+
       - name: Cross-language numerical parity (Go versus browser JavaScript)
         shell: bash
         run: |
