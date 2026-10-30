@@ -12,3 +12,6 @@
 /.idea/
 /.vscode/
 *.tmp
+/field-data/
+/control.token
+*.token

@@ -25,3 +25,6 @@ jobs:
         run: go vet ./...
       - name: Build
         run: go build ./...
+
+      - name: M1 loopback service and restart smoke (Linux)
+        run: bash scripts/smoke-m1-linux.sh

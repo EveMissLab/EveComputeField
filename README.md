@@ -4,8 +4,8 @@
 
 Date: **2026-10-30 (Asia/Taipei)**  
 Project owner: **EVEMISS TECHNOLOGY CO., LTD. / EveMissLab**  
-Status: **OPEN-SOURCE REFERENCE PROTOTYPE — NOT A PRODUCTION RUNTIME**  
-License: MIT (proposed public release license; included in the package)
+Status: **M1 PERSISTENT FIELD AUTHORITY — REFERENCE PROTOTYPE, NOT A PRODUCTION RUNTIME**  
+License: MIT (included in the public repository)
 
 ## Purpose / 目的
 
@@ -26,7 +26,39 @@ The reference implementation uses Go as a **replaceable bootstrap**, not as the 
 - TLS 1.3 mutual-certificate authentication for worker network exposure; no anonymous LAN mode.
 - Go unit tests, mTLS tests, Windows-compatible source, ready-to-run CLI examples.
 
-## Quick start
+## M1 — Persistent field authority (loopback local service)
+
+**M1 is now implemented**: a local daemon can hold several fields, serve
+repeated calls, checkpoint field state, and restore it after a graceful process
+restart. New control endpoints are **loopback-only** with a high-entropy token.
+For exact endpoints, limits, security and recovery semantics, read
+[docs/M1_FIELD_AUTHORITY.md](docs/M1_FIELD_AUTHORITY.md).
+
+Terminal A (create a local-only 256-bit token **once**, then start the daemon):
+
+```bash
+go run ./cmd/evefield token -out ./control.token
+go run ./cmd/evefield serve -data ./field-data -token-file ./control.token
+```
+
+Terminal B:
+
+```bash
+go run ./cmd/evefield ctl create -spec examples/local.json
+go run ./cmd/evefield ctl list
+go run ./cmd/evefield ctl run -id reference-local
+go run ./cmd/evefield ctl inspect -id reference-local
+go run ./cmd/evefield ctl put -id reference-local -domain continuity -key greeting -value hello
+go run ./cmd/evefield ctl get -id reference-local -domain continuity -key greeting
+```
+
+Stop and restart Terminal A: `inspect` still reports the previously committed
+`epoch` and `results`, and the `continuity` key still exists. This is **durable
+field identity and stored state**, not a claim that tasks keep executing after
+machine shutdown. Use only one `serve` per data directory; a stale lock after
+an unclean crash must be investigated before manual removal.
+
+## Quick start — original one-shot CLI
 
 Prerequisite: Go **1.23+** (reference code is compiled/tested with 1.23; install a maintained security-patched version in practice). No third-party Go module dependencies.
 
@@ -65,8 +97,10 @@ Windows PowerShell: use the same `go run ./cmd/evefield ...` commands, with sepa
 ## Repository layout
 
 ```text
-cmd/evefield/             CLI: plan, run, worker, certs
+cmd/evefield/             CLI: plan, run, worker, certs, token, serve, ctl
 internal/field/         Field schema, DAG, pure reference backend, state snapshots
+internal/authority/     Single-writer persistent field registry
+internal/control/       Authenticated loopback control API
 internal/transport/     Strict JSON + mTLS worker client/server
 internal/devcert/       Development certificates only
 examples/               Minimal local and LAN specs
@@ -98,8 +132,8 @@ This is a separate core-systems project: **the organization website and `evemiss
 
 ## Module identity and repository
 
-The Go module is `github.com/EveMissLab/EveComputeField`; its CLI entry point is `./cmd/evefield`. The organizational GitHub repository must be created independently. See [REPO_BOOTSTRAP](docs/REPO_BOOTSTRAP.md) for precise publishing steps. The module path and public project identity are already aligned, but publication is not implied by this package.
+The Go module is `github.com/EveMissLab/EveComputeField`; its CLI entry point is `./cmd/evefield`. The independent public repository is [EveMissLab/EveComputeField](https://github.com/EveMissLab/EveComputeField). The field authority and application runtime remain separate from the organization website and project catalog.
 
 ## Open-source position
 
-Only self-contained, independently authored public-safe reference code and public architecture have been packaged. The private or experimental upstream systems are not copied or released here. MIT is included for the reference implementation; a future proprietary adapter can remain separate without changing the open core. Review intellectual-property and contributor governance before an official GitHub public release.
+Only self-contained, independently authored public-safe reference code and public architecture have been packaged. The private or experimental upstream systems are not copied or released here. MIT is included for the reference implementation; a future proprietary adapter can remain separate without changing the open core. All future private or non-public research adapters require a separate explicit publication review; do not assume their source is included.

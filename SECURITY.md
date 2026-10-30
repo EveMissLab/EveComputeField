@@ -2,6 +2,25 @@
 
 This code is a research/reference prototype. It does not have a production security audit.
 
+## M1 local authority control boundary
+
+- `evefield serve` listens only on explicit `127.0.0.1` or `::1`; wildcard and
+  non-local addresses are rejected. **Never reverse-proxy this control service**
+  to an untrusted network or make it publicly accessible.
+- `evefield token` generates a random 256-bit bearer secret in a file created
+  owner-only on POSIX. Windows deployments need an appropriate filesystem ACL
+  review: POSIX `0600` does not itself define Windows DACL semantics.
+- Every control action needs that token. Browser `Origin` requests are denied;
+  no CORS permission is granted. Control traffic is plaintext loopback HTTP,
+  not an encrypted remote control protocol.
+- The field directory and token must be accessible only to the authorized
+  operator; an attacker with local account/file access may bypass the service.
+- `serve` takes a single-writer `.authority.lock`; after an unclean exit verify
+  that no competing process remains before manually clearing it.
+- Snapshots and other saved field state are plaintext; do not store secrets.
+- This is not a production multi-tenant authorization boundary. There is no
+  tenant RBAC, signed policy, credential revocation or remote-control audit.
+
 ## Default posture
 
 - Do not expose `worker` to the public internet. By default it binds `127.0.0.1`.
