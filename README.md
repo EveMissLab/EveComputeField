@@ -4,7 +4,7 @@
 
 Date: **2026-10-30 (Asia/Taipei)**  
 Project owner: **EVEMISS TECHNOLOGY CO., LTD. / EveMissLab**  
-Status: **M2 LOCAL-FIRST EXECUTABLE FIELD — REFERENCE PROTOTYPE, NOT A PRODUCTION RUNTIME**
+Status: **M3 LOCAL FLUID SVG BENCHMARK — REFERENCE PROTOTYPE, NOT A PRODUCTION RUNTIME**
 License: MIT (included in the public repository)
 
 ## Purpose / 目的
@@ -92,6 +92,32 @@ $token = '.\.evefield-local\control.token'
 See **[M2 local-first guide](docs/M2_LOCAL_FIRST.md)** for full details,
 Linux setup, registry JSON, failure semantics and validation status. `ctl
 create` is only necessary once per field identity.
+
+## M3 — SVG fluid-field challenge (new)
+
+**瀑布 → 河流 → 河口 → 海洋，在同一個 SVG 場景。**
+
+![Single continuous waterfall-to-ocean SVG fluid scene](examples/fluid/scene.svg)
+
+Open **[`examples/fluid/index.html`](examples/fluid/index.html)** locally to
+interactively control a continuous SVG-only drawing. The scene uses a
+conservative 96-cell 1D shallow-water river solver, with the waterfall as the
+upstream discharge source and ocean as downstream tidal-stage boundary.
+All visible geometry is SVG; the external controls are HTML. No Canvas,
+WebGL, CDN or cloud service is used. Included is an exported static
+[`scene.svg`](examples/fluid/scene.svg).
+
+The independent **Go** implementation is a real field-associated workload:
+
+```bash
+go run ./cmd/evefield tool fluid < examples/fluid/scenario.json
+node --test examples/fluid/fluid.test.js
+bash scripts/smoke-m3-fluid-linux.sh
+```
+
+Read [M3 fluid benchmark & physical-model limitations](docs/M3_FLUID_SVG_BENCHMARK.md)
+for numerical assumptions, conservation, local Windows execution, persistent
+field invocation and what is *not* physically solved.
 
 ## Quick start — original one-shot CLI
 

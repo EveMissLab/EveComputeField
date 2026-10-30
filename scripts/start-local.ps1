@@ -35,7 +35,8 @@ try {
             workloads = @(
                 @{name='hash'; program=$exe; args=@('tool','sha256'); timeout_ms=3000; max_output_bytes=4096},
                 @{name='uppercase'; program=$exe; args=@('tool','uppercase'); timeout_ms=3000; max_output_bytes=131072},
-                @{name='lines'; program=$exe; args=@('tool','lines'); timeout_ms=3000; max_output_bytes=4096}
+                @{name='lines'; program=$exe; args=@('tool','lines'); timeout_ms=3000; max_output_bytes=4096},
+                @{name='fluid'; program=$exe; args=@('tool','fluid'); timeout_ms=10000; max_output_bytes=16384}
             )
         }
         $json = ConvertTo-Json -InputObject $manifest -Depth 6
@@ -51,6 +52,8 @@ try {
     Write-Host "  & '$exe' ctl create -spec examples/local.json -token-file '$token'"
     Write-Host "  & '$exe' ctl resize -id reference-local -units 720 -token-file '$token'"
     Write-Host "  & '$exe' ctl invoke -id reference-local -workload hash -input-file examples/invoke.txt -save-domain continuity -save-key last_hash -token-file '$token'"
+    Write-Host "  & '$exe' ctl invoke -id reference-local -workload fluid -input-file examples/fluid/scenario.json -save-domain continuity -save-key fluid_result -token-file '$token'"
+    Write-Host 'Note: if you already had workloads.json, add the fluid entry yourself (the script does not overwrite it).'
     & $exe serve -data $fields -listen $Listen -token-file $token -workloads $registry
     if ($LASTEXITCODE -ne 0) { throw 'local service stopped with an error' }
 } finally {

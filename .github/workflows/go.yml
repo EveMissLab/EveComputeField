@@ -38,3 +38,21 @@ jobs:
       - name: M2 local resize + named workload + restart smoke (Linux)
         if: runner.os == 'Linux'
         run: bash scripts/smoke-m2-linux.sh
+
+      - name: M3 local fluid field integration smoke (Linux)
+        if: runner.os == 'Linux'
+        run: bash scripts/smoke-m3-fluid-linux.sh
+
+      - name: Install Node for deterministic SVG-fluid math tests
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: SVG-fluid numerical regression tests (no browser dependency)
+        run: node --test examples/fluid/fluid.test.js
+
+      - name: Cross-language numerical parity (Go versus browser JavaScript)
+        shell: bash
+        run: |
+          go run ./cmd/evefield tool fluid < examples/fluid/scenario.json > fluid-result.json
+          node scripts/check-fluid-parity.cjs fluid-result.json

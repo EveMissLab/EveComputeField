@@ -1,0 +1,47 @@
+{
+  "schema": "evecomputefield.m3.fluid.validation.v0.1",
+  "date": "2026-10-30",
+  "status": "LOCAL_LINUX_REFERENCE_PASS",
+  "runtime": {
+    "os": "Linux",
+    "go": "go1.23.2",
+    "node": "v22.16.0",
+    "browser": "headless Chromium via Playwright"
+  },
+  "assumptions": "1D shallow water downstream of ballistic illustrative waterfall, ocean tailwater boundary; no 2D/3D validation",
+  "numerics": {
+    "cells": 96,
+    "steps": 267,
+    "duration_s": 8,
+    "initial_volume_m2": 110.39999999999999,
+    "final_volume_m2": 109.8566396157423,
+    "integrated_boundary_in_m2": 8.156109571980165,
+    "integrated_boundary_out_m2": 8.699469956237861,
+    "mass_residual_m2": 0,
+    "max_cfl": 0.13674688347673244
+  },
+  "acceptance": {
+    "go_test": "PASS",
+    "go_race": "PASS",
+    "go_vet": "PASS",
+    "go_build": "PASS",
+    "node_fluid_test": "PASS",
+    "linux_field_daemon_invoke_save_restart": "PASS",
+    "go_js_parity": "PASS",
+    "browser_inline_script_animation": "PASS",
+    "svg_export_xml_valid": "PASS",
+    "browser_slider_tide_inflow": "PASS",
+    "browser_pause_reset": "PASS",
+    "windows_workstation": "NOT_RUN",
+    "two_machine_lan": "NOT_REQUIRED",
+    "gpu_benchmark": "NOT_RUN"
+  },
+  "svg_sha256": "58d43c3a542bf5ecdc850b62a7ce633db575902868baeed527a8c403ee90e822",
+  "limitations": [
+    "NOT production CFD",
+    "NOT 2D ocean or 3D waterfall turbulence",
+    "NOT OS-level pulse control",
+    "local field named workload invocation is not DAG cell distribution",
+    "process workload not sandboxed"
+  ]
+}
