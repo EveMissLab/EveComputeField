@@ -65,3 +65,14 @@ This is a code-and-contract baseline, not proof of hardware performance or produ
   unit-test CI matrix. Cloud continuity and physical pulse claims remain out
   of scope.
 - Harden field ID validation for path aliases and Windows device names.
+
+## 2026-10-31 — M4-P0 local mapping and virtual memory-domain bridge
+
+- Add R3-compatible virtual-unit / tile / physical Worker mapping with explicit
+  worker range and seam accounting, plus a validated mapping digest.
+- Add bounded same-state paired hot-call benchmark and a conservative,
+  startup-amortized placement gate (fallback to serial on insufficient benefit).
+- Add a bounded, local zero-copy virtual memory domain: shared-buffer
+  ownership/borrowed mappings, typed handles, quotas and generation-checked remap.
+- Preserve M3 scientific kernel and historical R1–R3 measurement artifacts.
+  Dynamic physical allocation/page virtualization remains follow-up research.
