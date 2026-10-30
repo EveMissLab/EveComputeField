@@ -1,0 +1,24 @@
+{
+  "schema": "evecomputefield/evidence-m1/v0.1",
+  "date": "2026-10-30",
+  "env": {
+    "os": "Linux",
+    "architecture": "x86_64",
+    "go": "go version go1.23.2 linux/amd64"
+  },
+  "gate": {
+    "unit_tests": {
+      "result": "PASS",
+      "test_functions": 23
+    },
+    "go_race": "PASS",
+    "go_vet": "PASS",
+    "go_build": "PASS",
+    "loopback_cli_restart": "PASS",
+    "windows_native": "NOT_RUN",
+    "two_physical_hosts": "NOT_RUN",
+    "crash_fsync_powerfail": "NOT_RUN",
+    "distributed_failover": "NOT_IMPLEMENTED"
+  },
+  "limitations": "Loopback only; single persistent authority; no broad remote control, general VM, or native pulse claims."
+}

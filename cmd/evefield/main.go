@@ -21,6 +21,10 @@ import (
 func usage() {
 	fmt.Fprintln(os.Stderr, `EveComputeField reference CLI
 Commands:
+  token  -out ./control.token
+  serve  -data ./field-data -token-file ./control.token [-listen 127.0.0.1:8765]
+  ctl    create -spec examples/local.json [-token-file ./control.token]
+  ctl    list | inspect -id FIELD | run -id FIELD | get/put -id FIELD -domain DOMAIN -key KEY
   plan   -spec examples/local.json
   run    -spec examples/local.json [-state ./field-state.json] [-parallel 4]
   certs  -out ./dev-certs [-host 127.0.0.1]
@@ -65,6 +69,12 @@ func run(args []string) error {
 		return errors.New("missing command")
 	}
 	switch args[0] {
+	case "token":
+		return tokenCommand(args[1:])
+	case "serve":
+		return serveCommand(args[1:])
+	case "ctl":
+		return ctlCommand(args[1:])
 	case "plan":
 		fs := flag.NewFlagSet("plan", flag.ContinueOnError)
 		specFile := fs.String("spec", "examples/local.json", "field spec JSON")

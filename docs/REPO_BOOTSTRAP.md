@@ -1,3 +1,5 @@
+> Publication update (2026-10-30): the public independent repository now exists at https://github.com/EveMissLab/EveComputeField . Initial `main` is already published. The historical instructions below describe the completed initial bootstrap, not a pending step.
+
 # Publish as a standalone EveMissLab repository
 
 **Target:** `EveMissLab/EveComputeField` — new repository. **Do not use** `evemisslab-project-catalog` or an existing website repository.

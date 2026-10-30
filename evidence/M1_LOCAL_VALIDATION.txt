@@ -1,0 +1,22 @@
+M1 LOCAL VALIDATION (2026-10-30, Asia/Taipei)
+Linux e0363c010cdd 6.18.57 #1 SMP Tue Oct 20 21:56:04 UTC 2026 x86_64 GNU/Linux
+go version go1.23.2 linux/amd64
+--- go test ./... -count=1
+?   	github.com/EveMissLab/EveComputeField/cmd/evefield	[no test files]
+ok  	github.com/EveMissLab/EveComputeField/internal/authority	0.060s
+?   	github.com/EveMissLab/EveComputeField/internal/devcert	[no test files]
+ok  	github.com/EveMissLab/EveComputeField/internal/control	0.075s
+ok  	github.com/EveMissLab/EveComputeField/internal/field	0.013s
+ok  	github.com/EveMissLab/EveComputeField/internal/transport	0.010s
+--- go test -race ./... -count=1
+?   	github.com/EveMissLab/EveComputeField/cmd/evefield	[no test files]
+?   	github.com/EveMissLab/EveComputeField/internal/devcert	[no test files]
+ok  	github.com/EveMissLab/EveComputeField/internal/authority	1.056s
+ok  	github.com/EveMissLab/EveComputeField/internal/control	1.052s
+ok  	github.com/EveMissLab/EveComputeField/internal/field	1.018s
+ok  	github.com/EveMissLab/EveComputeField/internal/transport	1.028s
+--- go vet ./...
+--- go build ./...
+--- bash scripts/smoke-m1-linux.sh
+M1_SMOKE_PASS: create, run, checkpoint, graceful restart, restore, memory read
+--- gofmt -l

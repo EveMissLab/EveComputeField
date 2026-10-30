@@ -94,3 +94,20 @@ Worker calls are limited to pure computation. A remote task can finish while the
 ## API migration discipline
 
 The version string belongs to the **semantic protocol**, not the implementation language. Changing Go → Rust / NOVA does not require a protocol bump *if* identity, validation, state transitions, errors, ordering, and failure semantics remain compatible. Any breaking semantic change **does** require a new protocol version and a migration plan.
+
+## M1 additive control service (implemented)
+
+The original `field/v0.1` spec and stateless mTLS worker wire format remain
+unchanged. New local admin interface is documented in
+[M1_FIELD_AUTHORITY.md](M1_FIELD_AUTHORITY.md). It provides a per-process
+multi-field registry with stable IDs, `GET/POST /v1/fields`, inspect, repeated
+`POST /v1/fields/{id}/run`, and controlled domain KV GET/PUT. Every request
+requires a secret-bearing Authorization header; **only loopback IPs** are
+accepted as listeners. There is no remote admin credential exchange.
+
+Successful field runs become authoritative only after filesystem checkpoint;
+failed runs do not mutate the committed epoch. KV updates do not count as
+compute epochs. Underlying memory domains are typed logical KV stores, not
+real virtual address spaces or a transparent distributed-RAM service. M1 does
+not support live reconfiguration through control endpoints, worker consensus,
+or physical pulse optimization. No future native adapter is implied.
