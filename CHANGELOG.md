@@ -1,3 +1,16 @@
+## 2026-10-30 — M3 Fluid SVG Benchmark (reference)
+
+- Single continuous waterfall → river → ocean SVG-only scene, offline HTML controls;
+  deterministic browser finite-volume solver and downloadable still-frame SVG.
+- Deterministic Go 1D Saint-Venant/Rusanov finite-volume numerical workload (`tool fluid`)
+  usable via the M2 named local workload registry, plus reference input scenario.
+- Mass balance, tide and inflow sensitivity, replay and malformed-input tests;
+  Go/JS numerical-parity audit, Linux persistent field integration smoke.
+- Windows first-run bootstrap registers `fluid` only for newly generated registries;
+  pre-existing user-owned registries are never rewritten.
+- Explicit physical/visual model limitations: no 2D waterfall jet, ocean solver,
+  true core-pulse acceleration, sandboxing, or distributed computation.
+
 # Changelog
 
 ## M1 — Persistent Field Authority — 2026-10-30 (reference)

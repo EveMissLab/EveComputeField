@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>EveComputeField / 流體場 SVG 實驗</title>
+  <style>
+    :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Microsoft JhengHei",sans-serif;color:#e8f4f3;background:#081b24;font-synthesis:none}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(ellipse at 50% 0,#19394a 0,#081b24 70%);min-height:100vh}
+    .shell{width:min(1500px,97vw);margin:0 auto;padding:24px 0 32px}
+    .header{display:flex;gap:24px;align-items:flex-end;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap}
+    .eyebrow{font-weight:800;letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:#8ee2d0;margin:0 0 7px}
+    h1{font-size:clamp(22px,2.8vw,36px);letter-spacing:-.035em;font-weight:750;margin:0 0 6px}
+    .sub{font-size:14px;color:#a1bac4;margin:0}
+    .tag{font-size:11px;color:#afe3dd;border:1px solid #376c71;border-radius:99px;padding:8px 13px;letter-spacing:.09em;white-space:nowrap}
+    .scene-shell{position:relative;border:1px solid #365766;border-radius:16px;overflow:hidden;background:#193b4b;box-shadow:0 28px 70px #0008}
+    svg#world{width:100%;height:auto;display:block;aspect-ratio:1400/760;touch-action:pan-y}
+    .scene-caption{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:12px 17px;background:#102b38;color:#9ed0d3;font-size:12px;border-top:1px solid #37555e;flex-wrap:wrap}
+    .caption-active{color:#93eac9}
+    .bottom{display:grid;grid-template-columns:minmax(310px,1fr) minmax(360px,1.1fr);gap:14px;margin-top:14px}
+    .panel{border:1px solid #2c505d;background:#112936;border-radius:13px;padding:18px 20px}
+    .panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;gap:14px}.panel h2{font-size:14px;letter-spacing:.025em;margin:0;color:#e4f7f2}.fine{font-size:11px;color:#86adbb}
+    .ctrl{display:grid;grid-template-columns:116px 1fr 72px;gap:12px;align-items:center;margin:12px 0}.ctrl label{font-size:12px;color:#b8d2d5}.value{font-size:13px;text-align:right;font-variant-numeric:tabular-nums;color:#c9fff0;font-weight:600}
+    input[type=range]{width:100%;accent-color:#5bdfc5;cursor:pointer}
+    .actions{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+    button{cursor:pointer;border-radius:8px;font-weight:650;padding:9px 14px;font-size:12px;border:1px solid #386a74;color:#c0f6ed;background:#1c4853;transition:background .2s}button:hover{background:#286072}button.primary{background:#48c6ab;color:#03272d;border-color:#48c6ab}button.primary:hover{background:#71e1c4}
+    .metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.metric{background:#153744;border:1px solid #294b5b;border-radius:9px;padding:12px}.metric b{display:block;font-size:clamp(15px,2.1vw,21px);color:#d9fff4;white-space:nowrap;font-variant-numeric:tabular-nums}.metric span{display:block;font-size:10px;letter-spacing:.03em;color:#8bb4be;margin-top:5px}
+    .note{font-size:11px;line-height:1.65;color:#8daeb8;margin:13px 0 0}
+    .error{color:#ffc6b9!important}.status{display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;background:#76e6b0;border-radius:50%;box-shadow:0 0 9px #63e3aa80}
+    @media(max-width:850px){.bottom{grid-template-columns:1fr}.shell{width:min(100%,96vw);padding-top:16px}.panel{padding:14px}.metrics{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:460px){.ctrl{grid-template-columns:83px 1fr 60px;gap:8px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.scene-caption{font-size:10px}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="header">
+    <div><p class="eyebrow">EVEMISSLAB · COMPUTE FIELD / LOCAL TEST 01</p>
+      <h1>一個連續的流體場</h1>
+      <p class="sub">瀑布 → 河流 → 河口 → 海洋 ｜ 以 SVG 繪製、有限體積法演算的本地實驗</p></div>
+    <div class="tag">SVG ONLY RENDER · ZERO CANVAS · OFFLINE</div>
+  </header>
+  <section class="scene-shell" aria-label="瀑布、河道及海洋的連續 SVG 動畫">
+   <svg id="world" viewBox="0 0 1400 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="scene-title scene-description">
+    <title id="scene-title">瀑布、河流與海洋的連續水力模擬</title>
+    <desc id="scene-description">從高山瀑布落至深潭，再沿曲折河道流入右側海洋的向量畫面；水量與潮汐由簡化的一維水動力模型控制。</desc>
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e2e48"/><stop offset=".52" stop-color="#547e90"/><stop offset="1" stop-color="#b1bdb1"/></linearGradient>
+      <radialGradient id="glow"><stop stop-color="#e5f0cb" stop-opacity=".57"/><stop offset=".45" stop-color="#e8e8c4" stop-opacity=".21"/><stop offset="1" stop-color="#dae4b8" stop-opacity="0"/></radialGradient>
+      <linearGradient id="mountain" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#547c83"/><stop offset="1" stop-color="#2c5665"/></linearGradient>
+      <linearGradient id="foothill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#416c6b"/><stop offset="1" stop-color="#1f4a51"/></linearGradient>
+      <linearGradient id="rock" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#596c61"/><stop offset=".47" stop-color="#314c4b"/><stop offset="1" stop-color="#213c43"/></linearGradient>
+      <linearGradient id="plateau" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4f7562"/><stop offset="1" stop-color="#284e4b"/></linearGradient>
+      <linearGradient id="waterfall" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#126476" stop-opacity=".93"/><stop offset=".22" stop-color="#76d7d7" stop-opacity=".97"/><stop offset=".47" stop-color="#d4f6ec" stop-opacity=".94"/><stop offset=".68" stop-color="#64c9d7"/><stop offset="1" stop-color="#1f778c" stop-opacity=".95"/></linearGradient>
+      <linearGradient id="river" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#64c3b4"/><stop offset=".3" stop-color="#298b9a"/><stop offset=".68" stop-color="#145d81"/><stop offset="1" stop-color="#0b395b"/></linearGradient>
+      <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#387f96"/><stop offset=".28" stop-color="#286985"/><stop offset="1" stop-color="#092c52"/></linearGradient>
+      <radialGradient id="pool"><stop stop-color="#8ce9dc"/><stop offset=".45" stop-color="#308ea1"/><stop offset="1" stop-color="#205170"/></radialGradient>
+      <linearGradient id="shore" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#40665d"/><stop offset=".5" stop-color="#2a554f"/><stop offset="1" stop-color="#203e48"/></linearGradient>
+      <linearGradient id="seaShine" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#5be4d1" stop-opacity=".3"/><stop offset=".55" stop-color="#b8f3e5" stop-opacity=".05"/><stop offset="1" stop-color="#7dd0d5" stop-opacity="0"/></linearGradient>
+      <filter id="blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="12"/></filter>
+      <filter id="soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3"/></filter>
+      <linearGradient id="estuary-fade" gradientUnits="userSpaceOnUse" x1="867" y1="0" x2="1110" y2="0"><stop offset="0" stop-color="#fff"/><stop offset=".29" stop-color="#fff"/><stop offset=".75" stop-color="#777"/><stop offset="1" stop-color="#000"/></linearGradient>
+      <mask id="estuary-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1400" height="760"><rect x="0" y="0" width="1400" height="760" fill="url(#estuary-fade)"/></mask>
+      <path id="river-axis" d="M 416 516 C 515 481 561 523 675 510 S 884 561 1045 592" fill="none"/>
+      <clipPath id="fall-clip"><path d="M 332 280 C 350 287 369 290 380 296 C 373 365 404 421 429 492 L 365 501 C 363 433 341 373 343 312 Z"/></clipPath>
+      <clipPath id="sea-clip"><path d="M 969 514 C 1068 480 1181 472 1400 475 L 1400 760 L 975 760 Z"/></clipPath>
+    </defs>
+    <!-- atmosphere and distant terrain -->
+    <rect width="1400" height="760" fill="url(#sky)"/>
+    <ellipse cx="1090" cy="204" rx="360" ry="280" fill="url(#glow)"/>
+    <circle cx="1097" cy="197" r="37" fill="#e7ebcf" opacity=".75"/>
+    <path d="M0 349 L111 211 L198 306 L332 149 L441 299 L569 176 L668 306 L755 232 L878 371 L1400 347 L1400 560 L0 550 Z" fill="url(#mountain)" opacity=".86"/>
+    <path d="M257 235 L332 149 L386 224 L355 205 L333 194 L308 230 L294 216 Z M515 237 L569 176 L630 251 L596 231 L567 221 L545 241 Z" fill="#d4ded3" opacity=".55"/>
+    <path d="M0 431 C 170 356 221 384 338 350 C 477 308 547 371 680 350 C 809 332 843 419 955 409 C 1112 390 1180 406 1400 377 L1400 555 L0 560 Z" fill="url(#foothill)" opacity=".82"/>
+    <path d="M632 399 C710 374 781 393 866 420 C978 448 1092 417 1400 412" fill="none" stroke="#9cb7ad" stroke-width="2" opacity=".19"/>
+    <path d="M0 456 Q172 410 302 440 Q375 442 434 466 L555 555 L0 630 Z" fill="#25534f"/>
+    <!-- high ground and cliff / waterfall top -->
+    <path d="M0 287 C90 279 177 301 250 288 C292 287 326 270 356 288 L369 335 L394 450 L430 510 L311 583 L0 589 Z" fill="url(#rock)"/>
+    <path d="M0 287 C90 277 170 294 242 283 C297 273 335 270 352 281 L360 304 C281 308 192 317 0 326 Z" fill="url(#plateau)"/>
+    <path d="M18 335 C120 324 194 347 274 316 L297 480 L0 523 Z" fill="#39584f" opacity=".56"/>
+    <path d="M296 307 L345 318 L367 355 L359 418 L391 473 L362 488 L338 413 L328 368 Z" fill="#142e39" opacity=".54"/>
+    <path d="M382 313 L411 381 L424 451 L457 494 L422 525 L383 463 Z" fill="#192e3a" opacity=".73"/>
+    <path d="M48 402 L219 369 M64 443 L238 412 M278 382 L313 466 M57 511 L239 458" fill="none" stroke="#a7b3a0" stroke-width="3" opacity=".11"/>
+    <path d="M333 295 C346 289 359 291 379 298" fill="none" stroke="#b6d1bc" stroke-width="7" opacity=".3"/>
+    <!-- ocean water reaches up under the estuary -->
+    <path d="M970 511 C1076 483 1190 472 1400 475 L1400 760 L975 760 Z" fill="url(#sea)"/>
+    <g clip-path="url(#sea-clip)">
+      <path d="M974 532 C1090 487 1260 500 1430 467 L1430 740 L1025 692 Z" fill="url(#seaShine)"/>
+      <g id="ocean-wavelets"></g>
+      <g id="ocean-shimmers"></g>
+    </g>
+    <path d="M1052 489 Q1190 471 1400 473" stroke="#ace2d1" opacity=".36" stroke-width="3" fill="none"/>
+    <!-- valley banks under river -->
+    <path mask="url(#estuary-mask)" d="M361 491 C460 427 523 456 616 470 C769 467 872 510 1001 506 L1074 610 C893 573 759 542 635 547 C482 569 416 560 355 549 Z" fill="#132e3c" opacity=".85"/>
+    <path d="M390 483 C516 439 566 487 666 479 S873 505 1039 549" fill="none" stroke="#789787" stroke-width="11" opacity=".35"/>
+    <path d="M370 548 C500 598 593 563 689 576 S869 636 973 690" fill="none" stroke="#b6b898" stroke-width="12" opacity=".22"/>
+    <!-- changing wet river channel (generated by the finite-volume solver) -->
+    <path id="river-water" mask="url(#estuary-mask)" d="M405 480 C550 430 700 480 1045 490 L1050 700 C800 660 530 570 405 555 Z" fill="url(#river)"/>
+    <path id="river-shimmer" mask="url(#estuary-mask)" d="" fill="none" stroke="#a5ece1" opacity=".37" stroke-width="4"/>
+    <path id="river-bottom" mask="url(#estuary-mask)" d="" fill="none" stroke="#1d5377" opacity=".4" stroke-width="5"/>
+    <g id="river-flows" mask="url(#estuary-mask)"></g>
+    <g id="river-ripples" mask="url(#estuary-mask)"></g>
+    <!-- foreground low bank over the near river edge -->
+    <path d="M0 625 C159 590 284 605 360 572 C447 551 497 573 554 588 C625 614 713 590 771 612 C841 630 885 669 939 691 L1010 760 L0 760 Z" fill="url(#shore)"/>
+    <path d="M0 629 C149 595 290 615 359 575 C475 552 515 587 554 589 C646 614 703 595 772 616 C863 637 896 679 939 692" fill="none" stroke="#7f9d79" stroke-width="5" opacity=".48"/>
+    <path d="M0 710 C158 653 198 694 306 653 C398 620 470 677 532 644" fill="none" stroke="#86a582" stroke-width="3" opacity=".2"/>
+    <!-- pool and waterfall overlay foreground -->
+    <ellipse cx="412" cy="516" rx="97" ry="45" fill="#154558" opacity=".8"/>
+    <ellipse cx="421" cy="510" rx="84" ry="33" fill="url(#pool)" opacity=".88"/>
+    <path d="M0 255 C118 254 219 267 297 269 C326 274 342 276 355 286 L363 303 C341 288 310 296 270 287 C166 282 72 292 0 287 Z" fill="#3b9fa4" opacity=".95"/>
+    <path d="M0 264 C101 264 223 267 315 280" fill="none" stroke="#b0ede0" stroke-width="4" opacity=".72"/>
+    <path d="M332 280 C350 287 369 290 380 296 C373 365 404 421 429 492 L365 501 C363 433 341 373 343 312 Z" fill="url(#waterfall)"/>
+    <g id="fall-streaks" clip-path="url(#fall-clip)"></g>
+    <path d="M338 291 C351 336 344 416 381 489" stroke="#d2fff2" stroke-width="6" opacity=".53" fill="none"/>
+    <path d="M363 302 C367 366 391 439 409 478" stroke="#f2fffa" stroke-width="7" opacity=".28" fill="none"/>
+    <ellipse cx="414" cy="502" rx="73" ry="19" fill="#a4ffff" opacity=".3" filter="url(#soft)"/>
+    <g id="waterfall-spray"></g>
+    <g id="pool-foam"></g>
+    <!-- natural details: pines and rock vegetation -->
+    <g fill="#142f36"><path d="M64 257 L83 181 L99 258 Z M88 250 L106 164 L128 259 Z M163 267 L181 208 L198 270 Z M256 259 L276 197 L295 266 Z"/><path d="M484 457 L500 408 L514 463 Z M517 458 L533 422 L546 468 Z"/></g>
+    <g fill="#356059"><path d="M46 268 L72 205 L96 273 Z M103 257 L119 199 L142 262 Z M168 279 L181 231 L195 279 Z M262 277 L275 234 L290 280 Z"/></g>
+    <g stroke="#86a885" stroke-linecap="round" fill="none" opacity=".48"><path d="M162 687 L160 669 M162 680 L152 674 M162 680 L170 668 M265 644 L271 633 M265 644 L258 633 M706 629 L701 616 M706 629 L715 620" stroke-width="2"/></g>
+    <g opacity=".8" fill="#c8d1b0"><circle cx="198" cy="613" r="3"/><circle cx="223" cy="608" r="2"/><circle cx="732" cy="640" r="2"/></g>
+    <!-- illustrated measurements and topology markers (also SVG) -->
+    <g font-family="system-ui,-apple-system,sans-serif" font-size="13" letter-spacing="1.7" fill="#e6f8ec" font-weight="650">
+      <g transform="translate(200 170)"><circle r="17" fill="#173c49" stroke="#83d7ca" stroke-width="1.2"/><text x="0" y="5" text-anchor="middle" font-size="12">01</text><text x="28" y="5">WATERFALL</text><path d="M8 19 L108 102" stroke="#d6f3e6" stroke-width="1" opacity=".4" fill="none"/></g>
+      <g transform="translate(600 408)"><circle r="17" fill="#173c49" stroke="#83d7ca" stroke-width="1.2"/><text x="0" y="5" text-anchor="middle" font-size="12">02</text><text x="28" y="5">RIVER</text><path d="M11 18 L67 78" stroke="#d6f3e6" stroke-width="1" opacity=".4" fill="none"/></g>
+      <g transform="translate(1056 392)"><circle r="17" fill="#173c49" stroke="#83d7ca" stroke-width="1.2"/><text x="0" y="5" text-anchor="middle" font-size="12">03</text><text x="28" y="5">OCEAN</text><path d="M0 17 L-48 89" stroke="#d6f3e6" stroke-width="1" opacity=".4" fill="none"/></g>
+    </g>
+    <g transform="translate(28 730)" font-family="ui-monospace,monospace" font-size="11" letter-spacing=".6" fill="#bcdfd1" opacity=".85"><text>ECF / CONTINUOUS HYDRO FIELD · REFERENCE SIMULATION</text></g>
+   </svg>
+   <div class="scene-caption"><span>物理耦合：<span class="caption-active">瀑布供水 → 河段守恆 → 海面潮位邊界</span></span><span>水流追蹤粒子為視覺示意；數值求解與渲染分離</span></div>
+  </section>
+  <div class="bottom">
+   <section class="panel" aria-labelledby="parameters-heading">
+    <div class="panel-head"><h2 id="parameters-heading">流體場控制 / HYDRAULIC CONTROLS</h2><span class="fine">本機計算 · 無雲端</span></div>
+    <div class="ctrl"><label for="flow">瀑布供水</label><input id="flow" type="range" min="0.2" max="2.5" value="1.0" step="0.05"/><span class="value" id="flow-value">1.00</span></div>
+    <div class="ctrl"><label for="tide">海洋潮位</label><input id="tide" type="range" min="-0.4" max="0.4" value="0" step="0.02"/><span class="value" id="tide-value">+0.00 m</span></div>
+    <div class="ctrl"><label for="friction">河床糙率</label><input id="friction" type="range" min="0.01" max="0.08" value="0.03" step="0.002"/><span class="value" id="friction-value">0.030</span></div>
+    <div class="actions"><button id="toggle" class="primary">暫停模擬</button><button id="reset">重置場</button><button id="export">匯出 SVG 畫面</button></div>
+   </section>
+   <section class="panel" aria-labelledby="metrics-heading">
+    <div class="panel-head"><h2 id="metrics-heading">場內觀測 / LIVE MEASUREMENTS</h2><span class="status fine"><span class="dot"></span><span id="running">SIMULATING</span></span></div>
+    <div class="metrics">
+      <div class="metric"><b id="m-time">0.0 s</b><span>模擬時間</span></div>
+      <div class="metric"><b id="m-vel">0.00 m/s</b><span>河道中央流速</span></div>
+      <div class="metric"><b id="m-out">0.00</b><span>入海通量 m²/s</span></div>
+      <div class="metric"><b id="m-vol">0.0</b><span>河段水量 m² / 單位寬度</span></div>
+      <div class="metric"><b id="m-mass">0.0e+0</b><span>質量守恆殘差 m²</span></div>
+      <div class="metric"><b id="m-fps">—</b><span>顯示幀率 / fps</span></div>
+    </div>
+    <p class="note" id="note">數值模型：一維 Saint-Venant 有限體積法（Rusanov 通量，CFL 自適應），河段 96 格。瀑布採彈道示意，海洋作潮位邊界；不表示完整 3D 紊流或 2D 海流模擬。</p>
+   </section>
+  </div>
+</main>
+<script src="./fluid-core.js"></script>
+<script src="./scene.js"></script>
+</body>
+</html>

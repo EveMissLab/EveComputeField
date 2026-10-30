@@ -28,7 +28,7 @@ Commands:
   ctl    resize -id FIELD -units 720
   ctl    invoke -id FIELD -workload NAME [-input-file PATH] [-save-domain DOMAIN -save-key KEY]
   ctl    get/put -id FIELD -domain DOMAIN -key KEY
-  tool   sha256 | uppercase | lines (trusted local standard-input workload helpers)
+  tool   sha256 | uppercase | lines | fluid (trusted local standard-input workload helpers)
   plan   -spec examples/local.json
   run    -spec examples/local.json [-state ./field-state.json] [-parallel 4]
   certs  -out ./dev-certs [-host 127.0.0.1]
