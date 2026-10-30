@@ -37,9 +37,10 @@ type View struct {
 }
 
 type entry struct {
-	mu    sync.Mutex
-	spec  field.Spec
-	state *field.State
+	mu      sync.Mutex
+	spec    field.Spec
+	state   *field.State
+	blocked bool // a pending failed resize requires service restart/recovery
 }
 
 type Manager struct {
@@ -96,6 +97,9 @@ func Open(root string, backends map[string]field.Executor, parallel int) (*Manag
 			continue
 		}
 		directory := filepath.Join(path, item.Name())
+		if err := recoverResize(directory); err != nil {
+			return nil, fmt.Errorf("recover resize for %q: %w", item.Name(), err)
+		}
 		if item.Type()&os.ModeSymlink != 0 {
 			return nil, fmt.Errorf("field directory %q is a symlink", item.Name())
 		}
@@ -231,7 +235,11 @@ func viewOf(e *entry) View {
 	for k, v := range e.state.Results {
 		result[k] = v
 	}
-	return View{FieldID: e.spec.FieldID, SpecDigest: e.spec.Digest(), LogicalUnits: e.spec.UnitCount, Epoch: e.state.Epoch, Results: result, Status: "ready"}
+	status := "ready"
+	if e.blocked {
+		status = "needs-recovery"
+	}
+	return View{FieldID: e.spec.FieldID, SpecDigest: e.spec.Digest(), LogicalUnits: e.spec.UnitCount, Epoch: e.state.Epoch, Results: result, Status: status}
 }
 
 func (m *Manager) entry(id string) (*entry, error) {
@@ -285,6 +293,9 @@ func (m *Manager) Run(ctx context.Context, id string) (field.Report, error) {
 	}
 	e.mu.Lock()
 	defer e.mu.Unlock()
+	if e.blocked {
+		return field.Report{}, errors.New("field needs recovery: restart authority")
+	}
 	candidate := *e.state
 	report, err := field.ExecuteRun(ctx, e.spec, &candidate, m.execs, m.parallel)
 	if err != nil {
@@ -319,6 +330,9 @@ func (m *Manager) Put(id, domain, key, value string) error {
 	}
 	e.mu.Lock()
 	defer e.mu.Unlock()
+	if e.blocked {
+		return errors.New("field needs recovery: restart authority")
+	}
 	candidate := *e.state
 	candidate.Data = cloneData(e.state.Data)
 	if err := candidate.Put(e.spec, domain, key, value); err != nil {
@@ -338,6 +352,9 @@ func (m *Manager) Get(id, domain, key string) (string, bool, error) {
 	}
 	e.mu.Lock()
 	defer e.mu.Unlock()
+	if e.blocked {
+		return "", false, errors.New("field needs recovery: restart authority")
+	}
 	value, ok, err := e.state.Get(e.spec, domain, key)
 	if err != nil {
 		return "", false, fmt.Errorf("%w: %v", ErrInvalid, err)

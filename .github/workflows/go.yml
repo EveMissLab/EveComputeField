@@ -10,7 +10,11 @@ permissions:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v6
@@ -19,7 +23,8 @@ jobs:
           cache: true
       - name: Unit tests
         run: go test ./...
-      - name: Race tests
+      - name: Race tests (Linux)
+        if: runner.os == 'Linux'
         run: go test -race ./...
       - name: Vet
         run: go vet ./...
@@ -27,4 +32,9 @@ jobs:
         run: go build ./...
 
       - name: M1 loopback service and restart smoke (Linux)
+        if: runner.os == 'Linux'
         run: bash scripts/smoke-m1-linux.sh
+
+      - name: M2 local resize + named workload + restart smoke (Linux)
+        if: runner.os == 'Linux'
+        run: bash scripts/smoke-m2-linux.sh

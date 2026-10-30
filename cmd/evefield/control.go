@@ -26,6 +26,7 @@ import (
 	"github.com/EveMissLab/EveComputeField/internal/control"
 	"github.com/EveMissLab/EveComputeField/internal/field"
 	"github.com/EveMissLab/EveComputeField/internal/transport"
+	"github.com/EveMissLab/EveComputeField/internal/workload"
 )
 
 func tokenCommand(args []string) error {
@@ -94,6 +95,8 @@ func serveCommand(args []string) error {
 	data := fs.String("data", "./field-data", "persistent field directory (single writer)")
 	tokenPath := fs.String("token-file", "./control.token", "local bearer token file")
 	parallel := fs.Int("parallel", 4, "max parallel tasks per DAG layer")
+	workloadsPath := fs.String("workloads", "", "optional local trusted workload registry JSON (disabled by default)")
+	workloadParallel := fs.Int("workload-parallel", 2, "max simultaneously executed registered local processes")
 	ca := fs.String("ca", "", "optional trusted worker CA")
 	cert := fs.String("cert", "", "optional mTLS client certificate")
 	key := fs.String("key", "", "optional mTLS client key")
@@ -127,6 +130,13 @@ func serveCommand(args []string) error {
 		}
 		backends[parts[0]] = backend
 	}
+	var runner *workload.Registry
+	if *workloadsPath != "" {
+		runner, err = workload.Load(*workloadsPath, *workloadParallel)
+		if err != nil {
+			return fmt.Errorf("load trusted workloads: %w", err)
+		}
+	}
 	manager, err := authority.Open(*data, backends, *parallel)
 	if err != nil {
 		return err
@@ -150,7 +160,7 @@ func serveCommand(args []string) error {
 		return err
 	}
 	defer ln.Close()
-	srv := &http.Server{Handler: control.NewHandler(manager, token), ReadHeaderTimeout: 3 * time.Second, ReadTimeout: 10 * time.Second, WriteTimeout: 75 * time.Second, IdleTimeout: 20 * time.Second}
+	srv := &http.Server{Handler: control.NewHandlerWithWorkloads(manager, token, runner), ReadHeaderTimeout: 3 * time.Second, ReadTimeout: 10 * time.Second, WriteTimeout: 75 * time.Second, IdleTimeout: 20 * time.Second}
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer stop()
 	done := make(chan error, 1)
@@ -161,7 +171,7 @@ func serveCommand(args []string) error {
 		}
 		done <- err
 	}()
-	log.Printf("EveComputeField M1 control on http://%s (loopback only; field data at %s)", ln.Addr(), manager.Root())
+	log.Printf("EveComputeField M2 control on http://%s (loopback only; field data at %s; workloads enabled=%t)", ln.Addr(), manager.Root(), runner != nil)
 	select {
 	case err := <-done:
 		return err
@@ -177,7 +187,7 @@ func serveCommand(args []string) error {
 
 func ctlCommand(args []string) error {
 	if len(args) < 1 {
-		return errors.New("ctl requires one action: create, list, inspect, run, get, put")
+		return errors.New("ctl requires one action: status, create, list, inspect, run, resize, workloads, invoke, get, put")
 	}
 	action := args[0]
 	fs := flag.NewFlagSet("ctl "+action, flag.ContinueOnError)
@@ -188,6 +198,11 @@ func ctlCommand(args []string) error {
 	domain := fs.String("domain", "", "memory domain for get/put")
 	memoryKey := fs.String("key", "", "memory key for get/put")
 	value := fs.String("value", "", "memory string for put")
+	units := fs.Int("units", 0, "new logical unit count for resize")
+	workloadName := fs.String("workload", "", "registered workload name for invoke")
+	inputFile := fs.String("input-file", "", "UTF-8 text file for invoke (default empty stdin payload)")
+	saveDomain := fs.String("save-domain", "", "optional snapshot domain for invoke result")
+	saveKey := fs.String("save-key", "", "optional snapshot key for invoke result")
 	if err := fs.Parse(args[1:]); err != nil {
 		return err
 	}
@@ -208,6 +223,12 @@ func ctlCommand(args []string) error {
 	var method, path string
 	var body []byte
 	switch action {
+	case "status":
+		method = http.MethodGet
+		path = "/v1/status"
+	case "workloads":
+		method = http.MethodGet
+		path = "/v1/workloads"
 	case "create":
 		s, err := readSpec(*specPath)
 		if err != nil {
@@ -222,7 +243,7 @@ func ctlCommand(args []string) error {
 	case "list":
 		method = http.MethodGet
 		path = "/v1/fields"
-	case "inspect", "run", "get", "put":
+	case "inspect", "run", "resize", "invoke", "get", "put":
 		if !safeCLIIdentifier(*id) {
 			return errors.New("-id must be a safe field identifier")
 		}
@@ -230,6 +251,39 @@ func ctlCommand(args []string) error {
 		switch action {
 		case "inspect":
 			method = http.MethodGet
+		case "resize":
+			method = http.MethodPut
+			path += "/resize"
+			body, _ = json.Marshal(map[string]int{"unit_count": *units})
+		case "invoke":
+			if !safeCLIIdentifier(*workloadName) {
+				return errors.New("-workload must be a safe registered name")
+			}
+			if (*saveDomain == "") != (*saveKey == "") {
+				return errors.New("-save-domain and -save-key must be supplied together")
+			}
+			if *saveDomain != "" && (!safeCLIIdentifier(*saveDomain) || !safeCLIIdentifier(*saveKey)) {
+				return errors.New("invalid snapshot domain or key")
+			}
+			input := ""
+			if *inputFile != "" {
+				file, err := os.Open(*inputFile)
+				if err != nil {
+					return err
+				}
+				b, readErr := io.ReadAll(io.LimitReader(file, workload.MaxInputBytes+1))
+				file.Close()
+				if readErr != nil {
+					return readErr
+				}
+				if len(b) > workload.MaxInputBytes {
+					return errors.New("invoke input file >64KiB")
+				}
+				input = string(b)
+			}
+			method = http.MethodPost
+			path += "/invoke/" + *workloadName
+			body, _ = json.Marshal(map[string]string{"input": input, "save_domain": *saveDomain, "save_key": *saveKey})
 		case "run":
 			method = http.MethodPost
 			path += "/run"
@@ -255,7 +309,7 @@ func ctlCommand(args []string) error {
 		return err
 	}
 	req.Header.Set("Authorization", "Bearer "+token)
-	if method == http.MethodPost && action == "create" || method == http.MethodPut {
+	if method == http.MethodPost && (action == "create" || action == "invoke") || method == http.MethodPut {
 		req.Header.Set("Content-Type", "application/json")
 	}
 	client := &http.Client{Timeout: 70 * time.Second, Transport: &http.Transport{Proxy: nil}, CheckRedirect: func(req *http.Request, via []*http.Request) error { return http.ErrUseLastResponse }}

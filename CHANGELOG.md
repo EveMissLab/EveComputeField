@@ -29,3 +29,13 @@ This is a code-and-contract baseline, not proof of hardware performance or produ
 - Set canonical Go module path and CLI `cmd/evefield`.
 - Added standalone repository scope, publisher instructions and GitHub Go CI template.
 - Remote repo creation intentionally remains a separate authenticated operation.
+
+## 2026-10-30 — M2 local-first executable field (candidate)
+
+- Add local authority quiescent field resize with crash-replay journal.
+- Add local-only allowlisted executable registry, bounded `invoke` endpoint,
+  opt-in named local workloads, and built-in test helpers.
+- Add Windows PowerShell bootstrap, Linux end-to-end smoke, and cross-platform
+  unit-test CI matrix. Cloud continuity and physical pulse claims remain out
+  of scope.
+- Harden field ID validation for path aliases and Windows device names.

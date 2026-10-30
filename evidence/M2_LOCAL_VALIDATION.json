@@ -1,0 +1,24 @@
+{
+  "program": "EveComputeField",
+  "milestone": "M2-local-first",
+  "date_asia_taipei": "2026-10-30",
+  "environment": "Linux amd64, Go 1.23.2, local test process",
+  "checks": {
+    "go_test_all": "PASS",
+    "go_test_race_all": "PASS",
+    "go_vet_all": "PASS",
+    "go_build_all": "PASS",
+    "m1_smoke_linux": "PASS",
+    "m2_local_resize_invoke_restart_smoke_linux": "PASS",
+    "windows_github_ci": "NOT_RUN_AT_AUTHORING",
+    "windows_real_workstation": "NOT_RUN",
+    "hardware_pulse_performance": "NOT_TESTED",
+    "cloud_continuity": "OUT_OF_SCOPE"
+  },
+  "important_limitations": [
+    "Logical unit count is not a physical CPU-core count",
+    "Registered workloads execute as normal local processes, not sandboxes",
+    "External process side effects cannot be rolled back by field snapshots",
+    "Journal recovery is a local roll-forward reference and not power-loss durability proof"
+  ]
+}

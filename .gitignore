@@ -15,3 +15,6 @@
 /field-data/
 /control.token
 *.token
+# M2 generated local runtime, do not publish credentials/snapshots.
+/.evefield-local/
+/build/

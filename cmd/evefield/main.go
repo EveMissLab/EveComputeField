@@ -22,9 +22,13 @@ func usage() {
 	fmt.Fprintln(os.Stderr, `EveComputeField reference CLI
 Commands:
   token  -out ./control.token
-  serve  -data ./field-data -token-file ./control.token [-listen 127.0.0.1:8765]
+  serve  -data ./field-data -token-file ./control.token [-listen 127.0.0.1:8765] [-workloads REGISTRY.json]
   ctl    create -spec examples/local.json [-token-file ./control.token]
-  ctl    list | inspect -id FIELD | run -id FIELD | get/put -id FIELD -domain DOMAIN -key KEY
+  ctl    status | list | workloads | inspect -id FIELD | run -id FIELD
+  ctl    resize -id FIELD -units 720
+  ctl    invoke -id FIELD -workload NAME [-input-file PATH] [-save-domain DOMAIN -save-key KEY]
+  ctl    get/put -id FIELD -domain DOMAIN -key KEY
+  tool   sha256 | uppercase | lines (trusted local standard-input workload helpers)
   plan   -spec examples/local.json
   run    -spec examples/local.json [-state ./field-state.json] [-parallel 4]
   certs  -out ./dev-certs [-host 127.0.0.1]
@@ -32,7 +36,8 @@ Commands:
   run    -spec examples/lan.json -remote worker=https://127.0.0.1:8443 -ca CA -cert CLIENT_CERT -key CLIENT_KEY
 
 Worker transport is TLS 1.3 with required client certificates; no unauthenticated LAN mode.
-The runtime implements only pure sum/mul operations and is not a general VM.`)
+The DAG reference backend implements pure sum/mul operations; opt-in named
+workloads enable trusted local programs, but are NOT sandboxed or transactional.`)
 }
 
 type remoteFlags []string
@@ -71,6 +76,8 @@ func run(args []string) error {
 	switch args[0] {
 	case "token":
 		return tokenCommand(args[1:])
+	case "tool":
+		return toolCommand(args[1:])
 	case "serve":
 		return serveCommand(args[1:])
 	case "ctl":
