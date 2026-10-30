@@ -111,3 +111,16 @@ compute epochs. Underlying memory domains are typed logical KV stores, not
 real virtual address spaces or a transparent distributed-RAM service. M1 does
 not support live reconfiguration through control endpoints, worker consensus,
 or physical pulse optimization. No future native adapter is implied.
+
+## M2 additive local extension (implemented)
+
+M2 adds `PUT /v1/fields/{id}/resize`, `POST
+/v1/fields/{id}/invoke/{registered-name}`, `GET /v1/status` and `GET
+/v1/workloads`. The `field/v0.1` DAG spec remains unchanged. A registered
+process is **not** a new DAG operator and does not change the compute epoch.
+Resize updates spec and snapshot together using a recovery journal; it has
+startup roll-forward semantics rather than atomic power-fail durability.
+
+The trusted local workload registry is **opt-in** and does not grant a remote
+worker process execution capability. Read [M2_LOCAL_FIRST.md](M2_LOCAL_FIRST.md)
+for full API shapes, security requirements and acceptance evidence.

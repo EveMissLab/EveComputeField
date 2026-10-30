@@ -4,7 +4,7 @@
 
 Date: **2026-10-30 (Asia/Taipei)**  
 Project owner: **EVEMISS TECHNOLOGY CO., LTD. / EveMissLab**  
-Status: **M1 PERSISTENT FIELD AUTHORITY — REFERENCE PROTOTYPE, NOT A PRODUCTION RUNTIME**  
+Status: **M2 LOCAL-FIRST EXECUTABLE FIELD — REFERENCE PROTOTYPE, NOT A PRODUCTION RUNTIME**
 License: MIT (included in the public repository)
 
 ## Purpose / 目的
@@ -58,6 +58,41 @@ field identity and stored state**, not a claim that tasks keep executing after
 machine shutdown. Use only one `serve` per data directory; a stale lock after
 an unclean crash must be investigated before manual removal.
 
+## M2 — Local-first application invocation (new)
+
+**Use one local computer first. No cloud, Dot, Grok or LAN is required for the M2 workflow.**
+M2 adds journal-recoverable logical-unit resizing, an **opt-in local named-workload
+registry**, a standard-input/stdout process adapter, `ctl status`, `ctl resize`,
+`ctl workloads`, `ctl invoke` and a Windows PowerShell startup script. The
+workload registry allows users to invoke explicitly configured trusted programs
+as field-associated tasks; these are **not sandboxed** and their side effects
+are **not** rolled back by field snapshots. Existing DAG operations are still
+pure `sum`/`mul` and remain independent of this adapter.
+
+On Windows, at the repository root in PowerShell A:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\start-local.ps1
+```
+
+The script compiles a local executable, creates a private token and example
+workload registry (without overwriting existing ones), and starts a loopback
+service. In PowerShell B:
+
+```powershell
+$exe = '.\build\evefield.exe'
+$token = '.\.evefield-local\control.token'
+& $exe ctl status -token-file $token
+& $exe ctl create -spec examples/local.json -token-file $token
+& $exe ctl resize -id reference-local -units 720 -token-file $token
+& $exe ctl invoke -id reference-local -workload hash -input-file examples/invoke.txt -save-domain continuity -save-key last_hash -token-file $token
+& $exe ctl get -id reference-local -domain continuity -key last_hash -token-file $token
+```
+
+See **[M2 local-first guide](docs/M2_LOCAL_FIRST.md)** for full details,
+Linux setup, registry JSON, failure semantics and validation status. `ctl
+create` is only necessary once per field identity.
+
 ## Quick start — original one-shot CLI
 
 Prerequisite: Go **1.23+** (reference code is compiled/tested with 1.23; install a maintained security-patched version in practice). No third-party Go module dependencies.
@@ -97,11 +132,12 @@ Windows PowerShell: use the same `go run ./cmd/evefield ...` commands, with sepa
 ## Repository layout
 
 ```text
-cmd/evefield/             CLI: plan, run, worker, certs, token, serve, ctl
+cmd/evefield/           CLI: plan, run, worker, certs, token, serve, ctl, tool
 internal/field/         Field schema, DAG, pure reference backend, state snapshots
-internal/authority/     Single-writer persistent field registry
-internal/control/       Authenticated loopback control API
-internal/transport/     Strict JSON + mTLS worker client/server
+internal/authority/     Single-writer persistent field registry + resize recovery
+internal/control/       Authenticated loopback control API + M2 invocation
+internal/workload/      Named, bounded, opt-in local process invocation (not sandbox)
+internal/transport/     Strict JSON + mTLS worker client/server (legacy optional)
 internal/devcert/       Development certificates only
 examples/               Minimal local and LAN specs
 docs/                   Detailed contracts, scope, release gate, repository decisions
@@ -120,7 +156,8 @@ Application / human / AI caller (future SDK)
                  |
      Backend interfaces (replaceable)
          /                    \
-   Local Go reference      Remote mTLS worker
+   Local Go reference     Local named workloads (opt-in)
+                      [remote mTLS worker: optional pre-existing capability]
      [optional later: NOVA / EML-SF / ODTS / MACR / TCGCT / GMA]
 ```
 
@@ -137,3 +174,9 @@ The Go module is `github.com/EveMissLab/EveComputeField`; its CLI entry point is
 ## Open-source position
 
 Only self-contained, independently authored public-safe reference code and public architecture have been packaged. The private or experimental upstream systems are not copied or released here. MIT is included for the reference implementation; a future proprietary adapter can remain separate without changing the open core. All future private or non-public research adapters require a separate explicit publication review; do not assume their source is included.
+
+### Historical manifests
+
+`MANIFEST_SHA256.txt` is the immutable-file list from the prior bootstrap
+reference package. It is **not** a verification manifest of M2; use
+`MANIFEST_SHA256_M2.txt` for this revision's tracked source snapshot.
