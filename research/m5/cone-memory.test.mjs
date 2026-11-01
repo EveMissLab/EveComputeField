@@ -180,3 +180,12 @@ test('optional full-oracle gate charges whole-grid work and verifies staged comm
     assert.equal(f.stats.oracle_cells-before,512);
   }finally{assert.equal(f.close(),0);}
 });
+
+
+test('branch fork cannot claim missing parent events as inherited ancestry',()=>{
+  const f=new ConeMemoryField({width:16,height:16,initial:seed(16,16),horizon:4});
+  try{f.predict('A',[I]);
+    assert.throws(()=>f.predict('B',[I,I,I,I],{parentBranch:'A',forkDepth:4}),/parent prefix/);
+    assert.equal(f.stats.branches,1);
+  }finally{assert.equal(f.close(),0);}
+});

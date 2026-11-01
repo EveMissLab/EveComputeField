@@ -138,7 +138,7 @@ export class ConeMemoryField {
     integer(forkDepth,1,events.length,'fork depth');
     const seq=events.map(e=>normalizeConeEvent(e,this.cells)),start=0;
     if(parentBranch!==null){const p=this.#branches.get(parentBranch);
-      if(!p)throw Error('unknown parent branch');
+      if(!p||p.events.length<forkDepth-1)throw Error('unknown or insufficient parent prefix');
       for(let i=0;i<forkDepth-1;i++)if(eventSignature(p.events[i])!==eventSignature(seq[i]))
         throw Error('inherited prefix mismatch');
     }else if(forkDepth!==1)throw Error('orphan nonzero fork');
