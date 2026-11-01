@@ -1,0 +1,11 @@
+{
+  "schema": "ecf-m5-gates/v1",
+  "date": "2026-11-02",
+  "status": "reference-branch-candidate",
+  "odts_source": "kakon77777-commits/ODTS feat/r3-multiordinal-causal-influence",
+  "canonical_odts_authority_unchanged": true,
+  "global_coupled_fluid_fallback": true,
+  "independent_os_windows_native": "NOT_RUN",
+  "full_lifecycle_speedup": "NOT_CLAIMED",
+  "license_boundary": "M5 independently authored; ODTS code not vendored"
+}
