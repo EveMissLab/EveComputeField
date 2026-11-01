@@ -1,0 +1,21 @@
+{
+  "schema": "ecf-m5p1-local-validation/v1",
+  "date": "2026-11-02",
+  "status": "LOCAL_LINUX_FOCUSED_PASS; FULL_GITHUB_CI_PENDING; WINDOWS_NATIVE_NOT_RUN",
+  "source": "independently authored VMD + finite influence-cone sidecar",
+  "expected_full_behavior": "existing M5-P0 draft and R3 full solver unchanged",
+  "tests": {
+    "focused_node_tests": 18,
+    "focused_passed": 18,
+    "focused_failed": 0,
+    "independent_oracle": "matched candidate bytes for tested deterministic CA cases",
+    "whole_repository_regression": "pending clean GitHub build"
+  },
+  "performance_claim": "NONE: sparse work reduction observed; end-to-end gain not established",
+  "limits": [
+    "Node 22 local Linux run; Node 24 and Windows native remain separate gates",
+    "R3 fluid remains full-oracle only; no fluid local skipping",
+    "no signed source provenance or OS memory protection",
+    "content_merkle_sha256 is a tile Merkle-style commitment, not raw full-grid SHA256"
+  ]
+}
