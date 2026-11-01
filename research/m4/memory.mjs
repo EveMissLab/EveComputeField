@@ -10,6 +10,7 @@ function integer(n, min, max, label) {
 
 export class VirtualMemoryDomain {
   #regions = new Map();
+  #generations = new Map();
   #buffers = new WeakSet();
   #bytes = 0;
   constructor({fieldId, domainId = 'compute', quotaBytes = 64 * 1024 * 1024, consistency = 'quiescent-barrier'} = {}) {
@@ -26,7 +27,10 @@ export class VirtualMemoryDomain {
         buffer.byteLength % TYPES[type].BYTES_PER_ELEMENT || this.#buffers.has(buffer))
       throw Error('invalid, unaligned or aliased shared backing');
     if (this.#bytes + buffer.byteLength > this.quotaBytes) throw Error('memory-domain quota exceeded');
-    const region = {name, buffer, type, access, ownership, generation: 1};
+    const generation = (this.#generations.get(name) ?? 0) + 1;
+    if (!Number.isSafeInteger(generation)) throw Error('memory generation exhausted');
+    const region = {name, buffer, type, access, ownership, generation};
+    this.#generations.set(name, generation);
     this.#regions.set(name, region); this.#buffers.add(buffer); this.#bytes += buffer.byteLength;
     return this.handle(name);
   }
@@ -70,7 +74,20 @@ export class VirtualMemoryDomain {
     // Domain mappings are metadata leases; earlier raw views remain physically accessible.
     this.#buffers.add(replacement);
     r.buffer = replacement; r.generation++;
+    if (!Number.isSafeInteger(r.generation)) throw Error('memory generation exhausted');
+    this.#generations.set(name, r.generation);
     return this.handle(name);
+  }
+  // Metadata release at an externally established quiescent point. This does NOT
+  // revoke previously exported raw TypedArray views or force GC of backing pages.
+  // Reallocation of the same logical name receives a strictly newer generation.
+  release(name, {expectedGeneration, quiescent = false} = {}) {
+    const r = this.#regions.get(name);
+    if (!r || !quiescent || !Number.isSafeInteger(expectedGeneration) ||
+        r.generation !== expectedGeneration) throw Error('stale/non-quiescent memory release');
+    this.#regions.delete(name);
+    this.#bytes -= r.buffer.byteLength;
+    return {name, released_bytes: r.buffer.byteLength, generation: r.generation};
   }
   describe() {
     return {schema: MEMORY_SCHEMA, field_id: this.fieldId, domain_id: this.domainId,

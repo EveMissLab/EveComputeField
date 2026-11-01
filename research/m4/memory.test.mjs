@@ -41,3 +41,18 @@ test('R3 state bank observation flips logical active handle without copying arra
   assert.equal(new Float64Array(buffers.h1)[0],7);
   assert.equal(catalog.domain.describe().mapped_bytes,256);
 });
+
+test('released VMD region frees quota and a recreated name never revives an old handle', () => {
+  const domain = new VirtualMemoryDomain({fieldId:'release-test',quotaBytes:16});
+  const old = domain.allocate({name:'tile',type:'u8',elements:16});
+  assert.throws(() => domain.release('tile',{expectedGeneration:old.generation}),/quiescent/);
+  assert.throws(() => domain.release('tile',{expectedGeneration:old.generation+1,quiescent:true}),/stale/);
+  assert.equal(domain.release('tile',{expectedGeneration:old.generation,quiescent:true}).released_bytes,16);
+  assert.equal(domain.describe().mapped_bytes,0);
+  assert.throws(() => domain.view(old),/stale/);
+  const current=domain.allocate({name:'tile',type:'u8',elements:16});
+  assert.equal(current.generation,old.generation+1);
+  assert.throws(() => domain.view(old),/stale/);
+  domain.view(current,{write:true})[2]=7;
+  assert.equal(domain.view(current)[2],7);
+});
